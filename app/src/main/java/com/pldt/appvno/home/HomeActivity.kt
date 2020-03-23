@@ -8,8 +8,10 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
 import com.pldt.appvno.R
+import com.pldt.appvno.call.CallActivity
 import com.pldt.appvno.extensions.isVisible
 import kotlinx.android.synthetic.main.activity_home.*
+import org.jetbrains.anko.startActivity
 
 class HomeActivity : AppCompatActivity(), HomeFragment.OnHomeInteractionListener {
 
@@ -29,13 +31,14 @@ class HomeActivity : AppCompatActivity(), HomeFragment.OnHomeInteractionListener
         }
 
         btn_free_call_home.setOnClickListener{
-            // TODO - Open Activity For calling
             container_floating_home.isVisible(false)
+            startActivity<CallActivity>()
+
         }
 
         btn_premium_call_home.setOnClickListener {
-            // TODO - Open Activity For calling
             container_floating_home.isVisible(false)
+            startActivity<CallActivity>()
         }
 
 

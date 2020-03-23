@@ -9,11 +9,9 @@ import android.view.ViewGroup
 
 import com.pldt.appvno.R
 import com.pldt.appvno.loginRegister.LoginRegisterActivity
+import com.pldt.appvno.profile.ProfileActivity
 import kotlinx.android.synthetic.main.fragment_other.*
-import org.jetbrains.anko.clearTask
-import org.jetbrains.anko.intentFor
-import org.jetbrains.anko.newTask
-import org.jetbrains.anko.intentFor
+import org.jetbrains.anko.*
 
 /**
  * A simple [Fragment] subclass.
@@ -35,6 +33,10 @@ class OtherFragment : Fragment() {
     }
 
     private fun attachListner() {
+
+        tv_profile_otherFragment.setOnClickListener {
+            activity?.startActivity<ProfileActivity>()
+        }
         tv_logout_otherFragment.setOnClickListener {
             activity?.startActivity(activity?.intentFor<LoginRegisterActivity>()?.newTask()?.clearTask())
         }

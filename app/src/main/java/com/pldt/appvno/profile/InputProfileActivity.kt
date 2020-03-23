@@ -1,4 +1,4 @@
-package com.pldt.appvno.inputProfile
+package com.pldt.appvno.profile
 
 import android.Manifest
 import android.app.AlertDialog

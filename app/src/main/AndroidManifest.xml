@@ -15,14 +15,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".call.CallActivity"></activity>
+        <activity android:name=".profile.ProfileActivity"></activity>
+        <activity android:name=".call.CallActivity" />
         <activity
             android:name=".home.HomeActivity"
             android:label="@string/title_activity_home"
             android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="adjustPan"/>
+            android:windowSoftInputMode="adjustPan" />
         <activity android:name=".termsCondition.TermsConditionActivity" />
-        <activity android:name=".inputProfile.InputProfileActivity" />
+        <activity android:name=".profile.InputProfileActivity" />
         <activity android:name=".otp.OtpConfirmationActivity" />
         <activity
             android:name=".SplashActivity"
@@ -35,8 +36,9 @@
         </activity>
         <activity android:name=".MainActivity" />
         <activity android:name=".privacyPolicy.PrivacyPolicyActivity" />
-        <activity android:name=".loginRegister.LoginRegisterActivity"
-            android:windowSoftInputMode="adjustPan"/>
+        <activity
+            android:name=".loginRegister.LoginRegisterActivity"
+            android:windowSoftInputMode="adjustPan" />
         <activity android:name=".getStarted.GetStartedActivity" />
     </application>
 

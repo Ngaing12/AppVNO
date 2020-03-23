@@ -2,12 +2,10 @@ package com.pldt.appvno.otp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.EditText
 import android.widget.Toast
 import com.pldt.appvno.R
-import com.pldt.appvno.getStarted.GetStartedActivity
-import com.pldt.appvno.inputProfile.InputProfileActivity
+import com.pldt.appvno.profile.InputProfileActivity
 import kotlinx.android.synthetic.main.activity_otp_confirmation.*
 import org.jetbrains.anko.startActivity
 
