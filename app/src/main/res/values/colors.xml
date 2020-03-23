@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="colorGetStartedBG">#53ACA7</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorTextNormal">#4E4E4E</color>
+    <color name="colorTextOffset">#FFFDFD</color>
+    <color name="colorButtonPrimary">#FF8C63</color>
+    <color name="colorHyperLinkPrimary">#FF8C63</color>
+    <color name="colorBackgroundPrimary">#FAFAFA</color>
+    <color name="colorNavigationTint">#6F6A6A</color>
+    <color name="colorBackgroundTransparent">#CC000000</color>
+    <color name="colorGreen">#61C0B5</color>
+    <color name="colorGray">#F7F7F7</color>
+</resources>
