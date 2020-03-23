@@ -14,6 +14,7 @@
         android:layout_height="32dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="15dp"
+        android:padding="4dp"
         android:src="@drawable/temp_ic_arrow_back_black_24dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -24,17 +25,13 @@
         android:layout_height="wrap_content"
         android:text="@string/temp_privacy_policy"
         android:textStyle="bold"
-        android:textSize="20sp"
+        android:textSize="16dp"
         android:textColor="@color/colorTextNormal"
         app:layout_constraintTop_toTopOf="@id/img_back_privacyPolicy"
+        app:layout_constraintBottom_toBottomOf="@id/img_back_privacyPolicy"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"/>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/colorTextNormal"
-        android:layout_marginTop="?android:attr/actionBarSize"
-        app:layout_constraintTop_toTopOf="parent"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

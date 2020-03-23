@@ -19,6 +19,7 @@ import kotlinx.android.synthetic.main.activity_login_register.*
 import kotlinx.android.synthetic.main.dialog_verify_number.*
 import org.jetbrains.anko.clearTask
 import org.jetbrains.anko.intentFor
+import org.jetbrains.anko.newTask
 import org.jetbrains.anko.startActivity
 
 class LoginRegisterActivity : AppCompatActivity(),LoginFragment.OnLoginInteractionListener, RegisterFragment.OnRegisterInteractionListener {
@@ -74,7 +75,7 @@ class LoginRegisterActivity : AppCompatActivity(),LoginFragment.OnLoginInteracti
     }
 
     override fun onLoginClickLogin() {
-        startActivity(intentFor<HomeActivity>().clearTask())
+        startActivity(intentFor<HomeActivity>().newTask().clearTask())
     }
 
     override fun onLoginClickFingerprint() {

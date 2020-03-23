@@ -23,18 +23,18 @@
 <!--        app:layout_constraintTop_toTopOf="parent"-->
 <!--        app:layout_constraintBottom_toTopOf="@id/navigation_bottom_home" />-->
 
-    <ImageView
-        android:id="@+id/img_open_home"
-        android:layout_width="52dp"
-        android:layout_height="52dp"
-        android:padding="12dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toTopOf="@id/navigation_bottom_home"
-        app:layout_constraintRight_toRightOf="parent"
-        android:background="@drawable/temp_circle_button_green"
-        android:src="@drawable/temp_ic_call_white_24dp"
-        android:foregroundTint="@color/colorWhite"/>
+<!--    <ImageView-->
+<!--        android:id="@+id/img_open_home"-->
+<!--        android:layout_width="52dp"-->
+<!--        android:layout_height="52dp"-->
+<!--        android:padding="12dp"-->
+<!--        android:layout_marginEnd="16dp"-->
+<!--        android:layout_marginBottom="16dp"-->
+<!--        app:layout_constraintBottom_toTopOf="@id/navigation_bottom_home"-->
+<!--        app:layout_constraintRight_toRightOf="parent"-->
+<!--        android:background="@drawable/temp_circle_button_green"-->
+<!--        android:src="@drawable/temp_ic_call_white_24dp"-->
+<!--        android:foregroundTint="@color/colorWhite"/>-->
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/navigation_bottom_home"

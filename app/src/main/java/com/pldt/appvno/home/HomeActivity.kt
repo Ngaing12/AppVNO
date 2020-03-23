@@ -11,8 +11,7 @@ import com.pldt.appvno.R
 import com.pldt.appvno.extensions.isVisible
 import kotlinx.android.synthetic.main.activity_home.*
 
-class HomeActivity : AppCompatActivity() {
-
+class HomeActivity : AppCompatActivity(), HomeFragment.OnHomeInteractionListener {
 
     var prevMenuItem: MenuItem? = null
 
@@ -25,20 +24,18 @@ class HomeActivity : AppCompatActivity() {
 
     private fun attachListener() {
 
-        img_open_home.setOnClickListener {
-            container_floating_home.isVisible(true)
-        }
-
         img_close_home.setOnClickListener {
             container_floating_home.isVisible(false)
         }
 
         btn_free_call_home.setOnClickListener{
-            // Open Activity For calling
+            // TODO - Open Activity For calling
+            container_floating_home.isVisible(false)
         }
 
         btn_premium_call_home.setOnClickListener {
-            // Open Activity For calling
+            // TODO - Open Activity For calling
+            container_floating_home.isVisible(false)
         }
 
 
@@ -71,23 +68,23 @@ class HomeActivity : AppCompatActivity() {
         navigation_bottom_home.setOnNavigationItemSelectedListener {
             when(it.itemId){
                 R.id.menu_home_bottomNavigation -> {
-                    container_fragment_home.currentItem = it.itemId
+                    container_fragment_home.currentItem = 0
                     return@setOnNavigationItemSelectedListener true
                 }
                 R.id.menu_messages_bottomNavigation -> {
-                    container_fragment_home.currentItem = it.itemId
+                    container_fragment_home.currentItem = 1
                     return@setOnNavigationItemSelectedListener true
                 }
                 R.id.menu_call_bottomNavigation -> {
-                    container_fragment_home.currentItem = it.itemId
+                    container_fragment_home.currentItem = 2
                     return@setOnNavigationItemSelectedListener true
                 }
                 R.id.menu_shop_bottomNavigation -> {
-                    container_fragment_home.currentItem = it.itemId
+                    container_fragment_home.currentItem = 3
                     return@setOnNavigationItemSelectedListener true
                 }
                 R.id.menu_others_bottomNavigation -> {
-                    container_fragment_home.currentItem = it.itemId
+                    container_fragment_home.currentItem = 4
                     return@setOnNavigationItemSelectedListener true
                 }
             }
@@ -115,4 +112,8 @@ class HomeActivity : AppCompatActivity() {
         container_fragment_home.adapter = adapter
     }
 
+
+    override fun onClickCall() {
+        container_floating_home.isVisible(true)
+    }
 }
