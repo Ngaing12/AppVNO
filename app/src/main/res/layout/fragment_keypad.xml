@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".call.KeypadFragment">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/img_back_phoneFragment"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/temp_ic_arrow_back_black_24dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_title_phoneFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Phone"
+            android:textSize="18dp"
+            app:layout_constraintBottom_toBottomOf="@id/img_back_phoneFragment"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/img_back_phoneFragment" />
+
+
+        <TextView
+            android:id="@+id/tv_add_contact_phoneFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="64dp"
+            android:gravity="center"
+            android:text="+ Add to Contact"
+            android:textColor="@color/colorHyperLinkPrimary"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_title_phoneFragment" />
+
+        <TextView
+            android:id="@+id/tv_number_phoneFragment"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="32dp"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="099999999999"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_add_contact_phoneFragment" />
+
+
+        <TextView
+            android:id="@+id/tv_1_phoneFragment"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="32dp"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="1"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/tv_2_phoneFragment"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_number_phoneFragment" />
+
+        <TextView
+            android:id="@+id/tv_2_phoneFragment"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="32dp"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="2"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/tv_3_phoneFragment"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tv_1_phoneFragment"
+            app:layout_constraintTop_toTopOf="@id/tv_1_phoneFragment" />
+
+        <TextView
+            android:id="@+id/tv_3_phoneFragment"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="32dp"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="3"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tv_2_phoneFragment"
+            app:layout_constraintTop_toTopOf="@id/tv_1_phoneFragment" />
+
+
+        <TextView
+            android:id="@+id/tv_4_phoneFragment"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="32dp"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="4"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/tv_5_phoneFragment"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_1_phoneFragment" />
+
+        <TextView
+            android:id="@+id/tv_5_phoneFragment"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="32dp"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="5"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/tv_6_phoneFragment"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tv_4_phoneFragment"
+            app:layout_constraintTop_toTopOf="@id/tv_4_phoneFragment" />
+
+        <TextView
+            android:id="@+id/tv_6_phoneFragment"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="32dp"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="6"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tv_5_phoneFragment"
+            app:layout_constraintTop_toTopOf="@id/tv_4_phoneFragment" />
+
+
+        <TextView
+            android:id="@+id/tv_7_phoneFragment"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="32dp"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="7"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/tv_8_phoneFragment"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_4_phoneFragment" />
+
+        <TextView
+            android:id="@+id/tv_8_phoneFragment"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="32dp"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="8"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/tv_9_phoneFragment"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tv_7_phoneFragment"
+            app:layout_constraintTop_toTopOf="@id/tv_7_phoneFragment" />
+
+        <TextView
+            android:id="@+id/tv_9_phoneFragment"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="32dp"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="9"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tv_8_phoneFragment"
+            app:layout_constraintTop_toTopOf="@id/tv_7_phoneFragment" />
+
+
+        <TextView
+            android:id="@+id/tv_asterisk_phoneFragment"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="32dp"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="*"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/tv_0_phoneFragment"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_7_phoneFragment" />
+
+        <TextView
+            android:id="@+id/tv_0_phoneFragment"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="32dp"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="0"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/tv_number_sign_phoneFragment"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tv_asterisk_phoneFragment"
+            app:layout_constraintTop_toTopOf="@id/tv_asterisk_phoneFragment" />
+
+        <TextView
+            android:id="@+id/tv_number_sign_phoneFragment"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="32dp"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="#"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tv_0_phoneFragment"
+            app:layout_constraintTop_toTopOf="@id/tv_asterisk_phoneFragment" />
+
+        <Button
+            android:id="@+id/btn_free_call_phoneFragment"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@color/colorHyperLinkPrimary"
+            android:padding="8dp"
+            android:text="Free Call"
+            android:textColor="@color/colorWhite"
+            app:layout_constraintTop_toBottomOf="@id/tv_asterisk_phoneFragment"
+            app:layout_constraintEnd_toStartOf="@+id/btn_premium_call_phoneFragment"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/btn_premium_call_phoneFragment"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@color/colorGreen"
+            android:padding="8dp"
+            android:text="Premium Call"
+            android:textColor="@color/colorWhite"
+            app:layout_constraintTop_toBottomOf="@id/tv_asterisk_phoneFragment"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/btn_free_call_phoneFragment" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
