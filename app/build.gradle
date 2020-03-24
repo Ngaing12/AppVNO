@@ -59,6 +59,11 @@ dependencies {
     implementation "org.permissionsdispatcher:permissionsdispatcher:$permission_dispatcher_version"
     kapt "org.permissionsdispatcher:permissionsdispatcher-processor:$permission_dispatcher_version"
 
+    // Groupie
+    implementation "com.xwray:groupie:2.7.0"
+    implementation "com.xwray:groupie-kotlin-android-extensions:2.7.0"
+
+
 //    // Splitties
 //    implementation("com.louiscad.splitties:splitties-activities:$splitties_version")
 //    implementation("com.louiscad.splitties:splitties-bundle:$splitties_version")

@@ -15,4 +15,7 @@
     <color name="colorGreen">#61C0B5</color>
     <color name="colorGray">#F7F7F7</color>
     <color name="colorSeperatorView">#C0BCBC</color>
+    <color name="colorChatFrom">#E6E6E6</color>
+    <color name="colorChatToSMS">#575A6B</color>
+    <color name="colorChatToApp">#61C0B5</color>
 </resources>

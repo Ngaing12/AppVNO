@@ -8,7 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 
 import com.pldt.appvno.R
-import com.pldt.appvno.message.NewMessage
+import com.pldt.appvno.message.NewMessageActivity
 import kotlinx.android.synthetic.main.fragment_message.*
 import org.jetbrains.anko.startActivity
 
@@ -30,7 +30,7 @@ class MessageFragment : Fragment() {
 
     private fun attachListener() {
         img_message_messageFragment.setOnClickListener {
-            activity?.startActivity<NewMessage>()
+            activity?.startActivity<NewMessageActivity>()
         }
     }
 
