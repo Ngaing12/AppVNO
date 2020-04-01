@@ -29,6 +29,10 @@ class MessageDetailActivity : AppCompatActivity() {
         messageType = intent.getIntExtra("MESSAGE_TYPE", 0)
 
 
+        img_back_messageDetail.setOnClickListener {
+            finish()
+        }
+
         adapter.add(ChatFromItem("Hi, Welcome to free bee Send some love to friends and family today and wish them a happy friday"))
         adapter.add(ChatToItemSMS("Thank you for warm welcome"))
         adapter.add(ChatToItemApp("Hello, Where are you?"))

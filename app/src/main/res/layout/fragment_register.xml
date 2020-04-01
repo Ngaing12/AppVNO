@@ -51,7 +51,7 @@
                 android:layout_width="1dp"
                 android:layout_height="match_parent"
                 android:layout_margin="8dp"
-                android:background="@color/colorTextNormal"/>
+                android:background="@color/colorSeperatorView"/>
 
             <EditText
                 android:id="@+id/edt_phone_number_register"

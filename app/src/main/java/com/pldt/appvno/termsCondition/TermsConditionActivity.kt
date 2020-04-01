@@ -5,6 +5,9 @@ import android.os.Bundle
 import com.pldt.appvno.R
 import com.pldt.appvno.home.HomeActivity
 import kotlinx.android.synthetic.main.activity_terms_condition.*
+import org.jetbrains.anko.clearTask
+import org.jetbrains.anko.intentFor
+import org.jetbrains.anko.newTask
 import org.jetbrains.anko.startActivity
 
 class TermsConditionActivity : AppCompatActivity() {
@@ -18,7 +21,7 @@ class TermsConditionActivity : AppCompatActivity() {
 
     private fun attachListener() {
         btn_agree_termsCondition.setOnClickListener {
-            startActivity<HomeActivity>()
+            startActivity(intentFor<HomeActivity>().newTask().clearTask())
         }
 
         img_back_termsCondition.setOnClickListener {

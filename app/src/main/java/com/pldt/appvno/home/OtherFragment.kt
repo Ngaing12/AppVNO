@@ -8,6 +8,9 @@ import android.view.View
 import android.view.ViewGroup
 
 import com.pldt.appvno.R
+import com.pldt.appvno.contactUs.ContactUsActivity
+import com.pldt.appvno.credits.CreditsActivity
+import com.pldt.appvno.helpFaqs.HelpFaqsActivity
 import com.pldt.appvno.loginRegister.LoginRegisterActivity
 import com.pldt.appvno.profile.ProfileActivity
 import kotlinx.android.synthetic.main.fragment_other.*
@@ -29,10 +32,22 @@ class OtherFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        attachListner()
+        attachListener()
     }
 
-    private fun attachListner() {
+    private fun attachListener() {
+
+
+        tv_contact_otherFragment.setOnClickListener {
+            activity?.startActivity<ContactUsActivity>()
+        }
+        tv_help_otherFragment.setOnClickListener {
+            activity?.startActivity<HelpFaqsActivity>()
+        }
+
+        tv_credit_otherFragment.setOnClickListener {
+            activity?.startActivity<CreditsActivity>()
+        }
 
         tv_profile_otherFragment.setOnClickListener {
             activity?.startActivity<ProfileActivity>()
