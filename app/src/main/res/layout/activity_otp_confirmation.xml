@@ -8,245 +8,208 @@
     tools:context=".otp.OtpConfirmationActivity">
 
 
-    <ImageView
-        android:id="@+id/img_back_otpConfirmation"
-        android:layout_width="32dp"
-        android:layout_height="32dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="15dp"
-        android:src="@drawable/temp_ic_arrow_back_black_24dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+  <include layout="@layout/app_bar_with_back" />
 
-    <ImageView
-        android:id="@+id/img_logo_otpConfirmation"
-        android:layout_width="160dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="100dp"
-        android:src="@drawable/temp_sample_logo"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+  <ImageView
+      android:id="@+id/otpConfirmation_img_logo"
+      android:layout_width="@dimen/logo_width"
+      android:layout_height="@dimen/logo_height"
+      android:layout_marginTop="@dimen/margin_100dp"
+      android:src="@drawable/temp_sample_logo"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
 
+  <TextView
+      android:id="@+id/otpConfirmation_tv_title"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="@dimen/margin_32dp"
+      android:layout_marginTop="@dimen/margin_16dp"
+      android:layout_marginEnd="@dimen/margin_32dp"
+      android:gravity="center"
+      android:text="@string/this_is_your_number"
+      app:layout_constraintTop_toBottomOf="@id/otpConfirmation_img_logo" />
 
-    <TextView
-        android:id="@+id/tv_title_otpConfirmation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="32dp"
-        android:gravity="center"
-        android:text="This is your number "
-        app:layout_constraintTop_toBottomOf="@id/img_logo_otpConfirmation" />
+  <TextView
+      android:id="@+id/otpConfirmation_tv_wrong"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="@dimen/margin_32dp"
+      android:layout_marginTop="@dimen/margin_8dp"
+      android:layout_marginEnd="@dimen/margin_32dp"
+      android:gravity="center"
+      android:text="@string/wrong_number"
+      android:textColor="@color/colorHyperLinkPrimary"
+      app:layout_constraintTop_toBottomOf="@id/otpConfirmation_tv_title" />
 
-    <TextView
-        android:id="@+id/tv_wrong_otpConfirmation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="32dp"
-        android:gravity="center"
-        android:text="Wrong number?"
-        android:textColor="@color/colorHyperLinkPrimary"
-        app:layout_constraintTop_toBottomOf="@id/tv_title_otpConfirmation" />
+  <TextView
+      android:id="@+id/otpConfirmation_tv_label"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="@dimen/margin_32dp"
+      android:layout_marginTop="@dimen/margin_100dp"
+      android:gravity="center"
+      android:text="@string/your_6_digit_code"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/otpConfirmation_tv_title" />
 
-
-    <TextView
-        android:id="@+id/tv_label_otpConfirmation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="98dp"
-        android:gravity="center"
-        android:text="Your 6 digit code"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_title_otpConfirmation" />
-
-    <TextView
-        android:id="@+id/tv_counter_otpConfirmation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="98dp"
-        android:layout_marginEnd="32dp"
-        android:gravity="center"
-        android:text="00:00"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_title_otpConfirmation" />
+  <TextView
+      android:id="@+id/otpConfirmation_tv_counter"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="@dimen/margin_100dp"
+      android:layout_marginEnd="@dimen/margin_32dp"
+      android:gravity="center"
+      android:text="@string/_00_00"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/otpConfirmation_tv_title" />
 
 
-    <EditText
-        android:id="@+id/edit_code_otpConfirmation"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="@drawable/temp_edit_text_white"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:gravity="center"
-        android:inputType="number"
-        android:maxLength="6"
-        android:ems="10"
-        android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/tv_label_otpConfirmation"/>
+  <EditText
+      android:id="@+id/otpConfirmation_edit_code"
+      android:layout_width="match_parent"
+      android:layout_height="@dimen/edit_text_primary_height"
+      android:layout_marginStart="@dimen/margin_32dp"
+      android:layout_marginTop="@dimen/margin_16dp"
+      android:layout_marginEnd="@dimen/margin_32dp"
+      android:background="@drawable/temp_edit_text_white"
+      android:ems="10"
+      android:gravity="center"
+      android:inputType="number"
+      android:maxLength="6"
+      android:textStyle="bold"
+      app:layout_constraintTop_toBottomOf="@id/otpConfirmation_tv_label" />
 
 
-<!--    <EditText-->
-<!--        android:id="@+id/edt_number_1_otpConfirmation"-->
-<!--        android:layout_width="50dp"-->
-<!--        android:layout_height="60dp"-->
-<!--        android:layout_marginTop="16dp"-->
-<!--        android:background="@drawable/temp_edit_text_white"-->
-<!--        android:ems="10"-->
-<!--        android:inputType="number"-->
-<!--        android:maxLength="1"-->
-<!--        android:textStyle="bold"-->
-<!--        android:gravity="center"-->
-<!--        app:layout_constraintEnd_toStartOf="@+id/edt_number_2_otpConfirmation"-->
-<!--        app:layout_constraintHorizontal_bias="0.5"-->
-<!--        app:layout_constraintHorizontal_chainStyle="spread"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@id/tv_label_otpConfirmation" />-->
+  <!--    <EditText-->
+  <!--        android:id="@+id/edt_number_1_otpConfirmation"-->
+  <!--        android:layout_width="50dp"-->
+  <!--        android:layout_height="60dp"-->
+  <!--        android:layout_marginTop="16dp"-->
+  <!--        android:background="@drawable/temp_edit_text_white"-->
+  <!--        android:ems="10"-->
+  <!--        android:inputType="number"-->
+  <!--        android:maxLength="1"-->
+  <!--        android:textStyle="bold"-->
+  <!--        android:gravity="center"-->
+  <!--        app:layout_constraintEnd_toStartOf="@+id/edt_number_2_otpConfirmation"-->
+  <!--        app:layout_constraintHorizontal_bias="0.5"-->
+  <!--        app:layout_constraintHorizontal_chainStyle="spread"-->
+  <!--        app:layout_constraintStart_toStartOf="parent"-->
+  <!--        app:layout_constraintTop_toBottomOf="@id/tv_label_otpConfirmation" />-->
 
-<!--    <EditText-->
-<!--        android:id="@+id/edt_number_2_otpConfirmation"-->
-<!--        android:layout_width="50dp"-->
-<!--        android:layout_height="60dp"-->
-<!--        android:layout_marginTop="16dp"-->
-<!--        android:background="@drawable/temp_edit_text_white"-->
-<!--        android:ems="10"-->
-<!--        android:inputType="number"-->
-<!--        android:maxLength="1"-->
-<!--        android:textStyle="bold"-->
-<!--        android:gravity="center"-->
-<!--        app:layout_constraintEnd_toStartOf="@+id/edt_number_3_otpConfirmation"-->
-<!--        app:layout_constraintHorizontal_bias="0.5"-->
-<!--        app:layout_constraintStart_toEndOf="@+id/edt_number_1_otpConfirmation"-->
-<!--        app:layout_constraintTop_toBottomOf="@id/tv_label_otpConfirmation" />-->
+  <!--    <EditText-->
+  <!--        android:id="@+id/edt_number_2_otpConfirmation"-->
+  <!--        android:layout_width="50dp"-->
+  <!--        android:layout_height="60dp"-->
+  <!--        android:layout_marginTop="16dp"-->
+  <!--        android:background="@drawable/temp_edit_text_white"-->
+  <!--        android:ems="10"-->
+  <!--        android:inputType="number"-->
+  <!--        android:maxLength="1"-->
+  <!--        android:textStyle="bold"-->
+  <!--        android:gravity="center"-->
+  <!--        app:layout_constraintEnd_toStartOf="@+id/edt_number_3_otpConfirmation"-->
+  <!--        app:layout_constraintHorizontal_bias="0.5"-->
+  <!--        app:layout_constraintStart_toEndOf="@+id/edt_number_1_otpConfirmation"-->
+  <!--        app:layout_constraintTop_toBottomOf="@id/tv_label_otpConfirmation" />-->
 
-<!--    <EditText-->
-<!--        android:id="@+id/edt_number_3_otpConfirmation"-->
-<!--        android:layout_width="50dp"-->
-<!--        android:layout_height="60dp"-->
-<!--        android:layout_marginTop="16dp"-->
-<!--        android:background="@drawable/temp_edit_text_white"-->
-<!--        android:ems="10"-->
-<!--        android:inputType="number"-->
-<!--        android:maxLength="1"-->
-<!--        android:textStyle="bold"-->
-<!--        android:gravity="center"-->
-<!--        app:layout_constraintEnd_toStartOf="@+id/edt_number_4_otpConfirmation"-->
-<!--        app:layout_constraintHorizontal_bias="0.5"-->
-<!--        app:layout_constraintStart_toEndOf="@+id/edt_number_2_otpConfirmation"-->
-<!--        app:layout_constraintTop_toBottomOf="@id/tv_label_otpConfirmation" />-->
+  <!--    <EditText-->
+  <!--        android:id="@+id/edt_number_3_otpConfirmation"-->
+  <!--        android:layout_width="50dp"-->
+  <!--        android:layout_height="60dp"-->
+  <!--        android:layout_marginTop="16dp"-->
+  <!--        android:background="@drawable/temp_edit_text_white"-->
+  <!--        android:ems="10"-->
+  <!--        android:inputType="number"-->
+  <!--        android:maxLength="1"-->
+  <!--        android:textStyle="bold"-->
+  <!--        android:gravity="center"-->
+  <!--        app:layout_constraintEnd_toStartOf="@+id/edt_number_4_otpConfirmation"-->
+  <!--        app:layout_constraintHorizontal_bias="0.5"-->
+  <!--        app:layout_constraintStart_toEndOf="@+id/edt_number_2_otpConfirmation"-->
+  <!--        app:layout_constraintTop_toBottomOf="@id/tv_label_otpConfirmation" />-->
 
-<!--    <EditText-->
-<!--        android:id="@+id/edt_number_4_otpConfirmation"-->
-<!--        android:layout_width="50dp"-->
-<!--        android:layout_height="60dp"-->
-<!--        android:layout_marginTop="16dp"-->
-<!--        android:background="@drawable/temp_edit_text_white"-->
-<!--        android:ems="10"-->
-<!--        android:inputType="number"-->
-<!--        android:maxLength="1"-->
-<!--        android:textStyle="bold"-->
-<!--        android:gravity="center"-->
-<!--        app:layout_constraintEnd_toStartOf="@+id/edt_number_5_otpConfirmation"-->
-<!--        app:layout_constraintHorizontal_bias="0.5"-->
-<!--        app:layout_constraintStart_toEndOf="@+id/edt_number_3_otpConfirmation"-->
-<!--        app:layout_constraintTop_toBottomOf="@id/tv_label_otpConfirmation" />-->
+  <!--    <EditText-->
+  <!--        android:id="@+id/edt_number_4_otpConfirmation"-->
+  <!--        android:layout_width="50dp"-->
+  <!--        android:layout_height="60dp"-->
+  <!--        android:layout_marginTop="16dp"-->
+  <!--        android:background="@drawable/temp_edit_text_white"-->
+  <!--        android:ems="10"-->
+  <!--        android:inputType="number"-->
+  <!--        android:maxLength="1"-->
+  <!--        android:textStyle="bold"-->
+  <!--        android:gravity="center"-->
+  <!--        app:layout_constraintEnd_toStartOf="@+id/edt_number_5_otpConfirmation"-->
+  <!--        app:layout_constraintHorizontal_bias="0.5"-->
+  <!--        app:layout_constraintStart_toEndOf="@+id/edt_number_3_otpConfirmation"-->
+  <!--        app:layout_constraintTop_toBottomOf="@id/tv_label_otpConfirmation" />-->
 
-<!--    <EditText-->
-<!--        android:id="@+id/edt_number_5_otpConfirmation"-->
-<!--        android:layout_width="50dp"-->
-<!--        android:layout_height="60dp"-->
-<!--        android:layout_marginTop="16dp"-->
-<!--        android:background="@drawable/temp_edit_text_white"-->
-<!--        android:ems="10"-->
-<!--        android:inputType="number"-->
-<!--        android:maxLength="1"-->
-<!--        android:textStyle="bold"-->
-<!--        android:gravity="center"-->
-<!--        app:layout_constraintEnd_toStartOf="@+id/edt_number_6_otpConfirmation"-->
-<!--        app:layout_constraintHorizontal_bias="0.5"-->
-<!--        app:layout_constraintStart_toEndOf="@+id/edt_number_4_otpConfirmation"-->
-<!--        app:layout_constraintTop_toBottomOf="@id/tv_label_otpConfirmation" />-->
+  <!--    <EditText-->
+  <!--        android:id="@+id/edt_number_5_otpConfirmation"-->
+  <!--        android:layout_width="50dp"-->
+  <!--        android:layout_height="60dp"-->
+  <!--        android:layout_marginTop="16dp"-->
+  <!--        android:background="@drawable/temp_edit_text_white"-->
+  <!--        android:ems="10"-->
+  <!--        android:inputType="number"-->
+  <!--        android:maxLength="1"-->
+  <!--        android:textStyle="bold"-->
+  <!--        android:gravity="center"-->
+  <!--        app:layout_constraintEnd_toStartOf="@+id/edt_number_6_otpConfirmation"-->
+  <!--        app:layout_constraintHorizontal_bias="0.5"-->
+  <!--        app:layout_constraintStart_toEndOf="@+id/edt_number_4_otpConfirmation"-->
+  <!--        app:layout_constraintTop_toBottomOf="@id/tv_label_otpConfirmation" />-->
 
-<!--    <EditText-->
-<!--        android:id="@+id/edt_number_6_otpConfirmation"-->
-<!--        android:layout_width="50dp"-->
-<!--        android:layout_height="60dp"-->
-<!--        android:layout_marginTop="16dp"-->
-<!--        android:background="@drawable/temp_edit_text_white"-->
-<!--        android:ems="10"-->
-<!--        android:inputType="number"-->
-<!--        android:maxLength="1"-->
-<!--        android:textStyle="bold"-->
-<!--        android:gravity="center"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.5"-->
-<!--        app:layout_constraintStart_toEndOf="@+id/edt_number_5_otpConfirmation"-->
-<!--        app:layout_constraintTop_toBottomOf="@id/tv_label_otpConfirmation" />-->
-
-
-    <TextView
-        android:id="@+id/tv_resend_otpConfirmation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginTop="64dp"
-        android:gravity="center"
-        android:text="Resend via sms"
-        android:textAllCaps="true"
-        android:textColor="@color/colorHyperLinkPrimary"
-        app:layout_constraintTop_toBottomOf="@id/edit_code_otpConfirmation" />
+  <!--    <EditText-->
+  <!--        android:id="@+id/edt_number_6_otpConfirmation"-->
+  <!--        android:layout_width="50dp"-->
+  <!--        android:layout_height="60dp"-->
+  <!--        android:layout_marginTop="16dp"-->
+  <!--        android:background="@drawable/temp_edit_text_white"-->
+  <!--        android:ems="10"-->
+  <!--        android:inputType="number"-->
+  <!--        android:maxLength="1"-->
+  <!--        android:textStyle="bold"-->
+  <!--        android:gravity="center"-->
+  <!--        app:layout_constraintEnd_toEndOf="parent"-->
+  <!--        app:layout_constraintHorizontal_bias="0.5"-->
+  <!--        app:layout_constraintStart_toEndOf="@+id/edt_number_5_otpConfirmation"-->
+  <!--        app:layout_constraintTop_toBottomOf="@id/tv_label_otpConfirmation" />-->
 
 
-    <Button
-        android:id="@+id/btn_submit_otpConfirmation"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="64dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:background="@drawable/temp_round_button_orange"
-        android:text="Login"
-        android:textColor="@color/colorTextOffset"
-        android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/tv_resend_otpConfirmation" />
+  <TextView
+      android:id="@+id/otpConfirmation_tv_resend"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="@dimen/margin_32dp"
+      android:layout_marginTop="@dimen/margin_64dp"
+      android:layout_marginEnd="@dimen/margin_32dp"
+      android:gravity="center"
+      android:text="@string/resend_via_sms"
+      android:textAllCaps="true"
+      android:textColor="@color/colorHyperLinkPrimary"
+      app:layout_constraintTop_toBottomOf="@id/otpConfirmation_edit_code" />
 
 
-    <TextView
-        android:id="@+id/tv_view_privacy_desc_otpConfirmation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:text="\@2020 AppVNO."
-        android:textAlignment="center"
-        android:textColor="@color/colorTextNormal"
-        android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/tv_view_privacy_otpConfirmation"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintStart_toStartOf="parent" />
+  <Button
+      android:id="@+id/otpConfirmation_btn_submit"
+      style="@style/ButtonPrimary"
+      android:layout_width="match_parent"
+      android:layout_marginStart="@dimen/margin_32dp"
+      android:layout_marginTop="@dimen/margin_64dp"
+      android:layout_marginEnd="@dimen/margin_32dp"
+      android:text="@string/login"
+      app:layout_constraintTop_toBottomOf="@id/otpConfirmation_tv_resend" />
 
-    <TextView
-        android:id="@+id/tv_view_privacy_otpConfirmation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:text="@string/temp_privacy_policy"
-        android:textAlignment="center"
-        android:textAppearance="@style/Widget.AppCompat.Spinner.Underlined"
-        android:textColor="@color/colorTextNormal"
-        android:textSize="15sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/tv_view_privacy_desc_otpConfirmation"
-        app:layout_constraintTop_toTopOf="@id/tv_view_privacy_desc_otpConfirmation" />
-
+  <fragment
+      android:id="@+id/fragment"
+      android:name="app.pldt.appvno.privacyPolicy.PrivacyFooterFragment"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      app:layout_constraintBottom_toBottomOf="parent"
+      tools:layout="@layout/fragment_privacy_footer" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

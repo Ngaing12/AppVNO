@@ -3,19 +3,31 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+
     <color name="colorGetStartedBG">#53ACA7</color>
     <color name="colorWhite">#FFFFFF</color>
-    <color name="colorTextNormal">#4E4E4E</color>
-    <color name="colorTextOffset">#FFFDFD</color>
-    <color name="colorButtonPrimary">#FF8C63</color>
+
+    <color name="colorSecondary">#61C0B5</color>
+
     <color name="colorHyperLinkPrimary">#FF8C63</color>
     <color name="colorBackgroundPrimary">#FAFAFA</color>
     <color name="colorNavigationTint">#6F6A6A</color>
     <color name="colorBackgroundTransparent">#CC000000</color>
     <color name="colorGreen">#61C0B5</color>
     <color name="colorGray">#F7F7F7</color>
-    <color name="colorSeperatorView">#C0BCBC</color>
+    <color name="colorSeparatorView">#C0BCBC</color>
     <color name="colorChatFrom">#E6E6E6</color>
     <color name="colorChatToSMS">#575A6B</color>
     <color name="colorChatToApp">#61C0B5</color>
+
+    <!-- Text color -->
+    <color name="colorTextNormal">#4E4E4E</color>
+    <color name="colorTextOffset">#FFFDFD</color>
+
+    <!-- Text Hint color -->
+    <color name="colorHintPrimary">#A5A3A2</color>
+
+    <!-- Button color -->
+    <color name="colorButtonPrimary">#FF8C63</color>
+
 </resources>

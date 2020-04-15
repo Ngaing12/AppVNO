@@ -7,110 +7,91 @@
     android:background="@color/colorBackgroundPrimary"
     tools:context=".home.HomeActivity">
 
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/container_fragment_home"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/navigation_bottom_home"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+  <androidx.viewpager.widget.ViewPager
+      android:id="@+id/container_fragment_home"
+      android:layout_width="match_parent"
+      android:layout_height="0dp"
+      app:layout_behavior="@string/appbar_scrolling_view_behavior"
+      app:layout_constraintBottom_toTopOf="@id/navigation_bottom_home"
+      app:layout_constraintTop_toTopOf="parent" />
 
 
-<!--    <FrameLayout-->
-<!--        android:id="@+id/container_fragment_home"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="0dp"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        app:layout_constraintBottom_toTopOf="@id/navigation_bottom_home" />-->
+  <com.google.android.material.bottomnavigation.BottomNavigationView
+      android:id="@+id/navigation_bottom_home"
+      style="@style/BottomNavigationHome"
+      android:layout_width="match_parent"
+      android:layout_height="@dimen/bottom_navigation_height"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:menu="@menu/home_bottom_navigation" />
 
-<!--    <ImageView-->
-<!--        android:id="@+id/img_open_home"-->
-<!--        android:layout_width="52dp"-->
-<!--        android:layout_height="52dp"-->
-<!--        android:padding="12dp"-->
-<!--        android:layout_marginEnd="16dp"-->
-<!--        android:layout_marginBottom="16dp"-->
-<!--        app:layout_constraintBottom_toTopOf="@id/navigation_bottom_home"-->
-<!--        app:layout_constraintRight_toRightOf="parent"-->
-<!--        android:background="@drawable/temp_circle_button_green"-->
-<!--        android:src="@drawable/temp_ic_call_white_24dp"-->
-<!--        android:foregroundTint="@color/colorWhite"/>-->
+  <androidx.constraintlayout.widget.ConstraintLayout
+      android:id="@+id/container_floating_home"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:background="@color/colorBackgroundTransparent"
+      android:elevation="@dimen/elevation_8dp"
+      android:visibility="gone">
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/navigation_bottom_home"
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:background="@drawable/temp_nav_background_white"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/btn_free_call_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin_26dp"
+        android:layout_marginBottom="@dimen/margin_24dp"
+        android:background="@drawable/temp_round_button_orange"
+        android:elevation="@dimen/elevation_10dp"
+        app:layout_constraintBottom_toTopOf="@id/img_close_home"
+        app:layout_constraintEnd_toEndOf="@id/img_close_home">
+
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:gravity="center"
+          android:paddingLeft="@dimen/padding_16dp"
+          android:paddingTop="@dimen/padding_8dp"
+          android:paddingRight="@dimen/padding_16dp"
+          android:paddingBottom="@dimen/padding_8dp"
+          android:text="@string/free_call"
+          android:textColor="@color/colorTextNormal" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/btn_premium_call_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin_26dp"
+        android:background="@drawable/temp_round_button_orange"
+        android:elevation="@dimen/elevation_10dp"
+        app:layout_constraintBottom_toBottomOf="@id/img_close_home"
+        app:layout_constraintRight_toLeftOf="@id/img_close_home"
+        app:layout_constraintTop_toTopOf="@id/img_close_home">
+
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:gravity="center"
+          android:paddingLeft="@dimen/padding_16dp"
+          android:paddingTop="@dimen/padding_8dp"
+          android:paddingRight="@dimen/padding_16dp"
+          android:paddingBottom="@dimen/padding_8dp"
+          android:text="@string/premium_call"
+          android:textColor="@color/colorTextNormal" />
+    </androidx.cardview.widget.CardView>
+
+    <ImageView
+        android:id="@+id/img_close_home"
+        android:layout_width="@dimen/icon_size_56dp"
+        android:layout_height="@dimen/icon_size_56dp"
+        android:layout_marginEnd="@dimen/margin_16dp"
+        android:layout_marginBottom="@dimen/margin_72dp"
+        android:background="@drawable/temp_circle_button_orange"
+        android:foregroundTint="@color/colorWhite"
+        android:padding="@dimen/padding_12dp"
+        android:src="@drawable/temp_ic_close_white_24dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:itemIconTint="@drawable/tem_nav_item_color"
-        app:itemTextColor="@drawable/tem_nav_item_color"
-        app:menu="@menu/home_bottom_navigation"/>
+        app:layout_constraintRight_toRightOf="parent" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/container_floating_home"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/colorBackgroundTransparent"
-        android:elevation="8dp"
-        android:visibility="gone">
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/btn_free_call_home"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:elevation="10dp"
-            android:layout_marginEnd="26dp"
-            android:layout_marginBottom="24dp"
-            app:layout_constraintEnd_toEndOf="@id/img_close_home"
-            app:layout_constraintBottom_toTopOf="@id/img_close_home"
-             android:background="@drawable/temp_round_button_orange">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingTop="8dp"
-                android:paddingBottom="8dp"
-                android:paddingLeft="16dp"
-                android:paddingRight="16dp"
-                android:gravity="center"
-                android:textColor="@color/colorTextNormal"
-                android:text="Free Call" />
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/btn_premium_call_home"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:elevation="10dp"
-            android:layout_marginEnd="26dp"
-            app:layout_constraintTop_toTopOf="@id/img_close_home"
-            app:layout_constraintBottom_toBottomOf="@id/img_close_home"
-            app:layout_constraintRight_toLeftOf="@id/img_close_home"
-            android:background="@drawable/temp_round_button_orange">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingTop="8dp"
-                android:paddingBottom="8dp"
-                android:paddingLeft="16dp"
-                android:paddingRight="16dp"
-                android:gravity="center"
-                android:textColor="@color/colorTextNormal"
-                android:text="Premium Call" />
-        </androidx.cardview.widget.CardView>
-
-        <ImageView
-            android:id="@+id/img_close_home"
-            android:layout_width="52dp"
-            android:layout_height="52dp"
-            android:padding="12dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="72dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            android:background="@drawable/temp_circle_button_orange"
-            android:src="@drawable/temp_ic_close_white_24dp"
-            android:foregroundTint="@color/colorWhite"/>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+  </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

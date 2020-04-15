@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".call.ContactFragment">
+    tools:context="app.pldt.appvno.call.ContactFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -57,7 +57,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@color/colorSeperatorView"
+            android:background="@color/colorSeparatorView"
             android:layout_marginTop="8dp"
             android:layout_marginLeft="32dp"
             android:layout_marginRight="32dp"

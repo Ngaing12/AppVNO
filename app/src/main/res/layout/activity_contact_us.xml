@@ -2,105 +2,103 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollview_container_contactUs"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
     android:animateLayoutChanges="true"
-    android:fillViewport="true"
-    android:id="@+id/scrollview_container_contactUs"
     android:background="@color/colorBackgroundPrimary"
+    android:fillViewport="true"
+    android:fitsSystemWindows="true"
     tools:context=".contactUs.ContactUsActivity">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+  <androidx.constraintlayout.widget.ConstraintLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content">
+
+
+    <include
+        android:id="@+id/app_bar_contactUs"
+        layout="@layout/app_bar_with_back" />
+
+    <TextView
+        android:id="@+id/tv_title_contactUs"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Contact US"
+        android:textAlignment="center"
+        android:textColor="@color/colorTextNormal"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/app_bar_contactUs" />
+
+    <EditText
+        android:id="@+id/edt_issue_contactUs"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/temp_edit_text_white"
+        android:ems="10"
+        android:hint="What is the Issue"
+        android:inputType="text"
+        android:maxLines="1"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_title_contactUs" />
+
+    <EditText
+        android:id="@+id/edt_desc_contactUs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/temp_edit_text_white"
+        android:ems="10"
+        android:gravity="top|left"
+        android:hint="Issue Description"
+        android:inputType="textMultiLine"
+        android:lines="11"
+        android:maxLength="1500"
+        android:maxLines="15"
+        android:minLines="10"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:scrollbars="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edt_issue_contactUs"
+        app:layout_constraintVertical_bias=".01" />
+
+    <TextView
+        android:id="@+id/tv_count_contactUs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0/1500"
+        android:textColor="@color/colorTextNormal"
+        android:textSize="12sp"
+        app:layout_constraintRight_toRightOf="@id/edt_desc_contactUs"
+        app:layout_constraintTop_toBottomOf="@id/edt_desc_contactUs" />
+
+    <Button
+        android:id="@+id/btn_submit_contactUs"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/temp_round_button_orange"
+        android:text="Submit"
+        android:textColor="@color/colorWhite"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_count_contactUs"
+        app:layout_constraintVertical_bias="1" />
 
 
-        <include
-            android:id="@+id/app_bar_contactUs"
-            layout="@layout/app_bar_with_back" />
-
-        <TextView
-            android:id="@+id/tv_title_contactUs"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            app:layout_constraintTop_toBottomOf="@id/app_bar_contactUs"
-            android:text="Contact US"
-            android:textSize="24sp"
-            android:textColor="@color/colorTextNormal"
-            android:textStyle="bold"
-            android:textAlignment="center" />
-
-        <EditText
-            android:id="@+id/edt_issue_contactUs"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginEnd="32dp"
-            android:layout_marginTop="32dp"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            android:hint="What is the Issue"
-            android:inputType="text"
-            android:ems="10"
-            android:maxLines="1"
-            android:background="@drawable/temp_edit_text_white"
-            app:layout_constraintTop_toBottomOf="@id/tv_title_contactUs"/>
-
-        <EditText
-            android:id="@+id/edt_desc_contactUs"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginEnd="32dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginBottom="16dp"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            android:inputType="textMultiLine"
-            android:lines="11"
-            android:minLines="10"
-            android:gravity="top|left"
-            android:maxLines="15"
-            android:scrollbars="vertical"
-            android:hint="Issue Description"
-            android:ems="10"
-            android:maxLength="1500"
-            android:background="@drawable/temp_edit_text_white"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintVertical_bias=".01"
-            app:layout_constraintTop_toBottomOf="@id/edt_issue_contactUs"/>
-
-        <TextView
-            android:id="@+id/tv_count_contactUs"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="32dp"
-            app:layout_constraintTop_toBottomOf="@id/edt_desc_contactUs"
-            app:layout_constraintRight_toRightOf="parent"
-            android:text="0/1000"
-            android:textSize="12sp"
-            android:textColor="@color/colorTextNormal" />
-
-        <Button
-            android:id="@+id/btn_submit_contactUs"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginBottom="32dp"
-            android:layout_marginTop="32dp"
-            android:background="@drawable/temp_round_button_orange"
-            android:text="Submit"
-            android:textColor="@color/colorWhite"
-            android:textStyle="bold"
-            app:layout_constraintVertical_bias="1"
-            app:layout_constraintTop_toBottomOf="@id/tv_count_contactUs"
-            app:layout_constraintBottom_toBottomOf="parent"/>
-
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+  </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>

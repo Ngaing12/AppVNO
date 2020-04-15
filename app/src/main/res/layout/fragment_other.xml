@@ -43,7 +43,7 @@
             app:layout_constraintLeft_toLeftOf="@id/guideline1"
             app:layout_constraintRight_toRightOf="@id/guideline2"
             app:layout_constraintTop_toBottomOf="@id/tv_profile_otherFragment"
-            android:background="@color/colorSeperatorView"/>
+            android:background="@color/colorSeparatorView"/>
 
         <TextView
             android:id="@+id/tv_credit_otherFragment"
@@ -64,7 +64,7 @@
             app:layout_constraintLeft_toLeftOf="@id/guideline1"
             app:layout_constraintRight_toRightOf="@id/guideline2"
             app:layout_constraintTop_toBottomOf="@id/tv_credit_otherFragment"
-            android:background="@color/colorSeperatorView"/>
+            android:background="@color/colorSeparatorView"/>
 
         <TextView
             android:id="@+id/tv_help_otherFragment"
@@ -85,7 +85,7 @@
             app:layout_constraintLeft_toLeftOf="@id/guideline1"
             app:layout_constraintRight_toRightOf="@id/guideline2"
             app:layout_constraintTop_toBottomOf="@id/tv_help_otherFragment"
-            android:background="@color/colorSeperatorView"/>
+            android:background="@color/colorSeparatorView"/>
 
         <TextView
             android:id="@+id/tv_contact_otherFragment"
@@ -106,7 +106,7 @@
             app:layout_constraintLeft_toLeftOf="@id/guideline1"
             app:layout_constraintRight_toRightOf="@id/guideline2"
             app:layout_constraintTop_toBottomOf="@id/tv_contact_otherFragment"
-            android:background="@color/colorSeperatorView"/>
+            android:background="@color/colorSeparatorView"/>
 
         <TextView
             android:id="@+id/tv_transaction_otherFragment"
@@ -127,7 +127,7 @@
             app:layout_constraintLeft_toLeftOf="@id/guideline1"
             app:layout_constraintRight_toRightOf="@id/guideline2"
             app:layout_constraintTop_toBottomOf="@id/tv_transaction_otherFragment"
-            android:background="@color/colorSeperatorView"/>
+            android:background="@color/colorSeparatorView"/>
 
         <TextView
             android:id="@+id/tv_settting_otherFragment"
@@ -148,7 +148,7 @@
             app:layout_constraintLeft_toLeftOf="@id/guideline1"
             app:layout_constraintRight_toRightOf="@id/guideline2"
             app:layout_constraintTop_toBottomOf="@id/tv_settting_otherFragment"
-            android:background="@color/colorSeperatorView"/>
+            android:background="@color/colorSeparatorView"/>
 
         <TextView
             android:id="@+id/tv_logout_otherFragment"
@@ -169,7 +169,7 @@
             app:layout_constraintLeft_toLeftOf="@id/guideline1"
             app:layout_constraintRight_toRightOf="@id/guideline2"
             app:layout_constraintTop_toBottomOf="@id/tv_logout_otherFragment"
-            android:background="@color/colorSeperatorView"/>
+            android:background="@color/colorSeparatorView"/>
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline1"

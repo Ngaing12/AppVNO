@@ -4,113 +4,96 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorWhite"
     tools:context=".getStarted.GetStartedActivity">
 
-    <ImageView
-        android:layout_width="160dp"
-        android:layout_height="50dp"
-        android:layout_margin="30dp"
-        android:src="@drawable/temp_sample_logo"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+  <ImageView
+      android:layout_width="@dimen/logo_width"
+      android:layout_height="@dimen/logo_height"
+      android:layout_margin="@dimen/margin_32dp"
+      android:src="@drawable/temp_logo"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      tools:ignore="ContentDescription" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:text="@string/temp_getStarted_1"
-        android:textAlignment="center"
-        android:textColor="@color/colorTextNormal"
-        android:textSize="32sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@id/tv_desc_getStarted"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
+  <TextView
+      style="@style/TextViewXXL"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="@dimen/margin_16dp"
+      android:text="@string/temp_getStarted_1"
+      app:layout_constraintBottom_toTopOf="@id/getStarted_tv_desc"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toRightOf="parent" />
 
-    <TextView
-        android:id="@+id/tv_desc_getStarted"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="16dp"
-        android:text="@string/temp_getStarted_2"
-        android:textAlignment="center"
-        android:textColor="@color/colorTextNormal"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@id/view_background_getStarted"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
+  <TextView
+      android:id="@+id/getStarted_tv_desc"
+      style="@style/TextViewM"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="@dimen/margin_32dp"
+      android:layout_marginEnd="@dimen/margin_32dp"
+      android:layout_marginBottom="@dimen/margin_16dp"
+      android:text="@string/temp_getStarted_2"
+      app:layout_constraintBottom_toTopOf="@id/getStarted_view_background"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toRightOf="parent" />
 
-    <View
-        android:id="@+id/view_background_getStarted"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:background="@drawable/temp_get_started_container"
-        app:layout_constraintBottom_toBottomOf="parent" />
+  <View
+      android:id="@+id/getStarted_view_background"
+      android:layout_width="match_parent"
+      android:layout_height="@dimen/getStarted_background_height"
+      android:background="@drawable/container_rounded_top"
+      android:backgroundTint="@color/colorSecondary"
+      app:layout_constraintBottom_toBottomOf="parent" />
 
+  <TextView
+      android:id="@+id/getStarted_tv_view_desc"
+      style="@style/TextViewL.Offset"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="@dimen/margin_64dp"
+      android:layout_marginTop="@dimen/margin_16dp"
+      android:layout_marginEnd="@dimen/margin_64dp"
+      android:text="@string/by_tapping_get_started_you_agree_to_our_term_amp_policies"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toTopOf="@id/getStarted_view_background" />
 
-    <TextView
-        android:id="@+id/tv_view_desc_getStarted"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="64dp"
-        android:text="By tapping 'Get Started' you agree to our Term &amp; Policies"
-        android:textAlignment="center"
-        android:textColor="@color/colorTextOffset"
-        android:textSize="15sp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@id/view_background_getStarted" />
+  <Button
+      android:id="@+id/getStarted_btn_getStarted"
+      style="@style/ButtonPrimary"
+      android:layout_width="match_parent"
+      android:layout_marginStart="@dimen/margin_16dp"
+      android:layout_marginTop="@dimen/margin_32dp"
+      android:layout_marginEnd="@dimen/margin_16dp"
+      android:text="@string/get_started"
+      app:layout_constraintTop_toBottomOf="@id/getStarted_tv_view_desc" />
 
-    <Button
-        android:id="@+id/btn_start_getStarted"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="16dp"
-        android:background="@drawable/temp_round_button_orange"
-        android:text="Get Started"
-        android:textColor="@color/colorTextOffset"
-        android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/tv_view_desc_getStarted" />
+  <TextView
+      android:id="@+id/getStarted_tv_view_privacy_desc"
+      style="@style/TextViewL.Offset"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="@dimen/margin_16dp"
+      android:text="@string/appVno_2020"
+      app:layout_constraintEnd_toStartOf="@+id/getStarted_tv_view_privacy"
+      app:layout_constraintHorizontal_bias="0.5"
+      app:layout_constraintHorizontal_chainStyle="packed"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/getStarted_btn_getStarted" />
 
-
-    <TextView
-        android:id="@+id/tv_view_privacy_desc_getStarted"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="\@2020 AppVNO."
-        android:textAlignment="center"
-        android:textColor="@color/colorTextOffset"
-        android:textSize="15sp"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintEnd_toStartOf="@+id/tv_view_privacy_getStarted"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btn_start_getStarted" />
-
-    <TextView
-        android:id="@+id/tv_view_privacy_getStarted"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/temp_privacy_policy"
-        android:textAlignment="center"
-        android:textAppearance="@style/Widget.AppCompat.Spinner.Underlined"
-        android:textColor="@color/colorTextOffset"
-        android:textSize="15sp"
-        android:layout_marginStart="8dp"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintEnd_toEndOf="@+id/view_background_getStarted"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/tv_view_privacy_desc_getStarted"
-        app:layout_constraintTop_toBottomOf="@id/btn_start_getStarted" />
+  <TextView
+      android:id="@+id/getStarted_tv_view_privacy"
+      style="@style/TextViewL.Offset"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="@dimen/margin_8dp"
+      android:text="@string/temp_privacy_policy_underlined"
+      app:layout_constraintEnd_toEndOf="@+id/getStarted_view_background"
+      app:layout_constraintHorizontal_bias="0.5"
+      app:layout_constraintHorizontal_chainStyle="packed"
+      app:layout_constraintStart_toEndOf="@+id/getStarted_tv_view_privacy_desc"
+      app:layout_constraintTop_toTopOf="@id/getStarted_tv_view_privacy_desc" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

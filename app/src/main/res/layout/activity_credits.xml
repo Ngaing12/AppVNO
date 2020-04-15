@@ -43,7 +43,7 @@
         app:layout_constraintTop_toBottomOf="@id/tv_viewPlan_credit"
         app:layout_constraintLeft_toLeftOf="@id/guideline1"
         app:layout_constraintRight_toRightOf="@id/guideline2"
-        android:background="@color/colorSeperatorView"/>
+        android:background="@color/colorSeparatorView"/>
 
     <TextView
         android:id="@+id/tv_buyCredit_credit"
@@ -63,7 +63,7 @@
         app:layout_constraintTop_toBottomOf="@id/tv_buyCredit_credit"
         app:layout_constraintLeft_toLeftOf="@id/guideline1"
         app:layout_constraintRight_toRightOf="@id/guideline2"
-        android:background="@color/colorSeperatorView"/>
+        android:background="@color/colorSeparatorView"/>
 
     <TextView
         android:id="@+id/tv_enterPromo_credit"
@@ -82,6 +82,6 @@
         app:layout_constraintTop_toBottomOf="@id/tv_enterPromo_credit"
         app:layout_constraintLeft_toLeftOf="@id/guideline1"
         app:layout_constraintRight_toRightOf="@id/guideline2"
-        android:background="@color/colorSeperatorView"/>
+        android:background="@color/colorSeparatorView"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
