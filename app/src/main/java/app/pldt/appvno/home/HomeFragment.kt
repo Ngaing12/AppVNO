@@ -13,6 +13,8 @@ import app.pldt.appvno.MainActivity
 
 import app.pldt.appvno.R
 import app.pldt.appvno.common.GoogleAdsManager
+import app.pldt.appvno.common.LocationRequestManager
+import app.pldt.appvno.models.LocationDetails
 import kotlinx.android.synthetic.main.fragment_home.*
 
 /**
@@ -62,6 +64,16 @@ class HomeFragment : Fragment() {
             points?.let { it ->
                 tv_money_fragmentHome.text = it.toString()
             }
+        })
+
+        LocationRequestManager.getCurrentLocationDetail().observe(viewLifecycleOwner, Observer<LocationDetails> { details ->
+           if (details == null){
+               tv_location_fragmentHome.text = "Unknown Location"
+           }
+           else {
+               tv_location_fragmentHome.text =
+                   "${details.streetNo} ${details.street} ${details.city}, ${details.countryCode} \n ${details.postalCode}, ${details.countryCode}"
+           }
         })
 
     }

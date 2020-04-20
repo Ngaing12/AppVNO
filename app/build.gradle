@@ -14,7 +14,7 @@ android {
         minSdkVersion 23
         targetSdkVersion 29
         versionCode 1
-        versionName "0.0.2"
+        versionName "0.0.4"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -73,6 +73,8 @@ dependencies {
     // Koin
     implementation "org.koin:koin-android:$koin_version"
 
+    // Google Play service
+    implementation "com.google.android.gms:play-services-location:17.0.0"
 
 //    // Splitties
 //    implementation("com.louiscad.splitties:splitties-activities:$splitties_version")

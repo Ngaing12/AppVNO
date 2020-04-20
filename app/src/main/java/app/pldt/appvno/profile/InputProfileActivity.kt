@@ -16,6 +16,7 @@ import app.pldt.appvno.termsCondition.TermsConditionActivity
 import kotlinx.android.synthetic.main.activity_input_profile.*
 import kotlinx.android.synthetic.main.app_bar_with_back.*
 import org.jetbrains.anko.startActivity
+import org.jetbrains.anko.toast
 import permissions.dispatcher.*
 import java.util.*
 
@@ -63,29 +64,28 @@ class InputProfileActivity : AppCompatActivity() {
     }
 
 
-    @NeedsPermission(Manifest.permission.CAMERA, Manifest.permission.CALL_PHONE,Manifest.permission.READ_CALL_LOG,Manifest.permission.RECORD_AUDIO,Manifest.permission.READ_CONTACTS)
+    @NeedsPermission(Manifest.permission.CAMERA, Manifest.permission.CALL_PHONE,Manifest.permission.READ_CALL_LOG,Manifest.permission.RECORD_AUDIO,Manifest.permission.READ_CONTACTS, Manifest.permission.ACCESS_FINE_LOCATION)
     fun requestPermission() {
         // Proceed to next Activity
         startActivity<TermsConditionActivity>()
     }
 
 
-    @OnPermissionDenied(Manifest.permission.CAMERA, Manifest.permission.CALL_PHONE,Manifest.permission.READ_CALL_LOG,Manifest.permission.RECORD_AUDIO,Manifest.permission.READ_CONTACTS)
+    @OnPermissionDenied(Manifest.permission.CAMERA, Manifest.permission.CALL_PHONE,Manifest.permission.READ_CALL_LOG,Manifest.permission.RECORD_AUDIO,Manifest.permission.READ_CONTACTS,Manifest.permission.ACCESS_FINE_LOCATION)
     fun onContactsDenied() {
         // NOTE: Deal with a denied permission, e.g. by showing specific UI
         // or disabling certain functionality
-        Toast.makeText(this, "You need to allow all Permission to proceed", Toast.LENGTH_SHORT).show()
+        toast("You need to allow all Permission to proceed")
     }
 
-
-    @OnShowRationale(Manifest.permission.CAMERA, Manifest.permission.CALL_PHONE,Manifest.permission.READ_CALL_LOG,Manifest.permission.RECORD_AUDIO,Manifest.permission.READ_CONTACTS)
+    @OnShowRationale(Manifest.permission.CAMERA, Manifest.permission.CALL_PHONE,Manifest.permission.READ_CALL_LOG,Manifest.permission.RECORD_AUDIO,Manifest.permission.READ_CONTACTS,Manifest.permission.ACCESS_FINE_LOCATION)
     fun showRationaleForContacts(request: PermissionRequest) {
         // NOTE: Show a rationale to explain why the permission is needed, e.g. with a dialog.
         // Call proceed() or cancel() on the provided PermissionRequest to continue or abort
         showRationaleDialog(R.string.temp_permission_contacts_rationale, request)
     }
 
-    @OnNeverAskAgain(Manifest.permission.CAMERA, Manifest.permission.CALL_PHONE,Manifest.permission.READ_CALL_LOG,Manifest.permission.RECORD_AUDIO,Manifest.permission.READ_CONTACTS)
+    @OnNeverAskAgain(Manifest.permission.CAMERA, Manifest.permission.CALL_PHONE,Manifest.permission.READ_CALL_LOG,Manifest.permission.RECORD_AUDIO,Manifest.permission.READ_CONTACTS,Manifest.permission.ACCESS_FINE_LOCATION)
     fun onContactsNeverAskAgain() {
         showSettingsDialog()
     }

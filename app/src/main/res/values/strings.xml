@@ -44,4 +44,6 @@
   <string name="terms_and_condition">Terms and Condition</string>
   <string name="free_call">Free Call</string>
   <string name="premium_call">Premium Call</string>
+  <string name="use_google_location_service">Use Google Location Service</string>
+  <string name="use_google_location_service_message">You need to enabled Google Location Service to login</string>
 </resources>
