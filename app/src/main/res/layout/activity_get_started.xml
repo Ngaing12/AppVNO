@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".getStarted.GetStartedActivity">
+    tools:context=".ui.getStarted.GetStartedActivity">
 
   <ImageView
       android:layout_width="@dimen/logo_width"
@@ -89,6 +89,7 @@
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_marginStart="@dimen/margin_8dp"
+      android:onClick="@{() -> click.attachListener()}"
       android:text="@string/temp_privacy_policy_underlined"
       app:layout_constraintEnd_toEndOf="@+id/getStarted_view_background"
       app:layout_constraintHorizontal_bias="0.5"

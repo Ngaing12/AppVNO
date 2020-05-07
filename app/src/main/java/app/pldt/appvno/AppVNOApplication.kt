@@ -3,10 +3,8 @@ package app.pldt.appvno
 import android.app.Application
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import  app.pldt.appvno.common.GoogleAdsManager
-import app.pldt.appvno.common.LocationRequestManager
-import app.pldt.appvno.common.SessionManager
-import app.pldt.appvno.models.LocationDetails
+import  app.pldt.appvno.googleAds.GoogleAdsManager
+import app.pldt.appvno.location.LocationRequestManager
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 import org.koin.dsl.module

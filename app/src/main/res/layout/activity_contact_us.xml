@@ -9,7 +9,7 @@
     android:background="@color/colorBackgroundPrimary"
     android:fillViewport="true"
     android:fitsSystemWindows="true"
-    tools:context=".contactUs.ContactUsActivity">
+    tools:context=".ui.contactUs.ContactUsActivity">
 
   <androidx.constraintlayout.widget.ConstraintLayout
       android:layout_width="match_parent"

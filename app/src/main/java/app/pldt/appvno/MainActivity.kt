@@ -5,8 +5,8 @@ import android.os.Bundle
 import android.util.Log
 import androidx.annotation.NonNull
 import androidx.lifecycle.Observer
-import app.pldt.appvno.call.CallActivity
-import app.pldt.appvno.common.GoogleAdsManager
+import app.pldt.appvno.ui.call.CallActivity
+import app.pldt.appvno.googleAds.GoogleAdsManager
 import app.pldt.appvno.extensions.isVisible
 import com.google.android.gms.ads.rewarded.RewardItem
 import com.google.android.gms.ads.rewarded.RewardedAd

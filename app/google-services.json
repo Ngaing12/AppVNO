@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "75870519224",
+    "firebase_url": "https://pldt-app-vno.firebaseio.com",
+    "project_id": "pldt-app-vno",
+    "storage_bucket": "pldt-app-vno.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:75870519224:android:06446fe93c1ab711af194d",
+        "android_client_info": {
+          "package_name": "app.pldt.appvno"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "75870519224-bvhhim5llupfps6jqq5d6us72el456f1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD22kfGRBArSxd0BOhOQSgptOn2As-pQLw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "75870519224-bvhhim5llupfps6jqq5d6us72el456f1.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "75870519224-8qibegn84paabat8rikugokcr1idn0eq.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "multisys.pldt-global-app-vno"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

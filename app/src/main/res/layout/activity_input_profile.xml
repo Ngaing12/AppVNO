@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".profile.InputProfileActivity">
+    tools:context=".ui.profile.InputProfileActivity">
 
 
   <include
@@ -61,7 +61,7 @@
 
   <fragment
       android:id="@+id/inputProfile_fragment_footer"
-      android:name="app.pldt.appvno.privacyPolicy.PrivacyFooterFragment"
+      android:name="app.pldt.appvno.ui.privacyPolicy.PrivacyFooterFragment"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       app:layout_constraintBottom_toBottomOf="parent"

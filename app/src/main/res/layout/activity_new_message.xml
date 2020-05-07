@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorBackgroundPrimary"
-    tools:context=".message.NewMessageActivity">
+    tools:context=".ui.message.NewMessageActivity">
 
     <ImageView
         android:id="@+id/img_back_newMessage"

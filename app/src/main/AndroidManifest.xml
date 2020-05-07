@@ -37,31 +37,31 @@
         </activity>
 
 
-        <activity android:name=".contactUs.ContactUsActivity"
+        <activity android:name="app.pldt.appvno.ui.contactUs.ContactUsActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".helpFaqs.HelpFaqsActivity" />
-        <activity android:name=".credits.CreditsActivity" />
-        <activity android:name=".message.MessageDetailActivity" />
-        <activity android:name=".message.NewMessageActivity" />
-        <activity android:name=".profile.ProfileActivity" />
-        <activity android:name=".call.CallActivity" />
-        <activity android:name=".home.HomeActivity"
+        <activity android:name="app.pldt.appvno.ui.helpFaqs.HelpFaqsActivity" />
+        <activity android:name="app.pldt.appvno.ui.credits.CreditsActivity" />
+        <activity android:name="app.pldt.appvno.ui.message.MessageDetailActivity" />
+        <activity android:name="app.pldt.appvno.ui.message.NewMessageActivity" />
+        <activity android:name="app.pldt.appvno.ui.profile.ProfileActivity" />
+        <activity android:name="app.pldt.appvno.ui.call.CallActivity" />
+        <activity android:name="app.pldt.appvno.ui.home.HomeActivity"
             android:label="@string/title_activity_home"
             android:windowSoftInputMode="adjustPan" />
-        <activity android:name=".termsCondition.TermsConditionActivity" />
-        <activity android:name=".profile.InputProfileActivity" />
-        <activity android:name=".otp.OtpConfirmationActivity" />
+        <activity android:name="app.pldt.appvno.ui.termsCondition.TermsConditionActivity" />
+        <activity android:name="app.pldt.appvno.ui.profile.InputProfileActivity" />
+        <activity android:name="app.pldt.appvno.ui.otp.OtpConfirmationActivity" />
 
-        <activity android:name=".privacyPolicy.PrivacyPolicyActivity"
+        <activity android:name="app.pldt.appvno.ui.privacyPolicy.PrivacyPolicyActivity"
             android:screenOrientation="portrait"/>
         <activity
-            android:name=".loginRegister.LoginRegisterActivity"
+            android:name="app.pldt.appvno.ui.loginRegister.LoginRegisterActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".getStarted.GetStartedActivity"
+        <activity android:name="app.pldt.appvno.ui.getStarted.GetStartedActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".SplashActivity"
+            android:name=".ui.SplashActivity"
             android:theme="@style/SplashTheme"
             android:screenOrientation="portrait">
             <intent-filter>

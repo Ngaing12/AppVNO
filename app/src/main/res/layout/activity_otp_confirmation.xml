@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorBackgroundPrimary"
-    tools:context=".otp.OtpConfirmationActivity">
+    tools:context=".ui.otp.OtpConfirmationActivity">
 
 
   <include layout="@layout/app_bar_with_back" />
@@ -206,7 +206,7 @@
 
   <fragment
       android:id="@+id/fragment"
-      android:name="app.pldt.appvno.privacyPolicy.PrivacyFooterFragment"
+      android:name="app.pldt.appvno.ui.privacyPolicy.PrivacyFooterFragment"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       app:layout_constraintBottom_toBottomOf="parent"
