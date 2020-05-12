@@ -20,6 +20,7 @@ import app.pldt.appvno.location.LocationRequestManager
 import app.pldt.appvno.extensions.addCountryCode
 import app.pldt.appvno.extensions.formatNumber
 import app.pldt.appvno.extensions.isVisible
+import app.pldt.appvno.firebase.MyFirebaseDatabase
 import app.pldt.appvno.model.TempUser
 import app.pldt.appvno.ui.home.HomeActivity
 import app.pldt.appvno.ui.otp.OtpConfirmationActivity
@@ -205,6 +206,7 @@ class LoginRegisterActivity : AppCompatActivity() {
             .addOnCompleteListener {
                 if (it.isSuccessful) {
                     AppVNOApplication.getInstance().tempUser = user
+                    MyFirebaseDatabase.startListening(user.id)
                     startActivity(intentFor<HomeActivity>().newTask().clearTask())
                     login_group.isVisible(true)
                     loginRegister_progressBar.isVisible(false)

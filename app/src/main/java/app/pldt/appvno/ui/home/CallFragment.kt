@@ -9,9 +9,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DividerItemDecoration
+import app.pldt.appvno.AppVNOApplication
 
 import app.pldt.appvno.R
+import app.pldt.appvno.firebase.CALL_CALLING
+import app.pldt.appvno.firebase.CALL_RINGING
 import app.pldt.appvno.model.TempUser
+import app.pldt.appvno.model.UserCallStatus
 import app.pldt.appvno.ui.call.CallDetailActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
@@ -80,8 +84,8 @@ class CallFragment : Fragment() {
                             .setTitle("Information")
                             .setPositiveButton("Call") { _, _ ->
 
-                                makecallToUser()
-                                activity?.startActivity<CallDetailActivity>()
+                                makeCallToUser(row)
+                             //   activity?.startActivity<CallDetailActivity>()
                                 // Todo - create node for calling for both user and status to  (Calling,Ringing)
                                // activity?.toast(row.email)
 //                            // activity?.startActivity<MessageDetailActivity>(CONTACT_INFO to row.user)
@@ -100,9 +104,51 @@ class CallFragment : Fragment() {
         }
     }
 
-    private fun makecallToUser() {
+    private fun makeCallToUser(user : TempUser) {
+       val l1 = userRef.child(user.id).addValueEventListener(object : ValueEventListener{
+            override fun onCancelled(p0: DatabaseError) {}
 
+            override fun onDataChange(p0: DataSnapshot) {
+                if (!p0.hasChild("calling")) {
+                    val ringingMap = HashMap<String, Any>()
+                    val userStatus = UserCallStatus(CALL_RINGING, AppVNOApplication.getInstance().tempUser?.id!!)
+
+                    ringingMap.put("calling", userStatus)
+
+                    userRef.child(user.id).updateChildren(ringingMap)
+                }
+            }
+        })
+
+        userRef.removeEventListener(l1)
+        val l2 = userRef.child(AppVNOApplication.getInstance().tempUser?.id!!).addValueEventListener(object : ValueEventListener{
+            override fun onCancelled(p0: DatabaseError) {}
+
+            override fun onDataChange(p0: DataSnapshot) {
+                if (!p0.hasChild("calling")) {
+                    val callMap = HashMap<String, Any>()
+                    val userStatus = UserCallStatus(CALL_CALLING, user.id)
+
+                    callMap.put("calling", userStatus)
+
+                    userRef.child(AppVNOApplication.getInstance().tempUser?.id!!).updateChildren(callMap)
+                }
+            }
+        })
+        userRef.removeEventListener(l2)
     }
+
+
+//    private  fun removeCalling(user : TempUser){
+//        userRef.child(user.id).addValueEventListener(object : ValueEventListener{
+//            override fun onCancelled(p0: DatabaseError) {}
+//
+//            override fun onDataChange(p0: DataSnapshot) {
+//                if (p0.exists() && )
+//            }
+//
+//        })
+//    }
 
     private fun attachListener() {
     }

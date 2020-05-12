@@ -40,6 +40,12 @@ class CallDetailActivity : AppCompatActivity(),Session.SessionListener, Publishe
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_call_detail)
+
+        close_video_chat_btn.setOnClickListener {
+            // Remove call in the db
+            destroyCall()
+            finish()
+        }
         requestCallPermissionWithPermissionCheck()
     }
 
@@ -129,7 +135,7 @@ class CallDetailActivity : AppCompatActivity(),Session.SessionListener, Publishe
     //  2 Publisher
     override fun onConnected(p0: Session?) {
         Log.d(LOG_TAG, "Session Connected")
-
+        tv_call_status.text = "Connected"
         mPublisher = Publisher.Builder(this)
             .videoTrack(false)
             .build()
@@ -193,6 +199,7 @@ class CallDetailActivity : AppCompatActivity(),Session.SessionListener, Publishe
 
     override fun onDisconnected(p0: SubscriberKit?) {
         Log.d(LOG_TAG, " SubscriberKit disconnected")
+
     }
 
     override fun onError(p0: SubscriberKit?, p1: OpentokError?) {

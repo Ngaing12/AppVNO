@@ -2,6 +2,8 @@ package app.pldt.appvno.firebase
 
 import android.app.AlertDialog
 import android.content.Context
+import app.pldt.appvno.AppVNOApplication
+import app.pldt.appvno.model.TempUser
 import app.pldt.appvno.ui.call.CallDetailActivity
 import com.google.firebase.database.*
 import org.jetbrains.anko.startActivity
@@ -13,24 +15,25 @@ const val CALL_CONNECTED = "CALL_CONNECTED"
 
 object MyFirebaseDatabase {
     private lateinit  var mContext: Context
+    lateinit var userRefUser  : DatabaseReference
     lateinit var userRef  : DatabaseReference
     operator fun invoke(context: Context) {
         mContext = context
     }
 
     fun startListening(uid : String){
-        userRef = FirebaseDatabase.getInstance().reference.child("users").child(uid)
-        userRef.addValueEventListener(childEventListener)
+        userRefUser = FirebaseDatabase.getInstance().reference.child("users").child(uid)
+        userRef = FirebaseDatabase.getInstance().reference.child("users")
+        userRefUser.addValueEventListener(childEventListener)
+
     }
 
     fun removeListener () {
-        userRef.removeEventListener(childEventListener)
+        userRefUser.removeEventListener(childEventListener)
     }
 
     val childEventListener  = object : ValueEventListener {
-        override fun onCancelled(p0: DatabaseError) {
-
-        }
+        override fun onCancelled(p0: DatabaseError) {}
 
         override fun onDataChange(p0: DataSnapshot) {
             if (p0.child("calling").exists()) {
@@ -39,33 +42,53 @@ object MyFirebaseDatabase {
                 val uid = p0.child("calling").child("uid").getValue().toString()
                 if (callState == CALL_RINGING) {
                     // Display AlertDialog
+                    displayIncomingCallAlert()
                 }
             }
         }
-
     }
 
-//
-//    private fun displayIncomingCallAlert(){
-//        AlertDialog.Builder(mContext)
-//            .setTitle("Information")
-//            .setPositiveButton("Call") { _, _ ->
-//               acceptCall()
-//                activity?.startActivity<CallDetailActivity>()
-//                // Todo - create node for calling for both user and status to  (Calling,Ringing)
-//                // activity?.toast(row.email)
-////                            // activity?.startActivity<MessageDetailActivity>(CONTACT_INFO to row.user)
-//
-//            }
-//            .setNegativeButton("Cancel") { dialog, _ ->
-//                dialog.cancel()
-//            }
-//            .setCancelable(true)
-//            .setMessage(string)
-//            .show()
-//    }
-//
-//
+
+    private fun displayIncomingCallAlert(){
+        AlertDialog.Builder(mContext)
+            .setTitle("Information")
+            .setPositiveButton("Call") { _, _ ->
+                mContext.startActivity<CallDetailActivity>()
+                // Make both state to connected
+            }
+            .setNegativeButton("Cancel") { dialog, _ ->
+                // Delete call
+                deleteCallState(AppVNOApplication.getInstance().tempUser!!)
+                dialog.cancel()
+            }
+            .setCancelable(true)
+            .setMessage("Calling")
+            .show()
+    }
+
+    fun deleteCallState(user : TempUser){
+        userRef.child(user.id).addValueEventListener(object : ValueEventListener{
+            override fun onCancelled(p0: DatabaseError) {}
+
+            override fun onDataChange(p0: DataSnapshot) {
+                if (p0.hasChild("calling")) {
+
+                    val uid = p0.child("calling").child("uid").getValue().toString()
+                    userRef.child(user.id).child("calling").removeValue().addOnCompleteListener {
+                        userRef.child(uid).addValueEventListener(object : ValueEventListener{
+                            override fun onCancelled(p0: DatabaseError) {}
+
+                            override fun onDataChange(p1: DataSnapshot) {
+                                if (p1.hasChild("calling"))
+                                    userRef.child(uid).child("calling").removeValue()
+                            }
+                        })
+                    }
+                }
+            }
+        })
+    }
+
 //    val ref = FirebaseDatabase.getInstance().getReference("/users")
 //    ref.addListenerForSingleValueEvent(object : ValueEventListener {
 //        override fun onDataChange(p0: DataSnapshot) {
