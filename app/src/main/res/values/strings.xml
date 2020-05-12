@@ -1,14 +1,49 @@
 <resources>
-    <string name="app_name">AppVNO</string>
-    <string name="temp_getStarted_1">Welcome to AppVNO</string>
-    <string name="temp_getStarted_2">Free and secure calls and message to any AppVNO user in the World</string>
-    <string name="temp_privacy_policy">Privacy Policy</string>
+  <string name="app_name">AppVNO</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="temp_sign_up">Sign up here</string>
-    <string name="temp_sign_in">Sign in</string>
-    <string name="temp_permission_contacts_rationale">All this permission is need by the app to function correctly.</string>
-    <string name="temp_terms_and_condition_text">I have read and accepted the <b>Terms of Use and General Content Provisions</b></string>
-    <string name="title_activity_home">HomeActivity</string>
+  <!-- TODO: Remove or change this placeholder text -->
+  <string name="temp_getStarted_1">Welcome to AppVNO</string>
+  <string name="temp_getStarted_2">Free and secure calls and message to any AppVNO user in the World</string>
+  <string name="temp_privacy_policy">Privacy Policy</string>
+  <string name="temp_privacy_policy_underlined"><u>Privacy Policy</u></string>
+  <string name="hello_blank_fragment">Hello blank fragment</string>
+  <string name="temp_sign_up">Sign up here</string>
+  <string name="temp_sign_in">Sign in</string>
+  <string name="temp_permission_contacts_rationale">All this permission is need by the app to function correctly.</string>
+  <string name="temp_terms_and_condition_text">I have read and accepted the <b>Terms of Use and General Content Provisions</b></string>
+  <string name="title_activity_home">HomeActivity</string>
+  <string name="by_tapping_get_started_you_agree_to_our_term_amp_policies"><![CDATA[By tapping \'Get Started\' you agree to our Term & Policies]]></string>
+  <string name="get_started">Get Started</string>
+  <string name="appVno_2020">\@2020 AppVNO.</string>
+  <string name="verify_your_identity">Verify your Identity</string>
+  <string name="user_your_fingerprint_to_verify_your_identity">User your fingerprint to verify your identity</string>
+  <string name="login_to_your_account">Login to your Account</string>
+  <string name="prefix_number">+63</string>
+  <string name="phone_number">Phone number</string>
+  <string name="login">Login</string>
+  <string name="don_t_have_account_yet">Don\'t have account yet?</string>
+  <string name="make_sure_you_can_recieve_sms_to_this_number_so_that_we_can_send_you_a_code">Make sure you can recieve SMS to this number so that we can send you a code.</string>
+  <string name="country">Country</string>
+  <string name="register">Register</string>
+  <string name="already_have_an_account">Already have an Account?</string>
+  <string name="this_is_your_number">This is your number</string>
+  <string name="wrong_number">Wrong number?</string>
+  <string name="your_6_digit_code">Your 6 digit code</string>
+  <string name="_00_00">00:00</string>
+  <string name="resend_via_sms">Resend via sms</string>
+  <string name="first_name">First Name</string>
+  <string name="last_name">Last Name</string>
+  <string name="date">Date</string>
+  <string name="gender">Gender</string>
+  <string name="continue_word">Continue</string>
+  <string name="complete_information">Complete Information</string>
+  <string name="to_receive_the_best_ad_sponsored_experience_i_allow_free_bee_to">To receive the best ad-sponsored experience. I allow Free Bee to:</string>
+  <string name="send_relevant_promotional_materials_via_sms_and_email_and_user_my_data_for_analytics_practices_to_improve_user_experience_and_loyalty_programs">Send relevant promotional materials via SMS and email and user my data for analytics practices to improve user experience and loyalty programs.</string>
+  <string name="you_may_modify_your_privacy_policy_preference_or_opt_out_of_service_anytime_simply_send_us_and_email_at_help_freebeecalls_com">You may modify your privacy policy preference or opt out of service anytime. Simply send us and email at help @freebeecalls.com</string>
+  <string name="i_agree">I Agree</string>
+  <string name="terms_and_condition">Terms and Condition</string>
+  <string name="free_call">Free Call</string>
+  <string name="premium_call">Premium Call</string>
+  <string name="use_google_location_service">Use Google Location Service</string>
+  <string name="use_google_location_service_message">You need to enabled Google Location Service to login</string>
 </resources>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackgroundPrimary"
+    tools:context=".ui.helpFaqs.HelpFaqsActivity">
+
+    <include
+        android:id="@+id/app_bar_helpFaqs"
+        layout="@layout/app_bar_with_back" />
+
+    <ImageView
+        android:id="@+id/img_close_helpFaqs"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:padding="12dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="72dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:background="@drawable/temp_circle_button_green"
+        android:src="@drawable/temp_ic_message_white_24dp"
+        android:foregroundTint="@color/colorWhite"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
