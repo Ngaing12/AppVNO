@@ -25,6 +25,7 @@ import app.pldt.appvno.ui.home.HomeActivity
 import app.pldt.appvno.ui.otp.OtpConfirmationActivity
 import com.google.android.gms.common.internal.Objects
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_login_register.*
 import kotlinx.android.synthetic.main.dialog_verify_number.*
 import kotlinx.android.synthetic.main.include_login.*
@@ -61,6 +62,16 @@ class LoginRegisterActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login_register)
+
+
+//        val userRef = FirebaseDatabase.getInstance().reference.child("users").child(tempUser1.id)
+//        userRef.setValue(tempUser1).addOnSuccessListener {
+//            toast("user 1 create")
+//        }
+//        val userRef2 = FirebaseDatabase.getInstance().reference.child("users").child(tempUser2.id)
+//        userRef2.setValue(tempUser2).addOnSuccessListener {
+//            toast("user 12create")
+//        }
 
         attachListener()
         setupSpinner()
@@ -164,6 +175,8 @@ class LoginRegisterActivity : AppCompatActivity() {
         val number  = login_edt_number.text.toString()
         if (number.isEmpty()){
             toast("Please input number")
+            login_group.isVisible(true)
+            loginRegister_progressBar.isVisible(false)
             return
         }
 

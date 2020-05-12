@@ -3,6 +3,7 @@ package app.pldt.appvno
 import android.app.Application
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import app.pldt.appvno.firebase.MyFirebaseDatabase
 import  app.pldt.appvno.googleAds.GoogleAdsManager
 import app.pldt.appvno.location.LocationRequestManager
 import app.pldt.appvno.model.TempUser
@@ -27,12 +28,17 @@ class AppVNOApplication : Application() {
     override fun onCreate() {
         super.onCreate()
 
+
+        // Temp Create Listener for call in this user and dialog for prompt
+
+
         points.value = 0
 
         // Initiate managers
        // SessionManager.init(this)
         LocationRequestManager(this)
         GoogleAdsManager.init(this)
+        MyFirebaseDatabase(this)
 
         setupKoin()
 

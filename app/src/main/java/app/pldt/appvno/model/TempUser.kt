@@ -7,4 +7,6 @@ data class TempUser (
     val email : String,
     val password : String,
     val id : String = ""
-) : Serializable
+) : Serializable {
+    constructor() : this  ("","", "", "")
+}

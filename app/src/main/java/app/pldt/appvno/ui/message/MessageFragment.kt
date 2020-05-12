@@ -47,8 +47,6 @@ class MessageFragment : Fragment() {
 
     private fun setupDummyData() {
 
-
-
         val tempUser1 = TempUser(
             "9000000000",
             "sample@gmail.com",

@@ -1,6 +1,84 @@
 package app.pldt.appvno.firebase
 
+import android.app.AlertDialog
+import android.content.Context
+import app.pldt.appvno.ui.call.CallDetailActivity
+import com.google.firebase.database.*
+import org.jetbrains.anko.startActivity
 
+
+const val CALL_RINGING = "CALL_RINGING"
+const val CALL_CALLING = "CALL_CALLING"
+const val CALL_CONNECTED = "CALL_CONNECTED"
+
+object MyFirebaseDatabase {
+    private lateinit  var mContext: Context
+    lateinit var userRef  : DatabaseReference
+    operator fun invoke(context: Context) {
+        mContext = context
+    }
+
+    fun startListening(uid : String){
+        userRef = FirebaseDatabase.getInstance().reference.child("users").child(uid)
+        userRef.addValueEventListener(childEventListener)
+    }
+
+    fun removeListener () {
+        userRef.removeEventListener(childEventListener)
+    }
+
+    val childEventListener  = object : ValueEventListener {
+        override fun onCancelled(p0: DatabaseError) {
+
+        }
+
+        override fun onDataChange(p0: DataSnapshot) {
+            if (p0.child("calling").exists()) {
+                // check value
+                val callState = p0.child("calling").child("callState").getValue().toString()
+                val uid = p0.child("calling").child("uid").getValue().toString()
+                if (callState == CALL_RINGING) {
+                    // Display AlertDialog
+                }
+            }
+        }
+
+    }
+
+//
+//    private fun displayIncomingCallAlert(){
+//        AlertDialog.Builder(mContext)
+//            .setTitle("Information")
+//            .setPositiveButton("Call") { _, _ ->
+//               acceptCall()
+//                activity?.startActivity<CallDetailActivity>()
+//                // Todo - create node for calling for both user and status to  (Calling,Ringing)
+//                // activity?.toast(row.email)
+////                            // activity?.startActivity<MessageDetailActivity>(CONTACT_INFO to row.user)
+//
+//            }
+//            .setNegativeButton("Cancel") { dialog, _ ->
+//                dialog.cancel()
+//            }
+//            .setCancelable(true)
+//            .setMessage(string)
+//            .show()
+//    }
+//
+//
+//    val ref = FirebaseDatabase.getInstance().getReference("/users")
+//    ref.addListenerForSingleValueEvent(object : ValueEventListener {
+//        override fun onDataChange(p0: DataSnapshot) {
+//            chatPartnerUser = p0.getValue(User::class.java)
+//            viewHolder.itemView.tv_username_recyclerLatestMessage.text = chatPartnerUser?.username
+//
+//            Picasso.get().load(chatPartnerUser?.profileImageUrl).into(viewHolder.itemView.img_photo_recyclerLatestMessage)
+//        }
+//
+//        override fun onCancelled(p0: DatabaseError) {
+//        }
+//    })
+}
 
 
 //object FireStoreUtil {

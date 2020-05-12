@@ -2,14 +2,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="app.pldt.appvno">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.READ_CALL_LOG" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission. ACCESS_COARSE_LOCATION" />
 
     <application
@@ -20,57 +20,51 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
+        <activity android:name=".ui.call.CallDetailActivity"></activity>
 
         <meta-data
             android:name="com.google.android.gms.ads.AD_MANAGER_APP"
-            android:value="true"/>
-
-
-        <!--        &lt;!&ndash; Sample AdMob App ID: ca-app-pub-3940256099942544~3347511713 &ndash;&gt;-->
-<!--        <meta-data-->
-<!--            android:name="com.google.android.gms.ads.APPLICATION_ID"-->
-<!--            android:value="ca-app-pub-3940256099942544~3347511713"/>-->
-
-        <activity android:name=".MainActivity">
-
-        </activity>
-
-
-        <activity android:name="app.pldt.appvno.ui.contactUs.ContactUsActivity"
+            android:value="true" /> <!-- &lt;!&ndash; Sample AdMob App ID: ca-app-pub-3940256099942544~3347511713 &ndash;&gt; -->
+        <!-- <meta-data -->
+        <!-- android:name="com.google.android.gms.ads.APPLICATION_ID" -->
+        <!-- android:value="ca-app-pub-3940256099942544~3347511713"/> -->
+        <activity android:name=".MainActivity" />
+        <activity
+            android:name=".ui.contactUs.ContactUsActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name="app.pldt.appvno.ui.helpFaqs.HelpFaqsActivity" />
-        <activity android:name="app.pldt.appvno.ui.credits.CreditsActivity" />
-        <activity android:name="app.pldt.appvno.ui.message.MessageDetailActivity" />
-        <activity android:name="app.pldt.appvno.ui.message.NewMessageActivity" />
-        <activity android:name="app.pldt.appvno.ui.profile.ProfileActivity" />
-        <activity android:name="app.pldt.appvno.ui.call.CallActivity" />
-        <activity android:name="app.pldt.appvno.ui.home.HomeActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".ui.helpFaqs.HelpFaqsActivity" />
+        <activity android:name=".ui.credits.CreditsActivity" />
+        <activity android:name=".ui.message.MessageDetailActivity" />
+        <activity android:name=".ui.message.NewMessageActivity" />
+        <activity android:name=".ui.profile.ProfileActivity" />
+        <activity android:name=".ui.call.CallActivity" />
+        <activity
+            android:name=".ui.home.HomeActivity"
             android:label="@string/title_activity_home"
-            android:windowSoftInputMode="adjustPan" />
-        <activity android:name="app.pldt.appvno.ui.termsCondition.TermsConditionActivity" />
-        <activity android:name="app.pldt.appvno.ui.profile.InputProfileActivity" />
-        <activity android:name="app.pldt.appvno.ui.otp.OtpConfirmationActivity" />
-
-        <activity android:name="app.pldt.appvno.ui.privacyPolicy.PrivacyPolicyActivity"
-            android:screenOrientation="portrait"/>
-        <activity
-            android:name="app.pldt.appvno.ui.loginRegister.LoginRegisterActivity"
-            android:screenOrientation="portrait" />
-        <activity android:name="app.pldt.appvno.ui.getStarted.GetStartedActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".ui.SplashActivity"
-            android:theme="@style/SplashTheme"
-            android:screenOrientation="portrait">
+            android:windowSoftInputMode="adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
+        <activity android:name=".ui.termsCondition.TermsConditionActivity" />
+        <activity android:name=".ui.profile.InputProfileActivity" />
+        <activity android:name=".ui.otp.OtpConfirmationActivity" />
+        <activity
+            android:name=".ui.privacyPolicy.PrivacyPolicyActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.loginRegister.LoginRegisterActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.getStarted.GetStartedActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.SplashActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/SplashTheme" />
     </application>
 
 </manifest>
