@@ -5,6 +5,7 @@ import android.os.Bundle
 import app.pldt.appvno.R
 import app.pldt.appvno.ui.loginRegister.LoginRegisterActivity
 import app.pldt.appvno.ui.privacyPolicy.PrivacyPolicyActivity
+import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_get_started.*
 import org.jetbrains.anko.startActivity
 

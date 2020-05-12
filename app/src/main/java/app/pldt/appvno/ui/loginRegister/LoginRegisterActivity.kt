@@ -12,6 +12,7 @@ import android.provider.Settings
 import android.util.Log
 import android.widget.Toast
 import androidx.annotation.StringRes
+import app.pldt.appvno.AppVNOApplication
 import com.afollestad.materialdialogs.MaterialDialog
 import app.pldt.appvno.R
 import app.pldt.appvno.common.LOCATION_ENABLE_REQUEST_CODE
@@ -19,10 +20,12 @@ import app.pldt.appvno.location.LocationRequestManager
 import app.pldt.appvno.extensions.addCountryCode
 import app.pldt.appvno.extensions.formatNumber
 import app.pldt.appvno.extensions.isVisible
+import app.pldt.appvno.model.TempUser
 import app.pldt.appvno.ui.home.HomeActivity
 import app.pldt.appvno.ui.otp.OtpConfirmationActivity
 import com.google.android.gms.common.internal.Objects
 import com.google.firebase.auth.FirebaseAuth
+import kotlinx.android.synthetic.main.activity_login_register.*
 import kotlinx.android.synthetic.main.dialog_verify_number.*
 import kotlinx.android.synthetic.main.include_login.*
 import kotlinx.android.synthetic.main.include_login_fingerprint.*
@@ -37,8 +40,23 @@ import permissions.dispatcher.*
 @RuntimePermissions
 class LoginRegisterActivity : AppCompatActivity() {
 
-    val dummyEmail = "sample@gmail.com"
-    val dummyPassword = "123456"
+
+    val tempUser1 = TempUser(
+        "9000000000",
+        "sample@gmail.com",
+        "123456",
+        "YsoykGNdT9azgDYZGtrX1RFR6Pg1"
+    )
+
+    val tempUser2 = TempUser(
+        "9111111111",
+        "example@gmail.com",
+        "123456",
+        "mN20pCadWOQLdhkKFIFEkPP2I6u2"
+    )
+    val phone1 = "9000000000"
+
+    val phone2 = "9111111111"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,19 +64,6 @@ class LoginRegisterActivity : AppCompatActivity() {
 
         attachListener()
         setupSpinner()
-
-        if (FirebaseAuth.getInstance().currentUser == null ) {
-            FirebaseAuth.getInstance().signInWithEmailAndPassword(dummyEmail, dummyPassword)
-                .addOnCompleteListener {
-                    if (it.isSuccessful) {
-
-                        Log.d("Test", "Firebase successfully login")
-                    }
-                }
-                .addOnFailureListener {
-                    toast("${it.message}")
-                }
-        }
     }
 
 
@@ -83,9 +88,10 @@ class LoginRegisterActivity : AppCompatActivity() {
             login_group.isVisible(true)
         }
 
+
         loginFingerprint_img_fingerprint.setOnClickListener {
             // TODO - add Fingerprint auth
-            startActivity(intentFor<HomeActivity>().newTask().clearTask())
+          //  startActivity(intentFor<HomeActivity>().newTask().clearTask())
         }
 
         login_btn_login.setOnClickListener {
@@ -148,7 +154,56 @@ class LoginRegisterActivity : AppCompatActivity() {
             // use Location Manager
             LocationRequestManager.getCurrentLocationViaLocal()
         }
-        startActivity(intentFor<HomeActivity>().newTask().clearTask())
+        // TODO - Temp login
+        doLogin()
+    }
+
+    private fun doLogin() {
+        login_group.isVisible(false)
+        loginRegister_progressBar.isVisible(true)
+        val number  = login_edt_number.text.toString()
+        if (number.isEmpty()){
+            toast("Please input number")
+            return
+        }
+
+        when (number){
+            phone1 ->{
+                loginToFirebase(tempUser1)
+            }
+            phone2 -> {
+                loginToFirebase(tempUser2)
+            }
+            else -> {
+                login_group.isVisible(true)
+                loginRegister_progressBar.isVisible(false)
+                toast("Incorrect number")
+
+            }
+        }
+    }
+
+
+    private fun loginToFirebase(user : TempUser){
+        if (FirebaseAuth.getInstance().currentUser != null )
+            FirebaseAuth.getInstance().signOut()
+
+        FirebaseAuth.getInstance().signInWithEmailAndPassword(user.email, user.password)
+            .addOnCompleteListener {
+                if (it.isSuccessful) {
+                    AppVNOApplication.getInstance().tempUser = user
+                    startActivity(intentFor<HomeActivity>().newTask().clearTask())
+                    login_group.isVisible(true)
+                    loginRegister_progressBar.isVisible(false)
+                }
+            }
+            .addOnFailureListener {
+                toast("${it.message}")
+                login_group.isVisible(true)
+                loginRegister_progressBar.isVisible(false)
+            }
+
+
     }
 
     @OnPermissionDenied(Manifest.permission.ACCESS_FINE_LOCATION)

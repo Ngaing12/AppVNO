@@ -5,6 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import  app.pldt.appvno.googleAds.GoogleAdsManager
 import app.pldt.appvno.location.LocationRequestManager
+import app.pldt.appvno.model.TempUser
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 import org.koin.dsl.module
@@ -14,6 +15,7 @@ class AppVNOApplication : Application() {
     // Temp
     private val points = MutableLiveData<Int>()
     fun getPoints(): LiveData<Int> = points
+    var tempUser : TempUser? = null
 
     fun addPoints(amount : Int){
         val num = points.value

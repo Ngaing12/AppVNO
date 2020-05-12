@@ -91,6 +91,9 @@ dependencies {
     implementation 'com.google.firebase:firebase-storage-ktx:19.1.1'
     implementation 'com.google.firebase:firebase-database-ktx:19.2.1'
 
+    // tokbox
+    implementation 'com.opentok.android:opentok-android-sdk:2.15.3'
+
 //    // Splitties
 //    implementation("com.louiscad.splitties:splitties-activities:$splitties_version")
 //    implementation("com.louiscad.splitties:splitties-bundle:$splitties_version")

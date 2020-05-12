@@ -8,6 +8,7 @@ import android.widget.Toast
 import app.pldt.appvno.R
 import app.pldt.appvno.model.ChatMessage
 import app.pldt.appvno.model.Contact
+import app.pldt.appvno.model.TempUser
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.ChildEventListener
 import com.google.firebase.database.DataSnapshot
@@ -24,7 +25,7 @@ import kotlinx.android.synthetic.main.recycler_chat_to_row_sms.view.*
 
 class MessageDetailActivity : AppCompatActivity() {
 
-    private lateinit var contact : Contact
+    private lateinit var user : TempUser
     var message : String? = ""
     var messageType : Int? = 0
 
@@ -37,9 +38,10 @@ class MessageDetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_message_detail)
 
-        contact = intent.getSerializableExtra(CONTACT_INFO) as Contact
+        user = intent.getSerializableExtra(CONTACT_INFO) as TempUser
 
-        tv_user_messageDetail.text = contact.name
+        tv_user_messageDetail.text = user.email
+        tv_number_messageDetail.text = user.number
 
         recycler_chat_messageDetail.adapter = adapter
 
@@ -57,7 +59,7 @@ class MessageDetailActivity : AppCompatActivity() {
     private fun listenForMessage() {
 
         fromId = FirebaseAuth.getInstance().uid
-        toId = contact.id
+        toId = user.id
 
         val ref = FirebaseDatabase.getInstance().getReference("/user-messages/$fromId/$toId")
 
