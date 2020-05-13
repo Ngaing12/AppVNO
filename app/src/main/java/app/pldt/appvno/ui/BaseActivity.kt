@@ -31,7 +31,7 @@ abstract class BaseActivity : AppCompatActivity() {
                 toast("You cancel the call")
 
                 // Make both state to connected
-                MyFirebaseDatabase.makeCallConnected()
+               // MyFirebaseDatabase.makeCallConnected()
             }
             .setNegativeButton("Cancel") { dialog, _ ->
                 // Delete call

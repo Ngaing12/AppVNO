@@ -121,27 +121,27 @@ class CallFragment : Fragment() {
                     val userStatus = UserCallStatus(CALL_RINGING, AppVNOApplication.getInstance().tempUser?.id!!)
 
                     ringingMap.put("calling", userStatus)
+                    userRef.child(user.id).removeEventListener(this)
+                    userRef.child(user.id).updateChildren(ringingMap).addOnSuccessListener {
 
-                    userRef.child(user.id).updateChildren(ringingMap)
+                        userRef.child(AppVNOApplication.getInstance().tempUser?.id!!).addValueEventListener(object : ValueEventListener{
+                            override fun onCancelled(p0: DatabaseError) {}
+
+                            override fun onDataChange(p0: DataSnapshot) {
+                                if (!p0.hasChild("calling")) {
+                                    val callMap = HashMap<String, Any>()
+                                    val userStatus = UserCallStatus(CALL_CALLING, user.id)
+
+                                    callMap.put("calling", userStatus)
+                                    userRef.child(AppVNOApplication.getInstance().tempUser?.id!!).removeEventListener(this)
+                                    userRef.child(AppVNOApplication.getInstance().tempUser?.id!!).updateChildren(callMap)
+                                }
+                            }
+                        })
+                    }
                 }
             }
         })
-        userRef.removeEventListener(l1)
-        val l2 = userRef.child(AppVNOApplication.getInstance().tempUser?.id!!).addValueEventListener(object : ValueEventListener{
-            override fun onCancelled(p0: DatabaseError) {}
-
-            override fun onDataChange(p0: DataSnapshot) {
-                if (!p0.hasChild("calling")) {
-                    val callMap = HashMap<String, Any>()
-                    val userStatus = UserCallStatus(CALL_CALLING, user.id)
-
-                    callMap.put("calling", userStatus)
-
-                    userRef.child(AppVNOApplication.getInstance().tempUser?.id!!).updateChildren(callMap)
-                }
-            }
-        })
-        userRef.removeEventListener(l2)
     }
 
 
