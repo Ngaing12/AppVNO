@@ -59,14 +59,15 @@ object MyFirebaseDatabase {
 
 
     fun deleteCallState(user : TempUser){
+        var uid = ""
         var l2 :ValueEventListener? = null
-        val l1 =userRef.child(user.id).addValueEventListener(object : ValueEventListener{
+        val l1 = userRef.child(user.id).addValueEventListener(object : ValueEventListener{
             override fun onCancelled(p0: DatabaseError) {}
 
             override fun onDataChange(p0: DataSnapshot) {
                 if (p0.hasChild("calling")) {
 
-                    val uid = p0.child("calling").child("uid").getValue().toString()
+                    uid = p0.child("calling").child("uid").getValue().toString()
                     userRef.child(user.id).child("calling").removeValue().addOnCompleteListener {
                         l2 = userRef.child(uid).addValueEventListener(object : ValueEventListener{
                             override fun onCancelled(p0: DatabaseError) {}
@@ -81,8 +82,8 @@ object MyFirebaseDatabase {
             }
         })
 
-        userRef.removeEventListener(l1)
-        l2?.let { userRef.removeEventListener(it) }
+        userRef.child(user.id).removeEventListener(l1)
+        l2?.let { userRef.child(uid).removeEventListener(it) }
     }
 
 
@@ -117,9 +118,10 @@ object MyFirebaseDatabase {
                     ringingMap.put("calling", userStatus)
 
                     userRef.child(uid).updateChildren(ringingMap)
-                    userRef.removeEventListener(this)
 
-                    userRef.removeEventListener(l2)
+                    userRef.child(uid).removeEventListener(this)
+
+                    userRef.child(AppVNOApplication.getInstance().tempUser?.id!!).removeEventListener(l2)
                 }
             }
         })
