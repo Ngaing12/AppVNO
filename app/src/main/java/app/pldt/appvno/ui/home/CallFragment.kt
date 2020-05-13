@@ -56,6 +56,7 @@ class CallFragment : Fragment() {
 
         attachListener()
 
+        adapter.clear()
         userRef.addChildEventListener(childEventListener)
 
 
