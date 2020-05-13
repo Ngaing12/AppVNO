@@ -34,13 +34,23 @@
         android:layout_margin="10dp"/>
   </FrameLayout>
 
-  <ImageView
+  <com.google.android.material.floatingactionbutton.FloatingActionButton
       android:id="@+id/close_video_chat_btn"
       android:layout_width="80dp"
       android:layout_height="80dp"
       android:src="@drawable/temp_ic_close_white_24dp"
       android:tint="@color/colorHintPrimary"
       android:layout_alignParentBottom="true"
+      android:layout_margin="20dp"/>
+
+  <com.google.android.material.floatingactionbutton.FloatingActionButton
+      android:id="@+id/mute_video_chat_btn"
+      android:layout_width="80dp"
+      android:layout_height="80dp"
+      android:src="@drawable/ic_volume_up_black_24dp"
+      android:tint="@color/colorWhite"
+      android:layout_alignParentBottom="true"
+      android:layout_alignParentEnd="true"
       android:layout_margin="20dp"/>
 
 </RelativeLayout>

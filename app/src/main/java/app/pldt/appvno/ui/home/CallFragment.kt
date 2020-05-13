@@ -22,6 +22,7 @@ import com.google.firebase.database.*
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.GroupieViewHolder
 import com.xwray.groupie.Item
+import kotlinx.android.synthetic.main.activity_call_detail.*
 import kotlinx.android.synthetic.main.fragment_call.*
 import kotlinx.android.synthetic.main.recycler_call_contact_item.view.*
 import org.jetbrains.anko.toast
@@ -51,8 +52,36 @@ class CallFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
 
         userRef = FirebaseDatabase.getInstance().reference.child("users")
-        userRef.addChildEventListener(childEventListener)
+        callFragment_recycler_contact.adapter = adapter
+
         attachListener()
+
+        userRef.addChildEventListener(childEventListener)
+
+
+        adapter.setOnItemClickListener { data, view ->
+            val row = (data as CallContact).user
+            Log.d("Test" , (row.email))
+            activity?.toast(row.email)
+
+
+            val string = "Do you want to call" + row.email + "?"
+            AlertDialog.Builder(context)
+                .setTitle("Information")
+                .setPositiveButton("Call") { _, _ ->
+                    userRef.removeEventListener(childEventListener)
+                    makeCallToUser(row)
+                    activity?.startActivity<CallDetailActivity>()
+
+                }
+                .setNegativeButton("Cancel") { dialog, _ ->
+                    userRef.removeEventListener(childEventListener)
+                    dialog.cancel()
+                }
+                .setCancelable(true)
+                .setMessage(string)
+                .show()
+        }
     }
 
     override fun onDestroy() {
@@ -60,6 +89,7 @@ class CallFragment : Fragment() {
         userRef.removeEventListener(childEventListener)
     }
 
+    // Change to friend list
     val childEventListener  = object : ChildEventListener {
         override fun onCancelled(p0: DatabaseError) {}
         override fun onChildMoved(p0: DataSnapshot, p1: String?) {}
@@ -74,32 +104,9 @@ class CallFragment : Fragment() {
                 if (it.id  != FirebaseAuth.getInstance().uid){
                     adapter.add(CallContact(it))
                     callFragment_recycler_contact.addItemDecoration(DividerItemDecoration(context, DividerItemDecoration.VERTICAL))
-                    adapter.setOnItemClickListener { data, view ->
-                        val row = (data as CallContact).user
-                        Log.d("Test" , (row.email))
-                        activity?.toast(row.email)
-
-                        val string = "Do you want to call" + row.email + "?"
-                        AlertDialog.Builder(context)
-                            .setTitle("Information")
-                            .setPositiveButton("Call") { _, _ ->
-
-                                makeCallToUser(row)
-                             //   activity?.startActivity<CallDetailActivity>()
-                                // Todo - create node for calling for both user and status to  (Calling,Ringing)
-                               // activity?.toast(row.email)
-//                            // activity?.startActivity<MessageDetailActivity>(CONTACT_INFO to row.user)
-
-                            }
-                            .setNegativeButton("Cancel") { dialog, _ ->
-                                dialog.cancel()
-                            }
-                            .setCancelable(true)
-                            .setMessage(string)
-                            .show()
-                    }
                 }
-                callFragment_recycler_contact.adapter = adapter
+//                userRef.removeEventListener(this)
+
             }
         }
     }
@@ -119,7 +126,6 @@ class CallFragment : Fragment() {
                 }
             }
         })
-
         userRef.removeEventListener(l1)
         val l2 = userRef.child(AppVNOApplication.getInstance().tempUser?.id!!).addValueEventListener(object : ValueEventListener{
             override fun onCancelled(p0: DatabaseError) {}
@@ -151,6 +157,8 @@ class CallFragment : Fragment() {
 //    }
 
     private fun attachListener() {
+
+
     }
 
 

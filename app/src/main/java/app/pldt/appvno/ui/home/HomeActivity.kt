@@ -10,11 +10,13 @@ import app.pldt.appvno.MainActivity
 import app.pldt.appvno.R
 import app.pldt.appvno.ui.call.CallActivity
 import app.pldt.appvno.extensions.isVisible
+import app.pldt.appvno.firebase.MyFirebaseDatabase
+import app.pldt.appvno.ui.BaseActivity
 import app.pldt.appvno.ui.message.MessageFragment
 import kotlinx.android.synthetic.main.activity_home.*
 import org.jetbrains.anko.startActivity
 
-class HomeActivity : AppCompatActivity(), HomeFragment.OnHomeInteractionListener {
+class HomeActivity : BaseActivity(), HomeFragment.OnHomeInteractionListener {
 
     var prevMenuItem: MenuItem? = null
 
@@ -118,5 +120,10 @@ class HomeActivity : AppCompatActivity(), HomeFragment.OnHomeInteractionListener
 
     override fun onClickCall() {
         container_floating_home.isVisible(true)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        MyFirebaseDatabase.removeListener()
     }
 }
