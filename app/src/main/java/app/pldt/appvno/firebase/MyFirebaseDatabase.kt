@@ -99,13 +99,11 @@ object MyFirebaseDatabase {
             override fun onDataChange(p0: DataSnapshot) {
                 userRef.child(AppVNOApplication.getInstance().tempUser?.id!!).removeEventListener(this)
                 if (p0.hasChild("calling")) {
-
-                    uid = p0.child(AppVNOApplication.getInstance().tempUser?.id!!).child("calling").child("uid").getValue().toString()
+                    uid = p0.child("calling").child("uid").getValue().toString()
                     val callMap = HashMap<String, Any>()
                     val userStatus = UserCallStatus(CALL_CONNECTED, uid)
                     callMap.put("calling", userStatus)
                     userRef.child(AppVNOApplication.getInstance().tempUser?.id!!).updateChildren(callMap)
-
                     userRef.child(uid).addValueEventListener(object : ValueEventListener{
                         override fun onCancelled(p0: DatabaseError) {}
 
