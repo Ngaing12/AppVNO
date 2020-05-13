@@ -49,18 +49,18 @@ class CallDetailActivity : AppCompatActivity(),Session.SessionListener, Publishe
             destroyCall()
             finish()
         }
-
-        mute_video_chat_btn.setOnClickListener {
-            if (isMuted){
-                isMuted = !isMuted
-                mPublisher?.publishAudio = isMuted
-                mute_video_chat_btn.setImageResource(R.drawable.ic_volume_up_black_24dp)
-            } else {
-                isMuted = !isMuted
-                mPublisher?.publishAudio = !isMuted
-                mute_video_chat_btn.setImageResource(R.drawable.ic_volume_off_black_24dp)
-            }
-        }
+//
+//        mute_video_chat_btn.setOnClickListener {
+//            if (isMuted){
+//                isMuted = !isMuted
+//                mPublisher?.publishAudio = isMuted
+//                mute_video_chat_btn.setImageResource(R.drawable.ic_volume_up_black_24dp)
+//            } else {
+//                isMuted = !isMuted
+//                mPublisher?.publishAudio = !isMuted
+//                mute_video_chat_btn.setImageResource(R.drawable.ic_volume_off_black_24dp)
+//            }
+//        }
         requestCallPermissionWithPermissionCheck()
     }
 
@@ -156,7 +156,7 @@ class CallDetailActivity : AppCompatActivity(),Session.SessionListener, Publishe
         mPublisher = Publisher.Builder(this)
             .videoTrack(false)
             .build()
-        mPublisher?.publishAudio = isMuted
+        //mPublisher?.publishAudio = isMuted
         mPublisher?.setPublisherListener(this)
 
         publisher_container.addView(mPublisher?.view)
