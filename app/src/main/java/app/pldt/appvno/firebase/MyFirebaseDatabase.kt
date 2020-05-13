@@ -60,22 +60,25 @@ object MyFirebaseDatabase {
 
     fun deleteCallState(user : TempUser){
         var uid = ""
-        var l2 :ValueEventListener? = null
-        val l1 = userRef.child(user.id).addValueEventListener(object : ValueEventListener{
-            override fun onCancelled(p0: DatabaseError) {}
+        userRef.child(user.id).addValueEventListener(object : ValueEventListener{
+            override fun onCancelled(p0: DatabaseError) {
+                userRef.child(user.id).removeEventListener(this)
+            }
 
             override fun onDataChange(p0: DataSnapshot) {
                 userRef.child(user.id).removeEventListener(this)
                 if (p0.hasChild("calling")) {
                     uid = p0.child("calling").child("uid").getValue().toString()
-
                     userRef.child(user.id).child("calling").removeValue().addOnCompleteListener {
-                        l2 = userRef.child(uid).addValueEventListener(object : ValueEventListener{
-                            override fun onCancelled(p0: DatabaseError) {}
+                         userRef.child(uid).addValueEventListener(object : ValueEventListener{
+                            override fun onCancelled(p0: DatabaseError) {
+                                userRef.child(uid).removeEventListener(this)
+                            }
 
                             override fun onDataChange(p1: DataSnapshot) {
                                 userRef.child(uid).removeEventListener(this)
                                 if (p1.hasChild("calling"))
+
                                     userRef.child(uid).child("calling").removeValue()
                             }
                         })
@@ -83,9 +86,6 @@ object MyFirebaseDatabase {
                 }
             }
         })
-
-        userRef.child(user.id).removeEventListener(l1)
-        l2?.let { userRef.child(uid).removeEventListener(it) }
     }
 
 
@@ -93,34 +93,30 @@ object MyFirebaseDatabase {
      fun makeCallConnected() {
 
         var uid = ""
-        val l2 = userRef.child(AppVNOApplication.getInstance().tempUser?.id!!).addValueEventListener(object : ValueEventListener{
+       userRef.child(AppVNOApplication.getInstance().tempUser?.id!!).addValueEventListener(object : ValueEventListener{
             override fun onCancelled(p0: DatabaseError) {}
 
             override fun onDataChange(p0: DataSnapshot) {
+                userRef.child(AppVNOApplication.getInstance().tempUser?.id!!).removeEventListener(this)
                 if (p0.hasChild("calling")) {
 
                     uid = p0.child(AppVNOApplication.getInstance().tempUser?.id!!).child("calling").child("uid").getValue().toString()
                     val callMap = HashMap<String, Any>()
                     val userStatus = UserCallStatus(CALL_CONNECTED, uid)
-
                     callMap.put("calling", userStatus)
-                    userRef.child(AppVNOApplication.getInstance().tempUser?.id!!).removeEventListener(this)
                     userRef.child(AppVNOApplication.getInstance().tempUser?.id!!).updateChildren(callMap)
 
                     userRef.child(uid).addValueEventListener(object : ValueEventListener{
                         override fun onCancelled(p0: DatabaseError) {}
 
                         override fun onDataChange(p0: DataSnapshot) {
+                            userRef.child(uid).removeEventListener(this)
                             if (p0.hasChild("calling")) {
                                 val ringingMap = HashMap<String, Any>()
                                 val userStatus = UserCallStatus(CALL_CONNECTED, AppVNOApplication.getInstance().tempUser?.id!!)
 
                                 ringingMap.put("calling", userStatus)
-
                                 userRef.child(uid).updateChildren(ringingMap)
-
-                                userRef.child(uid).removeEventListener(this)
-
                             }
                         }
                     })
