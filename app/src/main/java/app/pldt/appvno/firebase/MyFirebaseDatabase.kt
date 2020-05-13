@@ -65,14 +65,16 @@ object MyFirebaseDatabase {
             override fun onCancelled(p0: DatabaseError) {}
 
             override fun onDataChange(p0: DataSnapshot) {
+                userRef.child(user.id).removeEventListener(this)
                 if (p0.hasChild("calling")) {
-
                     uid = p0.child("calling").child("uid").getValue().toString()
+
                     userRef.child(user.id).child("calling").removeValue().addOnCompleteListener {
                         l2 = userRef.child(uid).addValueEventListener(object : ValueEventListener{
                             override fun onCancelled(p0: DatabaseError) {}
 
                             override fun onDataChange(p1: DataSnapshot) {
+                                userRef.child(uid).removeEventListener(this)
                                 if (p1.hasChild("calling"))
                                     userRef.child(uid).child("calling").removeValue()
                             }
@@ -96,32 +98,32 @@ object MyFirebaseDatabase {
 
             override fun onDataChange(p0: DataSnapshot) {
                 if (p0.hasChild("calling")) {
+
                     uid = p0.child(AppVNOApplication.getInstance().tempUser?.id!!).child("calling").child("uid").getValue().toString()
                     val callMap = HashMap<String, Any>()
                     val userStatus = UserCallStatus(CALL_CONNECTED, uid)
 
                     callMap.put("calling", userStatus)
-
+                    userRef.child(AppVNOApplication.getInstance().tempUser?.id!!).removeEventListener(this)
                     userRef.child(AppVNOApplication.getInstance().tempUser?.id!!).updateChildren(callMap)
-                }
-            }
-        })
 
-        val l1 = userRef.child(uid).addValueEventListener(object : ValueEventListener{
-            override fun onCancelled(p0: DatabaseError) {}
+                    userRef.child(uid).addValueEventListener(object : ValueEventListener{
+                        override fun onCancelled(p0: DatabaseError) {}
 
-            override fun onDataChange(p0: DataSnapshot) {
-                if (!p0.hasChild("calling")) {
-                    val ringingMap = HashMap<String, Any>()
-                    val userStatus = UserCallStatus(CALL_CONNECTED, AppVNOApplication.getInstance().tempUser?.id!!)
+                        override fun onDataChange(p0: DataSnapshot) {
+                            if (p0.hasChild("calling")) {
+                                val ringingMap = HashMap<String, Any>()
+                                val userStatus = UserCallStatus(CALL_CONNECTED, AppVNOApplication.getInstance().tempUser?.id!!)
 
-                    ringingMap.put("calling", userStatus)
+                                ringingMap.put("calling", userStatus)
 
-                    userRef.child(uid).updateChildren(ringingMap)
+                                userRef.child(uid).updateChildren(ringingMap)
 
-                    userRef.child(uid).removeEventListener(this)
+                                userRef.child(uid).removeEventListener(this)
 
-                    userRef.child(AppVNOApplication.getInstance().tempUser?.id!!).removeEventListener(l2)
+                            }
+                        }
+                    })
                 }
             }
         })
