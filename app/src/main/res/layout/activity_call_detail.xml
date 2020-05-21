@@ -23,7 +23,7 @@
       android:layout_height="match_parent"
       android:visibility="gone"
       android:background="@color/colorAccent">
-    a
+
     <FrameLayout
         android:id="@+id/publisher_container"
         android:layout_width="90dp"
