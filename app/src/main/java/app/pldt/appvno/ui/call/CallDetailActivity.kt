@@ -149,6 +149,7 @@ class CallDetailActivity : AppCompatActivity(),Session.SessionListener, Publishe
          }
     }
 
+
     //  2 Publisher
     override fun onConnected(p0: Session?) {
         Log.d(LOG_TAG, "Session Connected")

@@ -100,7 +100,6 @@ class CallFragment : Fragment() {
         override fun onChildAdded(p0: DataSnapshot, p1: String?) {
             val tempUser = p0.getValue(TempUser::class.java)
 
-
             tempUser?.let {
                 if (it.id  != FirebaseAuth.getInstance().uid){
                     adapter.add(CallContact(it))
