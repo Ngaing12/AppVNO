@@ -11,9 +11,12 @@ import android.os.Bundle
 import android.provider.Settings
 import android.util.Log
 import androidx.annotation.StringRes
+import app.pldt.appvno.AppVNOApplication
 import app.pldt.appvno.R
+import app.pldt.appvno.firebase.MyFirebaseDatabase
 import app.pldt.appvno.ui.profile.onRequestPermissionsResult
 import app.pldt.appvno.ui.termsCondition.TermsConditionActivity
+import com.google.firebase.database.FirebaseDatabase
 import com.opentok.android.*
 import kotlinx.android.synthetic.main.activity_call_detail.*
 import org.jetbrains.anko.startActivity
@@ -27,6 +30,7 @@ const val RC_VIDEO_APP_PERM = 124
 class CallDetailActivity : AppCompatActivity(),Session.SessionListener, PublisherKit.PublisherListener,
     SubscriberKit.SubscriberListener  {
 
+    var isMuted = false
 
     val API_KEY = "46732122"
     val SESSION_ID = "2_MX40NjczMjEyMn5-MTU4OTI1MjA3MjQ1NX41cHhHczdiZEE2MExidi9WYzFVaERDdVF-fg"
@@ -42,10 +46,21 @@ class CallDetailActivity : AppCompatActivity(),Session.SessionListener, Publishe
         setContentView(R.layout.activity_call_detail)
 
         close_video_chat_btn.setOnClickListener {
-            // Remove call in the db
             destroyCall()
             finish()
         }
+//
+//        mute_video_chat_btn.setOnClickListener {
+//            if (isMuted){
+//                isMuted = !isMuted
+//                mPublisher?.publishAudio = isMuted
+//                mute_video_chat_btn.setImageResource(R.drawable.ic_volume_up_black_24dp)
+//            } else {
+//                isMuted = !isMuted
+//                mPublisher?.publishAudio = !isMuted
+//                mute_video_chat_btn.setImageResource(R.drawable.ic_volume_off_black_24dp)
+//            }
+//        }
         requestCallPermissionWithPermissionCheck()
     }
 
@@ -122,15 +137,18 @@ class CallDetailActivity : AppCompatActivity(),Session.SessionListener, Publishe
 
 
     fun destroyCall(){
-        // Remove data from db
-        // Close app
+        MyFirebaseDatabase.deleteCallState(AppVNOApplication.getInstance().tempUser!!)
         mPublisher?.destroy()
         Log.d(LOG_TAG, "Stream Drop")
         if (mSubscriber != null){
             mSubscriber = null
             subscriber_container.removeAllViews()
         }
+         if (mSession != null){
+             mSession.disconnect()
+         }
     }
+
 
     //  2 Publisher
     override fun onConnected(p0: Session?) {
@@ -139,6 +157,7 @@ class CallDetailActivity : AppCompatActivity(),Session.SessionListener, Publishe
         mPublisher = Publisher.Builder(this)
             .videoTrack(false)
             .build()
+        //mPublisher?.publishAudio = isMuted
         mPublisher?.setPublisherListener(this)
 
         publisher_container.addView(mPublisher?.view)

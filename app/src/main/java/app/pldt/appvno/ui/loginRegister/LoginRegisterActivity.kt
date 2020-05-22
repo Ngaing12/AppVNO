@@ -207,9 +207,11 @@ class LoginRegisterActivity : AppCompatActivity() {
                 if (it.isSuccessful) {
                     AppVNOApplication.getInstance().tempUser = user
                     MyFirebaseDatabase.startListening(user.id)
-                    startActivity(intentFor<HomeActivity>().newTask().clearTask())
                     login_group.isVisible(true)
                     loginRegister_progressBar.isVisible(false)
+                    // Start new Activity
+                    startActivity(intentFor<HomeActivity>().newTask().clearTask())
+                    finish()
                 }
             }
             .addOnFailureListener {

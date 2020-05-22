@@ -12,6 +12,8 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/linphone-sdk-android-4.2" />
+            <option value="$PROJECT_DIR$/sysnetsdk-v1.0.1" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

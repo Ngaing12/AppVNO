@@ -41,7 +41,7 @@ class MessageFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         attachListener()
-
+        adapter.clear()
         setupDummyData()
     }
 

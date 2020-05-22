@@ -8,9 +8,12 @@ import androidx.lifecycle.Observer
 import app.pldt.appvno.ui.call.CallActivity
 import app.pldt.appvno.googleAds.GoogleAdsManager
 import app.pldt.appvno.extensions.isVisible
+import app.pldt.appvno.ui.call.SysnetCallActivity
 import com.google.android.gms.ads.rewarded.RewardItem
 import com.google.android.gms.ads.rewarded.RewardedAd
 import com.google.android.gms.ads.rewarded.RewardedAdCallback
+import com.sysnetph.sysnetsdk.RegistrationAction
+import com.sysnetph.sysnetsdk.Sysnet
 import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
@@ -19,6 +22,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var rewardedAd: RewardedAd
 
+    private var isRewarded = false
     private var counter = 0
     private val MAX_RETRY = 3
 
@@ -79,14 +83,21 @@ class MainActivity : AppCompatActivity() {
             }
             override fun onRewardedAdClosed() {
                 // Ad closed.
+                if (isRewarded) {
+                    startActivity<SysnetCallActivity>()
+                }else {
+                    startActivity<CallActivity>()
+                }
                 GoogleAdsManager.loadNewAds()
-                startActivity<CallActivity>()
                 finish()
             }
             override fun onUserEarnedReward(@NonNull reward: RewardItem) {
                 // User earned reward.
                 toast("You have earned reward ${reward.amount}")
+                isRewarded = true
                 AppVNOApplication.getInstance().addPoints(reward.amount)
+
+                // Open FreeCall
             }
             override fun onRewardedAdFailedToShow(errorCode: Int) {
                 // Ad failed to display.

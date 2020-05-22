@@ -1,2 +1,2 @@
 rootProject.name='AppVNO'
-include ':app'
+include ':app', ':linphone-sdk-android-4.2', ':sysnetsdk-v1.0.1'
