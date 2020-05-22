@@ -93,6 +93,8 @@ dependencies {
 
     // tokbox
     implementation 'com.opentok.android:opentok-android-sdk:2.15.3'
+    implementation project(path: ':linphone-sdk-android-4.2')
+    implementation project(path: ':sysnetsdk-v1.0.1')
 
 //    // Splitties
 //    implementation("com.louiscad.splitties:splitties-activities:$splitties_version")

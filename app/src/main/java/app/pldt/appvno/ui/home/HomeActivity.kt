@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.MenuItem
 import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
+import app.pldt.appvno.AppVNOApplication
 import app.pldt.appvno.MainActivity
 import app.pldt.appvno.R
 import app.pldt.appvno.ui.call.CallActivity
@@ -13,10 +14,16 @@ import app.pldt.appvno.extensions.isVisible
 import app.pldt.appvno.firebase.MyFirebaseDatabase
 import app.pldt.appvno.ui.BaseActivity
 import app.pldt.appvno.ui.message.MessageFragment
+import com.sysnetph.sysnetsdk.RegistrationAction
+import com.sysnetph.sysnetsdk.Sysnet
 import kotlinx.android.synthetic.main.activity_home.*
 import org.jetbrains.anko.startActivity
+import org.jetbrains.anko.toast
 
-class HomeActivity : BaseActivity(), HomeFragment.OnHomeInteractionListener {
+class HomeActivity : BaseActivity(), HomeFragment.OnHomeInteractionListener   , RegistrationAction {
+
+
+    private var isLogin = false
 
     var prevMenuItem: MenuItem? = null
 
@@ -25,14 +32,35 @@ class HomeActivity : BaseActivity(), HomeFragment.OnHomeInteractionListener {
         setContentView(R.layout.activity_home)
         attachListener()
         replaceFragment(HomeFragment.newInstance())
+
+
+        Sysnet.getInstance().inicreate()
+        Sysnet.getInstance().registrationListener = this
+
+       doSysnetLogin()
+    }
+
+
+    private fun doSysnetLogin () {
+        // Todo - temp
+        if (AppVNOApplication.getInstance().tempUser?.number == "9000000000") {
+            Sysnet.getInstance().register("ian","4332wurx")
+        } else {
+            Sysnet.getInstance().register("ian2","4332wurx")
+        }
     }
 
     private fun attachListener() {
 
         btn_free_call_home.setOnClickListener {
             container_floating_home.isVisible(false)
+            if (isLogin) {
+                startActivity<MainActivity>()
+            } else {
+                doSysnetLogin()
+                toast("Something went wrong please try again")
+            }
 
-            startActivity<MainActivity>()
         }
 
         img_close_home.setOnClickListener {
@@ -125,5 +153,12 @@ class HomeActivity : BaseActivity(), HomeFragment.OnHomeInteractionListener {
     override fun onDestroy() {
         super.onDestroy()
         MyFirebaseDatabase.removeListener()
+    }
+
+    override fun onRegistrationComplete(p0: Int) {
+        isLogin = when (p0) {
+            1 -> true
+            else -> false
+        }
     }
 }
