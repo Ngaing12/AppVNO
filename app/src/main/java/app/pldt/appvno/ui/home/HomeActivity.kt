@@ -13,6 +13,7 @@ import app.pldt.appvno.ui.call.CallActivity
 import app.pldt.appvno.extensions.isVisible
 import app.pldt.appvno.firebase.MyFirebaseDatabase
 import app.pldt.appvno.ui.BaseActivity
+import app.pldt.appvno.ui.call.SysnetCallActivity
 import app.pldt.appvno.ui.message.MessageFragment
 import com.sysnetph.sysnetsdk.RegistrationAction
 import com.sysnetph.sysnetsdk.Sysnet
@@ -55,7 +56,7 @@ class HomeActivity : BaseActivity(), HomeFragment.OnHomeInteractionListener   , 
         btn_free_call_home.setOnClickListener {
             container_floating_home.isVisible(false)
             if (isLogin) {
-                startActivity<MainActivity>()
+                startActivity<SysnetCallActivity>()
             } else {
                 doSysnetLogin()
                 toast("Something went wrong please try again")
