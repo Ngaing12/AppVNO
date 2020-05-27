@@ -148,7 +148,7 @@ class LoginRegisterActivity : AppCompatActivity() {
         onRequestPermissionsResult(requestCode, grantResults)
     }
 
-    @NeedsPermission(Manifest.permission.ACCESS_FINE_LOCATION)
+    @NeedsPermission(Manifest.permission.CAMERA, Manifest.permission.CALL_PHONE,Manifest.permission.READ_CALL_LOG,Manifest.permission.RECORD_AUDIO,Manifest.permission.READ_CONTACTS, Manifest.permission.ACCESS_FINE_LOCATION,Manifest.permission.MODIFY_AUDIO_SETTINGS, Manifest.permission.WAKE_LOCK)
     fun requestPermission() {
         if (LocationRequestManager.checkGPS()){
             getLocation()
@@ -223,14 +223,14 @@ class LoginRegisterActivity : AppCompatActivity() {
 
     }
 
-    @OnPermissionDenied(Manifest.permission.ACCESS_FINE_LOCATION)
+    @OnPermissionDenied(Manifest.permission.CAMERA, Manifest.permission.CALL_PHONE,Manifest.permission.READ_CALL_LOG,Manifest.permission.RECORD_AUDIO,Manifest.permission.READ_CONTACTS, Manifest.permission.ACCESS_FINE_LOCATION,Manifest.permission.MODIFY_AUDIO_SETTINGS, Manifest.permission.WAKE_LOCK)
     fun onContactsDenied() {
         // NOTE: Deal with a denied permission, e.g. by showing specific UI
         // or disabling certain functionality
         toast("You need to accept this permission to login")
     }
 
-    @OnShowRationale(Manifest.permission.ACCESS_FINE_LOCATION)
+    @OnShowRationale(Manifest.permission.CAMERA, Manifest.permission.CALL_PHONE,Manifest.permission.READ_CALL_LOG,Manifest.permission.RECORD_AUDIO,Manifest.permission.READ_CONTACTS, Manifest.permission.ACCESS_FINE_LOCATION,Manifest.permission.MODIFY_AUDIO_SETTINGS, Manifest.permission.WAKE_LOCK)
     fun showRationaleForContacts(request: PermissionRequest) {
         // NOTE: Show a rationale to explain why the permission is needed, e.g. with a dialog.
         // Call proceed() or cancel() on the provided PermissionRequest to continue or abort
@@ -238,7 +238,7 @@ class LoginRegisterActivity : AppCompatActivity() {
         request.proceed()
     }
 
-    @OnNeverAskAgain(Manifest.permission.ACCESS_FINE_LOCATION)
+    @OnNeverAskAgain(Manifest.permission.CAMERA, Manifest.permission.CALL_PHONE,Manifest.permission.READ_CALL_LOG,Manifest.permission.RECORD_AUDIO,Manifest.permission.READ_CONTACTS, Manifest.permission.ACCESS_FINE_LOCATION,Manifest.permission.MODIFY_AUDIO_SETTINGS, Manifest.permission.WAKE_LOCK)
     fun onContactsNeverAskAgain() {
         showSettingsDialog()
     }
