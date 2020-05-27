@@ -13,6 +13,8 @@ import app.pldt.appvno.ui.credits.CreditsActivity
 import app.pldt.appvno.ui.helpFaqs.HelpFaqsActivity
 import app.pldt.appvno.ui.loginRegister.LoginRegisterActivity
 import app.pldt.appvno.ui.profile.ProfileActivity
+import com.google.firebase.auth.FirebaseAuth
+import com.sysnetph.sysnetsdk.Sysnet
 import kotlinx.android.synthetic.main.fragment_other.*
 import org.jetbrains.anko.*
 
@@ -53,6 +55,8 @@ class OtherFragment : Fragment() {
             activity?.startActivity<ProfileActivity>()
         }
         tv_logout_otherFragment.setOnClickListener {
+            Sysnet.getInstance().unregister()
+            FirebaseAuth.getInstance().signOut()
             activity?.startActivity(activity?.intentFor<LoginRegisterActivity>()?.newTask()?.clearTask())
         }
     }

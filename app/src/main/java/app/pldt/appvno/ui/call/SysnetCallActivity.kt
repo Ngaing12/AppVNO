@@ -20,10 +20,25 @@ class SysnetCallActivity : AppCompatActivity() , activityListener, callactionsLi
         setContentView(R.layout.activity_sysnet_call)
 
 
+
         Sysnet.getInstance().calllistener = this;
         Sysnet.getInstance().callactionListener = this;
 
+        val incomingCall = intent.getBooleanExtra("incoming", false)
+
+        if (incomingCall) {
+            tv_call_status.setText("Waiting For answer");
+            group_outGOing.setVisibility(View.GONE)
+            group_callingOther.setVisibility(View.GONE)
+            group_incoming.setVisibility(View.VISIBLE)
+        }
+
         setupButtonAction()
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        Sysnet.getInstance().endCall()
     }
 
     private fun setupButtonAction() {
@@ -51,17 +66,28 @@ class SysnetCallActivity : AppCompatActivity() , activityListener, callactionsLi
             Sysnet.getInstance().answerCall()
         }
         btn_speaker.setOnClickListener {
-            Sysnet.getInstance().toggleSpeaker(getApplicationContext(),true)
+            Sysnet.getInstance().toggleSpeaker(applicationContext,true)
+        }
+        btn_speakerOff.setOnClickListener {
+            Sysnet.getInstance().toggleSpeaker(applicationContext,false)
+        }
+        btn_mute.setOnClickListener {
+            Sysnet.getInstance().toggleMute(true)
+        }
+        btn_unmute.setOnClickListener {
+            Sysnet.getInstance().toggleMute(false)
         }
     }
 
     fun callUser() {
         isLoading = true
         // TODO - temp
-        if (AppVNOApplication.getInstance().tempUser?.number == "9000000000") {
-            Sysnet.getInstance().makeCall("ian2", Sysnet.Servicetype.Free, Sysnet.NetworkType.ONNET)
-        } else {
-            Sysnet.getInstance().makeCall("ian", Sysnet.Servicetype.Free, Sysnet.NetworkType.ONNET)
+        if (Sysnet.getInstance().userlogin) {
+            if (AppVNOApplication.getInstance().tempUser?.number == "9000000000") {
+                Sysnet.getInstance().makeCall("ian2", Sysnet.Servicetype.Free, Sysnet.NetworkType.ONNET)
+            } else {
+                Sysnet.getInstance().makeCall("ian", Sysnet.Servicetype.Free, Sysnet.NetworkType.ONNET)
+            }
         }
     }
 
@@ -79,10 +105,6 @@ class SysnetCallActivity : AppCompatActivity() , activityListener, callactionsLi
         group_outGOing.setVisibility(View.GONE)
         group_callingOther.setVisibility(View.GONE)
         group_incoming.setVisibility(View.VISIBLE)
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
     }
 
     override fun onOutgoing() {

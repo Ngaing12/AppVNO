@@ -88,6 +88,30 @@
 
 
   <Button
+      android:id="@+id/btn_unmute"
+      android:layout_width="75dp"
+      android:layout_height="75dp"
+      android:layout_marginLeft="16dp"
+      android:layout_marginTop="32dp"
+      android:layout_marginRight="16dp"
+      android:text="Un mute"
+      app:layout_constraintEnd_toStartOf="@id/btn_keypad"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/btn_mute" />
+
+
+  <Button
+      android:id="@+id/btn_speakerOff"
+      android:layout_width="75dp"
+      android:layout_height="75dp"
+      android:layout_marginLeft="16dp"
+      android:layout_marginTop="32dp"
+      android:text="Speaker Off"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toEndOf="@id/btn_keypad"
+      app:layout_constraintTop_toBottomOf="@id/btn_speaker" />
+
+  <Button
       android:id="@+id/btn_endCall"
       android:layout_width="75dp"
       android:layout_height="75dp"
@@ -155,6 +179,6 @@
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:visibility="gone"
-      app:constraint_referenced_ids="tv_otherPerson_name,btn_keypad,btn_endCall,btn_speaker,tv_call_status,btn_mute" />
+      app:constraint_referenced_ids="tv_otherPerson_name,btn_keypad,btn_endCall,btn_speaker,tv_call_status,btn_mute,btn_unmute, btn_speakerOff" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

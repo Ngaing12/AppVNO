@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
+import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
 import app.pldt.appvno.AppVNOApplication
@@ -17,11 +18,13 @@ import app.pldt.appvno.ui.call.SysnetCallActivity
 import app.pldt.appvno.ui.message.MessageFragment
 import com.sysnetph.sysnetsdk.RegistrationAction
 import com.sysnetph.sysnetsdk.Sysnet
+import com.sysnetph.sysnetsdk.activityListener
 import kotlinx.android.synthetic.main.activity_home.*
+import kotlinx.android.synthetic.main.activity_sysnet_call.*
 import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
 
-class HomeActivity : BaseActivity(), HomeFragment.OnHomeInteractionListener   , RegistrationAction {
+class HomeActivity : BaseActivity(), HomeFragment.OnHomeInteractionListener   , RegistrationAction, activityListener {
 
 
     private var isLogin = false
@@ -34,9 +37,9 @@ class HomeActivity : BaseActivity(), HomeFragment.OnHomeInteractionListener   , 
         attachListener()
         replaceFragment(HomeFragment.newInstance())
 
-
         Sysnet.getInstance().inicreate()
         Sysnet.getInstance().registrationListener = this
+        Sysnet.getInstance().calllistener = this
 
        doSysnetLogin()
     }
@@ -162,4 +165,18 @@ class HomeActivity : BaseActivity(), HomeFragment.OnHomeInteractionListener   , 
             else -> false
         }
     }
+
+
+    override fun onCallActivity() {
+
+    }
+
+    override fun onIncomingActivity() {
+        startActivity<SysnetCallActivity>("incoming" to true)
+      //  startActivity<SysnetCallActivity>()
+    }
+
+    override fun onOutgoing() {
+    }
+
 }
