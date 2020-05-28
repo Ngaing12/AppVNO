@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.util.Log
 import app.pldt.appvno.ui.getStarted.GetStartedActivity
+import app.pldt.appvno.ui.getStarted.Main2Activity
 import com.sysnetph.sysnetsdk.Sysnet
 import org.jetbrains.anko.startActivity
 
@@ -43,7 +44,7 @@ class SplashActivity : AppCompatActivity() {
         // We'll forward the intent action, type and extras so it can be handled
         // by the next activity if needed, it's not the launcher job to do that
         val intent =  Intent();
-        intent.setClass(this, GetStartedActivity::class.java)
+        intent.setClass(this, Main2Activity::class.java)
         if (getIntent() != null && getIntent().extras != null) {
             getIntent().extras?.let { intent.putExtras(it) }
         }
