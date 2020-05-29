@@ -5,10 +5,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.util.Log
-import app.pldt.appvno.ui.getStarted.GetStartedActivity
-import app.pldt.appvno.ui.getStarted.Main2Activity
+import app.pldt.appvno.common.SessionManager
+import app.pldt.appvno.ui.getStarted.OnBoardingActivity
+import app.pldt.appvno.ui.loginRegister.LoginRegisterActivity
 import com.sysnetph.sysnetsdk.Sysnet
-import org.jetbrains.anko.startActivity
 
 class SplashActivity : AppCompatActivity() {
 
@@ -19,10 +19,7 @@ class SplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         mHandler = Handler()
-       // startActivity<GetStartedActivity>()
-        //finish()
     }
-
 
     override fun onStart() {
         super.onStart()
@@ -38,19 +35,24 @@ class SplashActivity : AppCompatActivity() {
         }
     }
 
-
     private fun onServiceReady() {
         // Once the service is ready, we can move on in the application
         // We'll forward the intent action, type and extras so it can be handled
         // by the next activity if needed, it's not the launcher job to do that
-        val intent =  Intent();
-        intent.setClass(this, Main2Activity::class.java)
+        val intent =  Intent()
+
+       if (!SessionManager.isShowOnBoarding()) {
+           intent.setClass(this, OnBoardingActivity::class.java)
+       }else {
+           intent.setClass(this, LoginRegisterActivity::class.java)
+       }
+
         if (getIntent() != null && getIntent().extras != null) {
             getIntent().extras?.let { intent.putExtras(it) }
         }
-        intent.action = getIntent().action;
-        intent.type = getIntent().type;
-        startActivity(intent);
+        intent.action = getIntent().action
+        intent.type = getIntent().type
+        startActivity(intent)
         finish()
     }
 
@@ -60,18 +62,13 @@ class SplashActivity : AppCompatActivity() {
             while (!Sysnet.isReady()) {
                 try {
                     Log.d("Test", "Waiting for sysnet.")
-                    sleep(100);
+                    sleep(100)
                 } catch (e : InterruptedException ) {
-                    throw  RuntimeException("waiting thread sleep() has been interrupted");
+                    throw  RuntimeException("waiting thread sleep() has been interrupted")
                 }
             }
             // As we're in a thread, we can't do UI stuff in it, must post a runnable in UI thread
-            mHandler?.post(
-                object : Runnable {
-                    override fun run() {
-                        onServiceReady()
-                    }
-                })
+            mHandler.post { onServiceReady() }
         }
     }
 }

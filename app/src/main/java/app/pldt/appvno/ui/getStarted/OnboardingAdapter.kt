@@ -7,6 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import app.pldt.appvno.R
+import app.pldt.appvno.model.Onboarding
 import kotlinx.android.synthetic.main.recycler_onboarding.view.*
 
 
@@ -44,12 +45,3 @@ class OnboardingAdapter(private  val onBoardingList: List<Onboarding>) :
 }
 
 
-
-
-
-
-data class Onboarding(
-    val title: String,
-    val description : String,
-    val icon : Int
-)

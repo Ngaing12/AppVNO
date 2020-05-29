@@ -34,7 +34,6 @@ android {
 }
 
 dependencies {
-    def splitties_version = "3.0.0-alpha06"
     def anko_version = '0.10.8'
     def permission_dispatcher_version = '4.6.0'
     def koin_version = '2.0.1'
@@ -77,6 +76,7 @@ dependencies {
     implementation "com.xwray:groupie:2.7.0"
     implementation "com.xwray:groupie-kotlin-android-extensions:2.7.0"
 
+    // Google Ads
     implementation "com.google.android.gms:play-services-ads:$play_services_ads_version"
 
     // Koin
@@ -90,14 +90,13 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth:19.3.0'
     implementation 'com.google.firebase:firebase-storage-ktx:19.1.1'
     implementation 'com.google.firebase:firebase-database-ktx:19.2.1'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.1.1'
 
     // tokbox
     implementation 'com.opentok.android:opentok-android-sdk:2.15.3'
-    implementation project(path: ':linphone-sdk-android-4.2')
-    implementation project(path: ':sysnetsdk-v1.0.1')
 
-//    // Splitties
-//    implementation("com.louiscad.splitties:splitties-activities:$splitties_version")
-//    implementation("com.louiscad.splitties:splitties-bundle:$splitties_version")
-//    implementation("com.louiscad.splitties:splitties-fragments:$splitties_version")
+    // Sysnet Libraries
+    implementation project(path: ':sysnetsdk-v1.0.1')
+    implementation project(path: ':linphone-sdk-android-4.2')
+
 }

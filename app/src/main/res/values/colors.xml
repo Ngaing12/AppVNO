@@ -22,6 +22,7 @@
 
     <!-- Text color -->
     <color name="colorTextNormal">#4E4E4E</color>
+    <color name="colorTextHighLight">#FF8C63</color>
     <color name="colorTextOffset">#FFFDFD</color>
 
     <!-- Text Hint color -->

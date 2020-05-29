@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Size -->
+    <dimen name="icon_size_24dp">24dp</dimen>
     <dimen name="icon_size_32dp">32dp</dimen>
     <dimen name="icon_size_56dp">56dp</dimen>
+    <dimen name="icon_size_112dp">112dp</dimen>
 
     <!-- Margin -->
     <dimen name="margin_8dp">8dp</dimen>

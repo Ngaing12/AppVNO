@@ -19,18 +19,16 @@ class SysnetCallActivity : AppCompatActivity() , activityListener, callactionsLi
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sysnet_call)
 
-
-
         Sysnet.getInstance().calllistener = this;
         Sysnet.getInstance().callactionListener = this;
 
         val incomingCall = intent.getBooleanExtra("incoming", false)
 
         if (incomingCall) {
-            tv_call_status.setText("Waiting For answer");
-            group_outGOing.setVisibility(View.GONE)
-            group_callingOther.setVisibility(View.GONE)
-            group_incoming.setVisibility(View.VISIBLE)
+            tv_call_status.text = "Waiting For answer";
+            group_outGOing.visibility = View.GONE
+            group_callingOther.visibility = View.GONE
+            group_incoming.visibility = View.VISIBLE
         }
 
         setupButtonAction()
@@ -117,7 +115,7 @@ class SysnetCallActivity : AppCompatActivity() , activityListener, callactionsLi
 
     // On Call
     override fun ResumeCall() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+
     }
 
     override fun EndCall() {
@@ -128,6 +126,6 @@ class SysnetCallActivity : AppCompatActivity() , activityListener, callactionsLi
     }
 
     override fun HoldCall() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+
     }
 }

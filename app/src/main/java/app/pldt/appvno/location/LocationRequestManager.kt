@@ -7,7 +7,7 @@ import android.os.Bundle
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import app.pldt.appvno.ui.models.LocationDetails
+import app.pldt.appvno.model.LocationDetails
 import com.google.android.gms.common.ConnectionResult
 import com.google.android.gms.common.GoogleApiAvailability
 import com.google.android.gms.location.FusedLocationProviderClient
@@ -97,10 +97,10 @@ object LocationRequestManager {
             addresses = geoCoder.getFromLocation(lat, lon, 10)
             if (addresses.count() > 0) {
                 val locationDetails = LocationDetails(
-                    countryCode =  addresses[0].countryCode ?: "",
-                    countryName =  addresses[0].countryName ?: "",
+                    countryCode = addresses[0].countryCode ?: "",
+                    countryName = addresses[0].countryName ?: "",
                     state = addresses[0].adminArea ?: "",
-                    city  = addresses[0].locality ?: "",
+                    city = addresses[0].locality ?: "",
                     street = addresses[0].thoroughfare ?: "",
                     streetNo = addresses[0].subThoroughfare ?: "",
                     postalCode = addresses[0].postalCode ?: ""

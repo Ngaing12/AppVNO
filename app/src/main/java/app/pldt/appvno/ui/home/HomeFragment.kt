@@ -12,7 +12,7 @@ import app.pldt.appvno.AppVNOApplication
 
 import app.pldt.appvno.R
 import app.pldt.appvno.location.LocationRequestManager
-import app.pldt.appvno.ui.models.LocationDetails
+import app.pldt.appvno.model.LocationDetails
 import kotlinx.android.synthetic.main.fragment_home.*
 
 /**
@@ -85,7 +85,6 @@ class HomeFragment : Fragment() {
     interface OnHomeInteractionListener {
         fun onClickCall()
     }
-
 
     companion object {
         fun newInstance() = HomeFragment()

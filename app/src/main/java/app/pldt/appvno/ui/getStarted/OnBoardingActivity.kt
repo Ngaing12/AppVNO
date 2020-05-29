@@ -9,33 +9,35 @@ import androidx.core.content.ContextCompat
 import androidx.core.view.get
 import androidx.viewpager2.widget.ViewPager2
 import app.pldt.appvno.R
+import app.pldt.appvno.common.SessionManager
+import app.pldt.appvno.model.Onboarding
 import app.pldt.appvno.ui.loginRegister.LoginRegisterActivity
-import kotlinx.android.synthetic.main.activity_main2.*
+import kotlinx.android.synthetic.main.activity_onboarding.*
 import org.jetbrains.anko.startActivity
 
-class Main2Activity : AppCompatActivity() {
+class OnBoardingActivity : AppCompatActivity() {
 
     private val onBoardingAdapter = OnboardingAdapter (
         listOf(
             Onboarding(
                 "Something",
-                "Something Something Something",
-                R.drawable.ic_launcher_foreground
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                R.drawable.success
             ),
             Onboarding(
                 "Nothing",
-                "Nothing Nothing Nothing",
-                R.drawable.ic_launcher_foreground
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                R.drawable.success
             ),
             Onboarding(
                 "Gone",
-                "Gone Gone Gone",
-                R.drawable.ic_launcher_foreground
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                R.drawable.success
             ),
             Onboarding(
                 "Finish",
-                "Finish Finish Finish",
-                R.drawable.ic_launcher_foreground
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                R.drawable.success
             )
 
         )
@@ -43,17 +45,25 @@ class Main2Activity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main2)
-        vp_onboarding.adapter = onBoardingAdapter
+        setContentView(R.layout.activity_onboarding)
+
+        onBoarding_vp_content.adapter = onBoardingAdapter
+
         setupIndicators()
         setCurrentIndicator(0)
-        vp_onboarding.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
+        setupListener()
+
+    }
+
+    private fun setupListener() {
+        onBoarding_vp_content.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(position: Int) {
                 super.onPageSelected(position)
                 setCurrentIndicator(position)
             }
         })
-        tv_skip.setOnClickListener{
+        onBoarding_tv_skip.setOnClickListener{
+            SessionManager.setIsShownOnBoarding(true)
             startActivity<LoginRegisterActivity>()
             finish()
         }
@@ -63,7 +73,7 @@ class Main2Activity : AppCompatActivity() {
         val indicator  = arrayOfNulls<ImageView>(onBoardingAdapter.itemCount)
         val layoutParams : LinearLayout.LayoutParams =
             LinearLayout.LayoutParams(WRAP_CONTENT, WRAP_CONTENT)
-        layoutParams.setMargins(8,0,8,0)
+        layoutParams.setMargins(24,0,24,0)
         for (i in indicator.indices){
             indicator[i] = ImageView(applicationContext)
             indicator[i].apply {
@@ -75,14 +85,14 @@ class Main2Activity : AppCompatActivity() {
                 )
                 this?.layoutParams = layoutParams
             }
-            ln_indicator.addView(indicator[i])
+            onBoarding_ln_indicator.addView(indicator[i])
         }
     }
 
     private fun setCurrentIndicator(index : Int) {
-        val childCount = ln_indicator.childCount
+        val childCount = onBoarding_ln_indicator.childCount
         for (i in 0 until childCount){
-            val imageView = ln_indicator[i] as ImageView
+            val imageView = onBoarding_ln_indicator[i] as ImageView
             if (i == index) {
                 imageView.setImageDrawable(
                     ContextCompat.getDrawable(

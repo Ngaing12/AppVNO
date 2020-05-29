@@ -25,8 +25,10 @@ import app.pldt.appvno.model.TempUser
 import app.pldt.appvno.ui.home.HomeActivity
 import app.pldt.appvno.ui.otp.OtpConfirmationActivity
 import com.google.android.gms.common.internal.Objects
+import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.iid.FirebaseInstanceId
 import kotlinx.android.synthetic.main.activity_login_register.*
 import kotlinx.android.synthetic.main.dialog_verify_number.*
 import kotlinx.android.synthetic.main.include_login.*
@@ -64,7 +66,21 @@ class LoginRegisterActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login_register)
 
+        FirebaseInstanceId.getInstance().instanceId
+            .addOnCompleteListener(OnCompleteListener { task ->
+                if (!task.isSuccessful) {
+                    Log.w("Test", "getInstanceId failed", task.exception)
+                    return@OnCompleteListener
+                }
 
+                // Get new Instance ID token
+                val token = task.result?.token
+
+                // Log and toast
+
+                Log.d("Test", token)
+                Toast.makeText(baseContext, token, Toast.LENGTH_SHORT).show()
+            })
 //        val userRef = FirebaseDatabase.getInstance().reference.child("users").child(tempUser1.id)
 //        userRef.setValue(tempUser1).addOnSuccessListener {
 //            toast("user 1 create")

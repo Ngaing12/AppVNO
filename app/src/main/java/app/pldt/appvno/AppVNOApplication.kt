@@ -3,6 +3,7 @@ package app.pldt.appvno
 import android.app.Application
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import app.pldt.appvno.common.SessionManager
 import app.pldt.appvno.firebase.MyFirebaseDatabase
 import  app.pldt.appvno.googleAds.GoogleAdsManager
 import app.pldt.appvno.location.LocationRequestManager
@@ -35,7 +36,7 @@ class AppVNOApplication : Application() {
         points.value = 0
 
         // Initiate managers
-       // SessionManager.init(this)
+        SessionManager.init(this)
         LocationRequestManager(this)
         GoogleAdsManager.init(this)
         MyFirebaseDatabase(this)

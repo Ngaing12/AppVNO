@@ -22,7 +22,7 @@
       android:roundIcon="@mipmap/ic_launcher_round"
       android:supportsRtl="true"
       android:theme="@style/AppTheme">
-    <activity android:name=".ui.getStarted.Main2Activity"></activity>
+    <activity android:name=".ui.getStarted.OnBoardingActivity"></activity>
     <activity android:name=".ui.call.SysnetCallActivity" />
     <activity android:name=".ui.call.CallDetailActivity" />
 
@@ -65,7 +65,6 @@
         android:theme="@style/SplashTheme">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
-
         <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>
     </activity>

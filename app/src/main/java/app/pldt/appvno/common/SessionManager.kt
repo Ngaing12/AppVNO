@@ -10,11 +10,25 @@ object SessionManager {
     private val PREF_NAME = "SessionManager.PREF_NAME"
     private val KEY_TOKEN = "SessionManager.KEY_TOKEN"
     private val KEY_IS_LOGGED_IN = "SessionManager.KEY_IS_LOGGED_IN"
+    private val KEY_FIRST_OPEN = "key_first_open"
 
     private var sharedPref: SharedPreferences? = null
 
     fun init(context: Context) {
         sharedPref = context.getSharedPreferences(PREF_NAME, 0)
+    }
+
+    fun isShowOnBoarding() : Boolean {
+        return sharedPref?.getBoolean(KEY_FIRST_OPEN, false) ?: false
+    }
+
+    fun setIsShownOnBoarding(isShownOnBoarding : Boolean) {
+        val editor = sharedPref?.edit()
+        if (isShownOnBoarding) {
+            editor?.putBoolean(KEY_FIRST_OPEN, true)
+        } else
+            editor?.clear()
+        editor?.apply()
     }
 
 //    fun save(session: Session) {
