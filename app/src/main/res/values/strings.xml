@@ -1,5 +1,7 @@
 <resources>
   <string name="app_name">AppVNO</string>
+  <string name="forgot_password_underline"><u>Forgot Password </u></string>
+  <string name="sign_up_underline"><u>Sign Up Now</u></string>
 
   <!-- TODO: Remove or change this placeholder text -->
   <string name="temp_getStarted_1">Welcome to AppVNO</string>
