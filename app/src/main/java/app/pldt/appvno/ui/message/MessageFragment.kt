@@ -82,6 +82,7 @@ class MessageFragment : Fragment() {
 
 
         messageFragment_recycler_contact.adapter = adapter
+
     }
 
     private fun attachListener() {

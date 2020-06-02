@@ -10,7 +10,7 @@
     android:background="@color/colorBackgroundPrimary"
     android:fillViewport="true"
     android:fitsSystemWindows="true"
-    tools:context=".ui.login.LoginActivity">
+    tools:context=".ui.register.RegisterActivity">
 
   <androidx.constraintlayout.widget.ConstraintLayout
       android:layout_width="match_parent"
@@ -25,24 +25,24 @@
         app:layout_constraintGuide_percent="0.35" />
 
     <ImageView
-        android:id="@+id/login_img_logo"
+        android:id="@+id/register_img_logo"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:layout_marginTop="@dimen/margin_32dp"
         android:src="@drawable/ic_launcher_foreground"
-        app:layout_constraintBottom_toTopOf="@id/login_tv_title"
+        app:layout_constraintBottom_toTopOf="@id/register_tv_title"
         app:layout_constraintTop_toTopOf="parent" />
 
 
     <TextView
-        android:id="@+id/login_tv_title"
+        android:id="@+id/register_tv_title"
         style="@style/TextViewXXL.Offset"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/margin_32dp"
-        android:text="LOGIN"
+        android:text="Signup"
         app:layout_constraintBottom_toTopOf="@id/guideline"
-        app:layout_constraintTop_toBottomOf="@id/login_img_logo" />
+        app:layout_constraintTop_toBottomOf="@id/register_img_logo" />
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -57,24 +57,58 @@
         app:layout_constraintTop_toTopOf="@id/guideline">
 
       <androidx.constraintlayout.widget.ConstraintLayout
-          android:id="@+id/login_container_content"
+          android:id="@+id/register_container_content"
           android:layout_width="match_parent"
           android:layout_height="wrap_content">
 
         <TextView
-            android:id="@+id/login_tv_desc1"
+            android:id="@+id/register_tv_desc1"
             style="@style/TextViewL"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_32dp"
             android:layout_marginTop="@dimen/margin_32dp"
             android:layout_marginEnd="@dimen/margin_32dp"
-            android:text="MobileNumber"
+            android:text="Country"
             android:textAlignment="viewStart"
-            app:layout_constraintTop_toTopOf="@id/login_container_content" />
+            app:layout_constraintTop_toTopOf="@id/register_container_content" />
 
         <EditText
-            android:id="@+id/login_edt_countryCode"
+            android:id="@+id/register_edt_country"
+            style="@style/EditTextPrimary"
+            android:layout_width="0dp"
+            android:focusable="false"
+            android:hint="Type country name here"
+            android:paddingRight="@dimen/margin_32dp"
+            app:layout_constraintLeft_toLeftOf="@id/register_tv_desc1"
+            app:layout_constraintRight_toRightOf="@id/register_tv_desc1"
+            app:layout_constraintTop_toBottomOf="@id/register_tv_desc1"/>
+
+        <ImageView
+            android:id="@+id/register_img_search"
+            android:layout_width="@dimen/icon_size_24dp"
+            android:layout_height="@dimen/icon_size_24dp"
+            android:src="@drawable/temp_ic_search_black_24dp"
+            android:layout_marginEnd="@dimen/margin_8dp"
+            app:layout_constraintBottom_toBottomOf="@id/register_edt_country"
+            app:layout_constraintTop_toTopOf="@id/register_edt_country"
+            app:layout_constraintRight_toRightOf="@id/register_edt_country"/>
+
+        <TextView
+            android:id="@+id/register_tv_desc2"
+            style="@style/TextViewL"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_16dp"
+            android:text="Mobile Number"
+            android:textAlignment="viewStart"
+            app:layout_constraintLeft_toLeftOf="@id/register_tv_desc1"
+            app:layout_constraintRight_toRightOf="@id/register_tv_desc1"
+            app:layout_constraintTop_toBottomOf="@id/register_edt_country" />
+
+
+        <EditText
+            android:id="@+id/register_edt_countryCode"
             style="@style/EditTextPrimary"
             android:layout_width="64dp"
             android:layout_margin="0dp"
@@ -82,104 +116,60 @@
             android:drawableEnd="@drawable/ic_arrow_drop_down_black_24dp"
             android:focusable="false"
             android:text="+1"
-            app:layout_constraintLeft_toLeftOf="@id/login_tv_desc1"
-            app:layout_constraintTop_toBottomOf="@id/login_tv_desc1" />
+            app:layout_constraintLeft_toLeftOf="@id/register_tv_desc2"
+            app:layout_constraintTop_toBottomOf="@id/register_tv_desc2" />
 
         <EditText
-            android:id="@+id/login_edt_mobileNumber"
+            android:id="@+id/register_edt_mobileNumber"
             style="@style/EditTextPrimary"
             android:layout_width="0dp"
             android:layout_margin="0dp"
             android:layout_marginTop="@dimen/margin_32dp"
             android:hint="Enter mobile number"
-            app:layout_constraintLeft_toRightOf="@id/login_edt_countryCode"
-            app:layout_constraintRight_toRightOf="@id/login_tv_desc1"
-            app:layout_constraintTop_toTopOf="@id/login_edt_countryCode" />
+            app:layout_constraintLeft_toRightOf="@id/register_edt_countryCode"
+            app:layout_constraintRight_toRightOf="@id/register_tv_desc2"
+            app:layout_constraintTop_toTopOf="@id/register_edt_countryCode" />
 
         <TextView
-            android:id="@+id/login_tv_desc2"
-            style="@style/TextViewL"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_16dp"
-            android:text="Password"
-            android:textAlignment="viewStart"
-            app:layout_constraintLeft_toLeftOf="@id/login_tv_desc1"
-            app:layout_constraintRight_toRightOf="@id/login_tv_desc1"
-            app:layout_constraintTop_toBottomOf="@id/login_edt_countryCode" />
-
-        <EditText
-            android:id="@+id/login_edt_mobile"
-            style="@style/EditTextPrimary"
-            android:layout_width="0dp"
-            android:layout_margin="0dp"
-            android:layout_marginTop="@dimen/margin_32dp"
-            android:hint="Enter mobile number"
-            app:layout_constraintLeft_toRightOf="@id/login_edt_countryCode"
-            app:layout_constraintRight_toRightOf="@id/login_tv_desc1"
-            app:layout_constraintTop_toTopOf="@id/login_edt_countryCode" />
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/login_til_password"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:hintEnabled="false"
-            app:layout_constraintLeft_toLeftOf="@id/login_tv_desc1"
-            app:layout_constraintRight_toRightOf="@id/login_tv_desc1"
-            app:layout_constraintTop_toBottomOf="@id/login_tv_desc2"
-            app:passwordToggleEnabled="true"
-            app:passwordToggleTint="@color/colorPrimaryDark">
-
-          <com.google.android.material.textfield.TextInputEditText
-              android:id="@+id/login_edt_password"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:background="@android:color/transparent"
-              android:hint="Password"
-              android:inputType="textPassword"
-              android:paddingStart="@dimen/margin_16dp" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <TextView
-            android:id="@+id/login_tv_forgotPassword"
+            android:visibility="invisible"
+            android:id="@+id/register_tv_forgotPassword"
             style="@style/TextViewL"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_8dp"
             android:text="@string/forgot_password_underline"
             android:textStyle="bold"
-            app:layout_constraintLeft_toLeftOf="@id/login_tv_desc1"
-            app:layout_constraintRight_toRightOf="@id/login_tv_desc1"
-            app:layout_constraintTop_toBottomOf="@id/login_til_password" />
+            app:layout_constraintLeft_toLeftOf="@id/register_tv_desc1"
+            app:layout_constraintRight_toRightOf="@id/register_tv_desc1"
+            app:layout_constraintTop_toBottomOf="@id/register_edt_countryCode" />
 
         <Button
-            android:id="@+id/login_btn_login"
+            android:id="@+id/register_btn_next"
             style="@style/ButtonPrimary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_32dp"
             android:minWidth="160dp"
-            android:text="Login"
+            android:text="Next"
             android:textAllCaps="false"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/login_tv_forgotPassword" />
+            app:layout_constraintTop_toBottomOf="@id/register_tv_forgotPassword" />
 
         <TextView
-            android:id="@+id/login_tv_desc3"
+            android:id="@+id/register_tv_desc3"
             style="@style/TextViewL"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_16dp"
-            android:text="Don't have an account yet?"
-            app:layout_constraintBottom_toBottomOf="@id/login_tv_signUp"
-            app:layout_constraintLeft_toLeftOf="@id/login_tv_desc1"
-            app:layout_constraintRight_toRightOf="@id/login_tv_desc1"
-            app:layout_constraintTop_toBottomOf="@id/login_btn_login" />
+            android:text="Already have an account?"
+            app:layout_constraintBottom_toBottomOf="@id/register_tv_signin"
+            app:layout_constraintLeft_toLeftOf="@id/register_tv_desc1"
+            app:layout_constraintRight_toRightOf="@id/register_tv_desc1"
+            app:layout_constraintTop_toBottomOf="@id/register_btn_next" />
 
         <TextView
-            android:id="@+id/login_tv_signUp"
+            android:id="@+id/register_tv_signin"
             style="@style/TextViewL"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -188,9 +178,9 @@
             android:text="@string/sign_up_underline"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="@id/login_tv_desc1"
-            app:layout_constraintRight_toRightOf="@id/login_tv_desc1"
-            app:layout_constraintTop_toBottomOf="@id/login_tv_desc3" />
+            app:layout_constraintLeft_toLeftOf="@id/register_tv_desc1"
+            app:layout_constraintRight_toRightOf="@id/register_tv_desc1"
+            app:layout_constraintTop_toBottomOf="@id/register_tv_desc3" />
       </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
@@ -203,7 +193,7 @@
         android:elevation="2dp">
 
       <ImageView
-          android:id="@+id/login_img_blocker"
+          android:id="@+id/register_img_blocker"
           android:layout_width="match_parent"
           android:layout_height="match_parent"
           android:src="@color/colorBackgroundTransparent"
@@ -218,10 +208,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:barrierDirection="top"
-        app:constraint_referenced_ids="login_img_logo"
+        app:constraint_referenced_ids="register_img_logo"
         tools:layout_editor_absoluteX="411dp"
         tools:layout_editor_absoluteY="731dp" />
-
 
   </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
