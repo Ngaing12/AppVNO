@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+  <ImageView
+      android:id="@+id/img_container"
+      android:layout_width="match_parent"
+      android:layout_height="@dimen/edit_text_primary_height"
+      android:background="@drawable/freebee_edt_secondary"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      tools:ignore="ContentDescription"
+      android:layout_marginBottom="@dimen/margin_8dp"/>
+
+  <TextView
+      android:id="@+id/tv_code"
+      style="@style/FreeBeeHP1"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="@dimen/margin_16dp"
+      android:text="+1"
+      app:layout_constraintBottom_toBottomOf="@id/img_container"
+      app:layout_constraintLeft_toLeftOf="@id/img_container"
+      app:layout_constraintTop_toTopOf="@id/img_container" />
+
+  <TextView
+      android:id="@+id/tv_country"
+      style="@style/FreeBeeHP1"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="@dimen/margin_8dp"
+      android:layout_marginEnd="@dimen/margin_8dp"
+      android:text="(Something)"
+      app:layout_constraintBottom_toBottomOf="@id/tv_code"
+      app:layout_constraintLeft_toRightOf="@id/tv_code"
+      app:layout_constraintRight_toRightOf="@id/img_container"
+      app:layout_constraintTop_toTopOf="@id/tv_code" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

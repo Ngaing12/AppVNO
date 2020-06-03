@@ -7,7 +7,6 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import app.pldt.appvno.R
 import app.pldt.appvno.extensions.isVisible
 import app.pldt.appvno.model.TempUser
-import app.pldt.appvno.ui.login.MessageContact
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.GroupieViewHolder
@@ -56,25 +55,25 @@ class RegisterActivity : AppCompatActivity() {
                 // Do something for slide offset
             }
         })
-        val tempUser1 = TempUser(
-            "9000000000",
-            "sample@gmail.com",
-            "123456",
-            "YsoykGNdT9azgDYZGtrX1RFR6Pg1"
-        )
-
-        adapter.add(MessageContact(tempUser1))
-        adapter.add(MessageContact(tempUser1))
-        adapter.add(MessageContact(tempUser1))
-        adapter.add(MessageContact(tempUser1))
-        adapter.add(MessageContact(tempUser1))
-        loginBSheet_rv_country.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
-        adapter.setOnItemClickListener { item, _ ->
-//            val row = item as MessageContact
+//        val tempUser1 = TempUser(
+//            "9000000000",
+//            "sample@gmail.com",
+//            "123456",
+//            "YsoykGNdT9azgDYZGtrX1RFR6Pg1"
+//        )
 //
-//            activity?.startActivity<MessageDetailActivity>(CONTACT_INFO to row.user)
-        }
-
-        loginBSheet_rv_country.adapter = adapter
+//        adapter.add(MessageContact(tempUser1))
+//        adapter.add(MessageContact(tempUser1))
+//        adapter.add(MessageContact(tempUser1))
+//        adapter.add(MessageContact(tempUser1))
+//        adapter.add(MessageContact(tempUser1))
+//        loginBSheet_rv_country.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
+//        adapter.setOnItemClickListener { item, _ ->
+////            val row = item as MessageContact
+////
+////            activity?.startActivity<MessageDetailActivity>(CONTACT_INFO to row.user)
+//        }
+//
+//        loginBSheet_rv_country.adapter = adapter
     }
 }

@@ -17,3 +17,11 @@ data class Onboarding(
     val description : String,
     val icon : Int
 )
+
+
+
+data class Country(
+    val code: String,
+    val name : String
+)
+

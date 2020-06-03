@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-  xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:app="http://schemas.android.com/apk/res-auto"
-  android:id="@+id/bottom_sheet_layout"
-  android:layout_width="match_parent"
-  android:layout_height="match_parent"
-  app:behavior_hideable="true"
-  app:behavior_peekHeight="0dp"
-  android:background="@android:color/transparent"
-  android:layout_marginStart="@dimen/margin_16dp"
-  android:layout_marginEnd="@dimen/margin_16dp"
-  app:layout_behavior="app.pldt.appvno.common.LockableBottomSheetBehavior">
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bottom_sheet_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginStart="@dimen/margin_16dp"
+    android:layout_marginEnd="@dimen/margin_16dp"
+    android:background="@android:color/transparent"
+    app:behavior_hideable="true"
+    app:behavior_peekHeight="0dp"
+    app:layout_behavior="app.pldt.appvno.common.LockableBottomSheetBehavior">
 
 
   <androidx.constraintlayout.widget.Guideline
@@ -24,12 +23,12 @@
       android:id="@+id/loginBSheet_img_drag"
       android:layout_width="match_parent"
       android:layout_height="20dp"
-      app:layout_constraintWidth_percent="0.3"
       android:background="@color/colorPrimaryDark"
+      android:visibility="gone"
       app:layout_constraintLeft_toLeftOf="parent"
       app:layout_constraintRight_toRightOf="parent"
-      app:layout_constraintTop_toTopOf="@id/loginBSheet_container_bg"/>
-
+      app:layout_constraintTop_toTopOf="@id/loginBSheet_container_bg"
+      app:layout_constraintWidth_percent="0.3" />
 
   <ImageView
       android:id="@+id/loginBSheet_container_bg"
@@ -37,81 +36,82 @@
       android:layout_height="0dp"
       android:src="@drawable/bottom_sheet_background"
       app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintTop_toBottomOf="@id/guideline2"/>
+      app:layout_constraintTop_toBottomOf="@id/guideline2" />
 
 
   <ImageView
       android:id="@+id/loginBSheet_img_close"
       android:layout_width="@dimen/icon_size_32dp"
       android:layout_height="@dimen/icon_size_32dp"
-      android:src="@drawable/temp_ic_close_gray_24dp"
       android:layout_marginTop="@dimen/margin_16dp"
       android:layout_marginEnd="@dimen/margin_32dp"
+      android:src="@drawable/ic_close"
       app:layout_constraintRight_toRightOf="@id/loginBSheet_container_bg"
-      app:layout_constraintTop_toTopOf="@id/loginBSheet_container_bg"/>
+      app:layout_constraintTop_toTopOf="@id/loginBSheet_container_bg" />
 
   <TextView
-      style="@style/TextViewL"
-      android:textAlignment="viewStart"
       android:id="@+id/loginBSheet_tv_decs1"
-      android:text="Search Country"
+      style="@style/FreeBeeHP3"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:layout_marginLeft="@dimen/margin_32dp"
       android:layout_marginRight="@dimen/margin_32dp"
-      app:layout_constraintTop_toBottomOf="@id/loginBSheet_img_close"/>
+      android:text="@string/search_country"
+      android:textAlignment="viewStart"
+      app:layout_constraintTop_toBottomOf="@id/loginBSheet_img_close" />
 
   <EditText
       android:id="@+id/loginBSheet_edt_country"
-      style="@style/EditTextPrimary"
+      style="@style/FreeBeeBaseEditText"
       android:layout_width="0dp"
-      android:hint="Type country name here"
-      android:paddingRight="@dimen/margin_32dp"
+      android:background="@drawable/freebee_edt_secondary"
+      android:hint="@string/type_country_name_here"
+      android:inputType="text"
+      android:paddingStart="@dimen/padding_8dp"
+      android:paddingEnd="@dimen/margin_32dp"
       app:layout_constraintLeft_toLeftOf="@id/loginBSheet_tv_decs1"
       app:layout_constraintRight_toRightOf="@id/loginBSheet_tv_decs1"
-      app:layout_constraintTop_toBottomOf="@id/loginBSheet_tv_decs1"/>
+      app:layout_constraintTop_toBottomOf="@id/loginBSheet_tv_decs1" />
 
   <ImageView
       android:id="@+id/loginBSheet_img_search"
       android:layout_width="@dimen/icon_size_24dp"
       android:layout_height="@dimen/icon_size_24dp"
-      android:src="@drawable/temp_ic_search_black_24dp"
       android:layout_marginEnd="@dimen/margin_8dp"
+      android:src="@drawable/ic_search"
       app:layout_constraintBottom_toBottomOf="@id/loginBSheet_edt_country"
-      app:layout_constraintTop_toTopOf="@id/loginBSheet_edt_country"
-      app:layout_constraintRight_toRightOf="@id/loginBSheet_edt_country"/>
+      app:layout_constraintRight_toRightOf="@id/loginBSheet_edt_country"
+      app:layout_constraintTop_toTopOf="@id/loginBSheet_edt_country" />
 
   <View
       android:id="@+id/loginBSheet_separator"
       android:layout_width="match_parent"
-      android:layout_height="@dimen/separator_view_size_1dp"
+      android:layout_height="@dimen/separator_view_size_5dp"
       android:layout_marginTop="@dimen/margin_16dp"
-      android:background="@color/colorSeparatorView"
-      app:layout_constraintTop_toBottomOf="@id/loginBSheet_edt_country"/>
+      android:background="@drawable/dash_line"
+      app:layout_constraintTop_toBottomOf="@id/loginBSheet_edt_country" />
 
   <androidx.recyclerview.widget.RecyclerView
       android:id="@+id/loginBSheet_rv_country"
       android:layout_width="0dp"
       android:layout_height="0dp"
-      app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-      android:layout_marginBottom="@dimen/margin_16dp"
       android:layout_marginTop="@dimen/margin_16dp"
+      android:layout_marginBottom="@dimen/margin_16dp"
+      android:nestedScrollingEnabled="true"
+      app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+      app:layout_constraintBottom_toTopOf="@id/loginBSheet_btn_confirm"
       app:layout_constraintLeft_toLeftOf="@id/loginBSheet_tv_decs1"
       app:layout_constraintRight_toRightOf="@id/loginBSheet_tv_decs1"
-      app:layout_constraintTop_toBottomOf="@id/loginBSheet_separator"
-      app:layout_constraintBottom_toTopOf="@id/loginBSheet_btn_confirm"/>
+      app:layout_constraintTop_toBottomOf="@id/loginBSheet_separator" />
 
   <Button
       android:id="@+id/loginBSheet_btn_confirm"
-      style="@style/ButtonPrimary"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:textAllCaps="false"
-      android:minWidth="160dp"
+      style="@style/FreeBeeButtonPrimary"
       android:layout_marginBottom="@dimen/margin_16dp"
+      android:enabled="false"
+      android:text="@string/confirm"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintLeft_toLeftOf="parent"
-      app:layout_constraintRight_toRightOf="parent"
-      android:text="Login"/>
+      app:layout_constraintRight_toRightOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,9 +5,11 @@ import android.os.Bundle
 import android.util.Log
 import android.view.MotionEvent
 import android.view.View
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.DividerItemDecoration
 import app.pldt.appvno.R
 import app.pldt.appvno.extensions.isVisible
+import app.pldt.appvno.model.Country
 import app.pldt.appvno.model.TempUser
 import app.pldt.appvno.ui.loginRegister.LoginBottomSheetFragment
 import com.google.android.material.bottomsheet.BottomSheetBehavior
@@ -18,17 +20,33 @@ import com.xwray.groupie.Item
 import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.bottom_sheet_login.*
 import kotlinx.android.synthetic.main.recycler_contact_item.view.*
+import kotlinx.android.synthetic.main.recycler_country_code_item.view.*
 import org.jetbrains.anko.toast
 
 class LoginActivity : AppCompatActivity() {
 
     val adapter = GroupAdapter<GroupieViewHolder>()
+    lateinit var bottomSheetBehavior : BottomSheetBehavior<ConstraintLayout>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        var bottomSheetBehavior = BottomSheetBehavior.from(bottom_sheet_layout)
+        setupBottomSheet()
+        setupDummyData()
+        setupButtons()
+
+    }
+
+    private fun setupButtons() {
+
+
+        login_btn_login.setOnClickListener{
+            if (login_edt_mobileNumber.text.toString() == "") {
+                login_edt_mobileNumber.setError("This field is required!", null)
+            }
+
+        }
 
         login_edt_countryCode.setOnClickListener {
             bottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED)
@@ -37,6 +55,10 @@ class LoginActivity : AppCompatActivity() {
         loginBSheet_img_close.setOnClickListener {
             bottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED)
         }
+    }
+
+    private fun setupBottomSheet() {
+        bottomSheetBehavior = BottomSheetBehavior.from(bottom_sheet_layout)
 
         bottomSheetBehavior.addBottomSheetCallback(  object : BottomSheetBehavior.BottomSheetCallback() {
             override fun onStateChanged(bottomSheet: View, newState: Int) {
@@ -60,21 +82,24 @@ class LoginActivity : AppCompatActivity() {
                 // Do something for slide offset
             }
         })
+    }
 
-        val tempUser1 = TempUser(
-            "9000000000",
-            "sample@gmail.com",
-            "123456",
-            "YsoykGNdT9azgDYZGtrX1RFR6Pg1"
+    private fun setupDummyData() {
+        val country = Country(
+            "+1",
+            "Country of Something"
         )
 
-        adapter.add(MessageContact(tempUser1))
-        adapter.add(MessageContact(tempUser1))
-        adapter.add(MessageContact(tempUser1))
-        adapter.add(MessageContact(tempUser1))
-        adapter.add(MessageContact(tempUser1))
-        loginBSheet_rv_country.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
-        adapter.setOnItemClickListener { item, _ ->
+        adapter.add(CountryCodeItem(country))
+        adapter.add(CountryCodeItem(country))
+        adapter.add(CountryCodeItem(country))
+        adapter.add(CountryCodeItem(country))
+        adapter.add(CountryCodeItem(country))
+        adapter.add(CountryCodeItem(country))
+        adapter.add(CountryCodeItem(country))
+        adapter.add(CountryCodeItem(country))
+        adapter.add(CountryCodeItem(country))
+        adapter.setOnItemClickListener { _, _ ->
 //            val row = item as MessageContact
 //
 //            activity?.startActivity<MessageDetailActivity>(CONTACT_INFO to row.user)
@@ -86,12 +111,12 @@ class LoginActivity : AppCompatActivity() {
 
 
 
-class MessageContact (val user: TempUser): Item<GroupieViewHolder>(){
-    override fun getLayout() = R.layout.recycler_contact_item
+class CountryCodeItem ( val country: Country): Item<GroupieViewHolder>(){
+    override fun getLayout() = R.layout.recycler_country_code_item
 
     override fun bind(viewHolder: GroupieViewHolder, position: Int) {
-        viewHolder.itemView.recyclerContact_tv_name.text = user.email
-        viewHolder.itemView.recyclerContact_tv_latest.text = user.number
+        viewHolder.itemView.tv_code.text = country.code
+        viewHolder.itemView.tv_country.text = country.name
     }
 }
 

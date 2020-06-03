@@ -1,7 +1,5 @@
 <resources>
   <string name="app_name">AppVNO</string>
-  <string name="forgot_password_underline"><u>Forgot Password </u></string>
-  <string name="sign_up_underline"><u>Sign Up Now</u></string>
 
   <!-- TODO: Remove or change this placeholder text -->
   <string name="temp_getStarted_1">Welcome to AppVNO</string>
@@ -22,8 +20,8 @@
   <string name="login_to_your_account">Login to your Account</string>
   <string name="prefix_number">+63</string>
   <string name="phone_number">Phone number</string>
-  <string name="login">Login</string>
-  <string name="don_t_have_account_yet">Don\'t have account yet?</string>
+
+
   <string name="make_sure_you_can_recieve_sms_to_this_number_so_that_we_can_send_you_a_code">Make sure you can recieve SMS to this number so that we can send you a code.</string>
   <string name="country">Country</string>
   <string name="register">Register</string>
@@ -40,7 +38,7 @@
   <string name="continue_word">Continue</string>
   <string name="complete_information">Complete Information</string>
   <string name="to_receive_the_best_ad_sponsored_experience_i_allow_free_bee_to">To receive the best ad-sponsored experience. I allow Free Bee to:</string>
-  <string name="send_relevant_promotional_materials_via_sms_and_email_and_user_my_data_for_analytics_practices_to_improve_user_experience_and_loyalty_programs">Send relevant promotional materials via SMS and email and user my data for analytics practices to improve user experience and loyalty programs.</string>
+  <string name="send_relevant_promtional_materials_via_sms_and_email_and_user_my_data_for_analytics_practices_to_improve_user_experience_and_loyalty_programs">Send relevant promotional materials via SMS and email and user my data for analytics practices to improve user experience and loyalty programs.</string>
   <string name="you_may_modify_your_privacy_policy_preference_or_opt_out_of_service_anytime_simply_send_us_and_email_at_help_freebeecalls_com">You may modify your privacy policy preference or opt out of service anytime. Simply send us and email at help @freebeecalls.com</string>
   <string name="i_agree">I Agree</string>
   <string name="terms_and_condition">Terms and Condition</string>
@@ -48,4 +46,21 @@
   <string name="premium_call">Premium Call</string>
   <string name="use_google_location_service">Use Google Location Service</string>
   <string name="use_google_location_service_message">You need to enabled Google Location Service to login</string>
+
+
+
+
+  <string name="login">Login</string>
+  <string name="mobile_number">Mobile Number</string>
+  <string name="empty">-</string>
+  <string name="enter_mobile_number">Enter mobile number</string>
+  <string name="password">Password</string>
+  <string name="forgot_password_underline"><u>Forgot Password </u></string>
+  <string name="sign_up_underline"><u>Sign Up Now</u></string>
+  <string name="don_t_have_account_yet">Don\'t have account yet?</string>
+  <string name="search_country">Search Country</string>
+  <string name="type_country_name_here">Type country name here</string>
+  <string name="confirm">Confirm</string>
+
+
 </resources>

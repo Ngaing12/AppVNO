@@ -5,7 +5,6 @@
     <color name="colorAccent">#D81B60</color>
 
     <color name="colorGetStartedBG">#53ACA7</color>
-    <color name="colorWhite">#FFFFFF</color>
 
     <color name="colorSecondary">#61C0B5</color>
 
@@ -30,5 +29,26 @@
 
     <!-- Button color -->
     <color name="colorButtonPrimary">#FF8C63</color>
+
+
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorBlack">#000000</color>
+
+
+
+    <!-- Free Bee Color Palette -->
+    <color name="freeBeeYellow">#fbc02d</color>
+    <color name="freeBeeHoney">#ff9d0b</color>
+    <color name="freeBeeLightYellow">#fff9ea</color>
+    <color name="freeBeeCaramel">#541d00</color>
+    <color name="waxVariant">#FDF0D0</color>
+    <color name="waxVariantDarl">#FF8000</color>
+
+    <!-- Edit Text -->
+    <color name="freeBeeEditTextPrimary">#99FDF0D0</color>
+    <color name="freeBeeEditTextSecondary">#99FFF3D3</color>
+
+
+    <color name="freeButtonDisabledState">#CABAB1</color>
 
 </resources>

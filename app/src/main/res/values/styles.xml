@@ -107,4 +107,91 @@
     </style>
 
 
+    <!-- Free Bee TextView -->
+    <style name="FreeBeeUH1">
+        <item name="android:fontFamily">@font/ubuntu_bold</item>
+        <item name="android:textColor">@color/freeBeeHoney</item>
+        <item name="android:textSize">@dimen/text_24sp</item>
+    </style>
+
+    <style name="FreeBeeUH2">
+        <item name="android:fontFamily">@font/ubuntu_bold</item>
+        <item name="android:textColor">@color/freeBeeHoney</item>
+        <item name="android:textSize">@dimen/text_20sp</item>
+    </style>
+
+    <style name="FreeBeeUH3">
+        <item name="android:fontFamily">@font/ubuntu_bold</item>
+        <item name="android:textColor">@color/freeBeeHoney</item>
+        <item name="android:textSize">@dimen/text_18sp</item>
+    </style>
+
+    <style name="FreeBeeHH1">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/text_24sp</item>
+    </style>
+    <style name="FreeBeeHH1.Offset">
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+
+    <style name="FreeBeeHH2">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/text_20sp</item>
+    </style>
+    <style name="FreeBeeHH2.Offset">
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+
+    <style name="FreeBeeHH3">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/text_18sp</item>
+    </style>
+    <style name="FreeBeeHH3.Offset">
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+
+    <style name="FreeBeeHP1">
+        <item name="android:textSize">@dimen/text_20sp</item>
+    </style>
+
+    <style name="FreeBeeHP2">
+        <item name="android:textSize">@dimen/text_18sp</item>
+    </style>
+
+    <style name="FreeBeeHP3">
+        <item name="android:textSize">@dimen/margin_16dp</item>
+    </style>
+
+    <style name="FreeBeeHP4">
+        <item name="android:textSize">@dimen/text_14sp</item>
+    </style>
+
+    <style name="FreeBeeButtonPrimary" parent="FreeBeeHH3">
+        <item name="android:layout_width">@dimen/button_width</item>
+        <item name="android:layout_height">@dimen/button_primary_height</item>
+        <item name="android:background">@drawable/freebee_button_primary</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="FreeBeeButtonSecondary" parent="FreeBeeHH3">
+        <item name="android:layout_width">@dimen/button_width</item>
+        <item name="android:layout_height">@dimen/button_primary_height</item>
+        <item name="android:background">@drawable/freebee_button_secondary</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="FreeBeeBaseEditText" parent="FreeBeeHP4">
+        <item name="android:layout_height">@dimen/edit_text_primary_height</item>
+    </style>
+
+    <style name="FreeBeeEditText" parent="FreeBeeBaseEditText">
+
+
+    </style>
+
+
+
+
+
 </resources>
