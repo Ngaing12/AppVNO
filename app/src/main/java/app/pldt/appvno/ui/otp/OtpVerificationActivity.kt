@@ -16,18 +16,14 @@ class OtpVerificationActivity : AppCompatActivity() {
         setContentView(R.layout.activity_otp_verification)
 
 
-        otpVerification_pinview.addTextChangedListener(object : TextWatcher {
-            override fun afterTextChanged(s: Editable?) {
+        pinview_otp.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable?) {}
 
-            }
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
 
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-
-            }
-
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                Log.d("Test", s.toString())
-            }
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int)
+            {
+                Log.d("Test", s.toString()) }
 
         })
     }

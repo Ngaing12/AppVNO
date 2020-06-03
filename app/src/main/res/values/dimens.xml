@@ -3,6 +3,7 @@
     <!-- Size -->
     <dimen name="icon_size_24dp">24dp</dimen>
     <dimen name="icon_size_32dp">32dp</dimen>
+    <dimen name="icon_size_48dp">48dp</dimen>
     <dimen name="icon_size_56dp">56dp</dimen>
     <dimen name="icon_size_112dp">112dp</dimen>
 
@@ -27,6 +28,7 @@
 
     <!-- Padding -->
     <dimen name="padding_2dp">2dp</dimen>
+    <dimen name="padding_4dp">4dp</dimen>
     <dimen name="padding_8dp">8dp</dimen>
     <dimen name="padding_12dp">12dp</dimen>
     <dimen name="padding_16dp">16dp</dimen>

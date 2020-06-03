@@ -63,7 +63,21 @@
   <string name="confirm">Confirm</string>
   <string name="sign_up">Sign up</string>
   <string name="next">Next</string>
-  <string name="login_now">Login Now</string>
+  <string name="login_now"><u>Login Now</u></string>
+  <string name="verification">Verification</string>
+  <string name="a_code_was_sent">A code was sent to the number</string>
+  <string name="enter_the_code_verify">Enter the code verify this mobile number.</string>
+  <string name="pinview_hint">------</string>
+  <string name="invalid_code">Invalid code! Check if you\'ve entered the correct code or resend another code</string>
+  <string name="resend_code"><u>Resend Code</u></string>
+  <string name="submit_code">Submit Code</string>
+  <string name="create_a_password">Create a Password</string>
+  <string name="create_password">Create Password</string>
+  <string name="create_your_password">Create your Password</string>
+  <string name="re_enter_password">Re-enter Password</string>
+  <string name="re_enter_your_password">Re-enter your Password</string>
+  <string name="at_least_8_characters">At least 8 characters</string>
+  <string name="must_contain_both_alphabetic">Must contain both alphabetic and numeric characters (e.g. a-z, 0-9) and with at least one upper character</string>
 
 
 </resources>
