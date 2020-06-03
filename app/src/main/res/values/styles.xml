@@ -186,8 +186,7 @@
     </style>
 
     <style name="FreeBeeEditText" parent="FreeBeeBaseEditText">
-
-
+        <item name="android:background">@drawable/freebee_edt_primary</item>
     </style>
 
 

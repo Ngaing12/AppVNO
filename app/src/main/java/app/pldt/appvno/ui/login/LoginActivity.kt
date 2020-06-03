@@ -41,14 +41,14 @@ class LoginActivity : AppCompatActivity() {
     private fun setupButtons() {
 
 
-        login_btn_login.setOnClickListener{
-            if (login_edt_mobileNumber.text.toString() == "") {
-                login_edt_mobileNumber.setError("This field is required!", null)
+        btn_login.setOnClickListener{
+            if (edt_mobileNumber.text.toString() == "") {
+                edt_mobileNumber.setError("This field is required!", null)
             }
 
         }
 
-        login_edt_countryCode.setOnClickListener {
+        edt_countryCode.setOnClickListener {
             bottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED)
         }
 
@@ -64,16 +64,16 @@ class LoginActivity : AppCompatActivity() {
             override fun onStateChanged(bottomSheet: View, newState: Int) {
                 when (newState) {
                     BottomSheetBehavior.STATE_EXPANDED-> {
-                        login_img_blocker.isVisible(true)
+                        img_blocker.isVisible(true)
                     }
                     BottomSheetBehavior.STATE_DRAGGING -> {
-                        login_img_blocker.isVisible(true)
+                        img_blocker.isVisible(true)
                     }
                     BottomSheetBehavior.STATE_SETTLING ->{
-                        login_img_blocker.isVisible(true)
+                        img_blocker.isVisible(true)
                     }
                     else -> {
-                        login_img_blocker.isVisible(false)
+                        img_blocker.isVisible(false)
                     }
                 }
             }

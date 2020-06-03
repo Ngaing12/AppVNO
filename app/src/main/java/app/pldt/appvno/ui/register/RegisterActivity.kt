@@ -3,10 +3,13 @@ package app.pldt.appvno.ui.register
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.DividerItemDecoration
 import app.pldt.appvno.R
 import app.pldt.appvno.extensions.isVisible
+import app.pldt.appvno.model.Country
 import app.pldt.appvno.model.TempUser
+import app.pldt.appvno.ui.login.CountryCodeItem
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.GroupieViewHolder
@@ -16,37 +19,57 @@ import kotlinx.android.synthetic.main.bottom_sheet_login.*
 class RegisterActivity : AppCompatActivity() {
 
     val adapter = GroupAdapter<GroupieViewHolder>()
+    lateinit var bottomSheetBehavior : BottomSheetBehavior<ConstraintLayout>
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
 
+        setupDummyData()
+        setupBottomSheet()
+        setupButtons()
+    }
 
-        var bottomSheetBehavior = BottomSheetBehavior.from(bottom_sheet_layout)
+    private fun setupButtons() {
+        btn_next.setOnClickListener {
+            if (edt_country.text.toString() == ""){
+                edt_country.setError("This field is required!", null)
+            }
+            if (edt_mobileNumber.text.toString() == ""){
+                edt_mobileNumber.setError("This field is required!", null)
+            }
+        }
 
-        register_img_search.setOnClickListener {
+        edt_countryCode.setOnClickListener {
+            bottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED)
+        }
+        edt_country.setOnClickListener{
             bottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED)
         }
 
         loginBSheet_img_close.setOnClickListener {
             bottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED)
         }
+    }
+
+    private fun setupBottomSheet() {
+        bottomSheetBehavior = BottomSheetBehavior.from(bottom_sheet_layout)
 
         bottomSheetBehavior.addBottomSheetCallback(  object : BottomSheetBehavior.BottomSheetCallback() {
             override fun onStateChanged(bottomSheet: View, newState: Int) {
                 when (newState) {
                     BottomSheetBehavior.STATE_EXPANDED-> {
-                        register_img_blocker.isVisible(true)
+                        img_blocker.isVisible(true)
                     }
                     BottomSheetBehavior.STATE_DRAGGING -> {
-                        register_img_blocker.isVisible(true)
+                        img_blocker.isVisible(true)
                     }
                     BottomSheetBehavior.STATE_SETTLING ->{
-                        register_img_blocker.isVisible(true)
+                        img_blocker.isVisible(true)
                     }
                     else -> {
-                        register_img_blocker.isVisible(false)
+                        img_blocker.isVisible(false)
                     }
                 }
             }
@@ -55,25 +78,30 @@ class RegisterActivity : AppCompatActivity() {
                 // Do something for slide offset
             }
         })
-//        val tempUser1 = TempUser(
-//            "9000000000",
-//            "sample@gmail.com",
-//            "123456",
-//            "YsoykGNdT9azgDYZGtrX1RFR6Pg1"
-//        )
+    }
+
+
+    private fun setupDummyData() {
+        val country = Country(
+            "+1",
+            "Country of Something"
+        )
+
+        adapter.add(CountryCodeItem(country))
+        adapter.add(CountryCodeItem(country))
+        adapter.add(CountryCodeItem(country))
+        adapter.add(CountryCodeItem(country))
+        adapter.add(CountryCodeItem(country))
+        adapter.add(CountryCodeItem(country))
+        adapter.add(CountryCodeItem(country))
+        adapter.add(CountryCodeItem(country))
+        adapter.add(CountryCodeItem(country))
+        adapter.setOnItemClickListener { _, _ ->
+//            val row = item as MessageContact
 //
-//        adapter.add(MessageContact(tempUser1))
-//        adapter.add(MessageContact(tempUser1))
-//        adapter.add(MessageContact(tempUser1))
-//        adapter.add(MessageContact(tempUser1))
-//        adapter.add(MessageContact(tempUser1))
-//        loginBSheet_rv_country.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
-//        adapter.setOnItemClickListener { item, _ ->
-////            val row = item as MessageContact
-////
-////            activity?.startActivity<MessageDetailActivity>(CONTACT_INFO to row.user)
-//        }
-//
-//        loginBSheet_rv_country.adapter = adapter
+//            activity?.startActivity<MessageDetailActivity>(CONTACT_INFO to row.user)
+        }
+
+        loginBSheet_rv_country.adapter = adapter
     }
 }

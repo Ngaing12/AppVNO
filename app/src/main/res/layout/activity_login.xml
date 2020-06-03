@@ -2,7 +2,7 @@
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/scrollview_container_contactUs"
+    android:id="@+id/scrollview_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
@@ -17,28 +17,28 @@
       android:focusableInTouchMode="true">
 
     <ImageView
-        android:id="@+id/login_img_logo"
+        android:id="@+id/img_logo"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:scaleType="fitXY"
         android:src="@drawable/login_signup_logo"
-        app:layout_constraintBottom_toTopOf="@id/login_tv_title"
+        app:layout_constraintBottom_toTopOf="@id/tv_title"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="ContentDescription" />
 
     <TextView
-        android:id="@+id/login_tv_title"
+        android:id="@+id/tv_title"
         style="@style/FreeBeeHH1.Offset"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/margin_32dp"
         android:text="@string/login"
         android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@id/login_container_content"
-        app:layout_constraintTop_toBottomOf="@id/login_img_logo" />
+        app:layout_constraintBottom_toTopOf="@id/container_content"
+        app:layout_constraintTop_toBottomOf="@id/img_logo" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/login_container_content"
+        android:id="@+id/container_content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_16dp"
@@ -47,10 +47,10 @@
         android:layout_marginBottom="@dimen/margin_32dp"
         android:background="@drawable/pre_login_container"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="@id/login_tv_title">
+        app:layout_constraintTop_toTopOf="@id/tv_title">
 
       <TextView
-          android:id="@+id/login_tv_desc1"
+          android:id="@+id/tv_desc1"
           style="@style/FreeBeeHP3"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
@@ -58,10 +58,10 @@
           android:layout_marginTop="@dimen/margin_64dp"
           android:layout_marginEnd="@dimen/margin_32dp"
           android:text="@string/mobile_number"
-          app:layout_constraintTop_toTopOf="@id/login_container_content" />
+          app:layout_constraintTop_toTopOf="@id/container_content" />
 
       <EditText
-          android:id="@+id/login_edt_countryCode"
+          android:id="@+id/edt_countryCode"
           style="@style/FreeBeeBaseEditText"
           android:layout_width="70dp"
           android:layout_margin="0dp"
@@ -72,11 +72,11 @@
           android:paddingRight="@dimen/margin_16dp"
           android:text="@string/empty"
           android:textAlignment="center"
-          app:layout_constraintLeft_toLeftOf="@id/login_tv_desc1"
-          app:layout_constraintTop_toBottomOf="@id/login_tv_desc1" />
+          app:layout_constraintLeft_toLeftOf="@id/tv_desc1"
+          app:layout_constraintTop_toBottomOf="@id/tv_desc1" />
 
       <EditText
-          android:id="@+id/login_edt_mobileNumber"
+          android:id="@+id/edt_mobileNumber"
           style="@style/FreeBeeBaseEditText"
           android:layout_width="0dp"
           android:layout_marginStart="@dimen/margin_4dp"
@@ -84,35 +84,35 @@
           android:hint="@string/enter_mobile_number"
           android:inputType="number"
           android:textAlignment="center"
-          app:layout_constraintBottom_toBottomOf="@id/login_edt_countryCode"
-          app:layout_constraintLeft_toRightOf="@id/login_edt_countryCode"
-          app:layout_constraintRight_toRightOf="@id/login_tv_desc1"
-          app:layout_constraintTop_toTopOf="@id/login_edt_countryCode" />
+          app:layout_constraintBottom_toBottomOf="@id/edt_countryCode"
+          app:layout_constraintLeft_toRightOf="@id/edt_countryCode"
+          app:layout_constraintRight_toRightOf="@id/tv_desc1"
+          app:layout_constraintTop_toTopOf="@id/edt_countryCode" />
 
       <TextView
-          android:id="@+id/login_tv_desc2"
+          android:id="@+id/tv_desc2"
           style="@style/FreeBeeHP3"
           android:layout_width="0dp"
           android:layout_height="wrap_content"
           android:layout_marginTop="@dimen/margin_16dp"
           android:text="@string/password"
-          app:layout_constraintLeft_toLeftOf="@id/login_tv_desc1"
-          app:layout_constraintRight_toRightOf="@id/login_tv_desc1"
-          app:layout_constraintTop_toBottomOf="@id/login_edt_countryCode" />
+          app:layout_constraintLeft_toLeftOf="@id/tv_desc1"
+          app:layout_constraintRight_toRightOf="@id/tv_desc1"
+          app:layout_constraintTop_toBottomOf="@id/edt_countryCode" />
 
       <com.google.android.material.textfield.TextInputLayout
-          android:id="@+id/login_til_password"
+          android:id="@+id/til_password"
           android:layout_width="0dp"
           android:layout_height="wrap_content"
           app:hintEnabled="false"
-          app:layout_constraintLeft_toLeftOf="@id/login_tv_desc1"
-          app:layout_constraintRight_toRightOf="@id/login_tv_desc1"
-          app:layout_constraintTop_toBottomOf="@id/login_tv_desc2"
+          app:layout_constraintLeft_toLeftOf="@id/tv_desc1"
+          app:layout_constraintRight_toRightOf="@id/tv_desc1"
+          app:layout_constraintTop_toBottomOf="@id/tv_desc2"
           app:passwordToggleEnabled="true"
           app:passwordToggleTint="@color/colorPrimaryDark">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/login_edt_password"
+            android:id="@+id/edt_password"
             style="@style/FreeBeeBaseEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -126,42 +126,42 @@
       </com.google.android.material.textfield.TextInputLayout>
 
       <TextView
-          android:id="@+id/login_tv_forgotPassword"
+          android:id="@+id/tv_forgotPassword"
           style="@style/FreeBeeHH3"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
           android:layout_marginTop="@dimen/margin_8dp"
           android:text="@string/forgot_password_underline"
           android:textAlignment="center"
-          app:layout_constraintLeft_toLeftOf="@id/login_tv_desc1"
-          app:layout_constraintRight_toRightOf="@id/login_tv_desc1"
-          app:layout_constraintTop_toBottomOf="@id/login_til_password" />
+          app:layout_constraintLeft_toLeftOf="@id/tv_desc1"
+          app:layout_constraintRight_toRightOf="@id/tv_desc1"
+          app:layout_constraintTop_toBottomOf="@id/til_password" />
 
       <Button
-          android:id="@+id/login_btn_login"
+          android:id="@+id/btn_login"
           style="@style/FreeBeeButtonPrimary"
           android:layout_height="wrap_content"
           android:layout_marginTop="@dimen/margin_32dp"
           android:text="@string/login"
           app:layout_constraintLeft_toLeftOf="parent"
           app:layout_constraintRight_toRightOf="parent"
-          app:layout_constraintTop_toBottomOf="@id/login_tv_forgotPassword" />
+          app:layout_constraintTop_toBottomOf="@id/tv_forgotPassword" />
 
       <TextView
-          android:id="@+id/login_tv_desc3"
+          android:id="@+id/tv_desc3"
           style="@style/FreeBeeHP3"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
           android:layout_marginTop="@dimen/margin_16dp"
           android:text="@string/don_t_have_account_yet"
           android:textAlignment="center"
-          app:layout_constraintBottom_toBottomOf="@id/login_tv_signUp"
-          app:layout_constraintLeft_toLeftOf="@id/login_tv_desc1"
-          app:layout_constraintRight_toRightOf="@id/login_tv_desc1"
-          app:layout_constraintTop_toBottomOf="@id/login_btn_login" />
+          app:layout_constraintBottom_toBottomOf="@id/tv_signUp"
+          app:layout_constraintLeft_toLeftOf="@id/tv_desc1"
+          app:layout_constraintRight_toRightOf="@id/tv_desc1"
+          app:layout_constraintTop_toBottomOf="@id/btn_login" />
 
       <TextView
-          android:id="@+id/login_tv_signUp"
+          android:id="@+id/tv_signUp"
           style="@style/FreeBeeHH3"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
@@ -170,9 +170,9 @@
           android:text="@string/sign_up_underline"
           android:textAlignment="center"
           app:layout_constraintBottom_toBottomOf="parent"
-          app:layout_constraintLeft_toLeftOf="@id/login_tv_desc1"
-          app:layout_constraintRight_toRightOf="@id/login_tv_desc1"
-          app:layout_constraintTop_toBottomOf="@id/login_tv_desc3" />
+          app:layout_constraintLeft_toLeftOf="@id/tv_desc1"
+          app:layout_constraintRight_toRightOf="@id/tv_desc1"
+          app:layout_constraintTop_toBottomOf="@id/tv_desc3" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -183,7 +183,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
       <ImageView
-          android:id="@+id/login_img_blocker"
+          android:id="@+id/img_blocker"
           android:layout_width="match_parent"
           android:layout_height="match_parent"
           android:src="@color/colorBackgroundTransparent"

@@ -61,6 +61,9 @@
   <string name="search_country">Search Country</string>
   <string name="type_country_name_here">Type country name here</string>
   <string name="confirm">Confirm</string>
+  <string name="sign_up">Sign up</string>
+  <string name="next">Next</string>
+  <string name="login_now">Login Now</string>
 
 
 </resources>
