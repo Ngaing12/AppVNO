@@ -8,16 +8,42 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import app.pldt.appvno.R
 import kotlinx.android.synthetic.main.activity_create_password.*
+import kotlinx.android.synthetic.main.dialog_touch_id.*
+import kotlinx.android.synthetic.main.dialog_touch_id_success.*
 
 class CreatePasswordActivity : AppCompatActivity() {
-
-    // TODO - change layout if need scroller
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_create_password)
 
         setupEditTexts()
+        btn_create.setOnClickListener {
+            touchId_dialog.visibility = View.VISIBLE
+            img_blocker.visibility = View.VISIBLE
+        }
+
+        touchId_btn_yes.setOnClickListener {
+            touchId_dialog.visibility = View.GONE
+            touchSuccess_dialog.visibility = View.VISIBLE
+        }
+        touchId_btn_no.setOnClickListener {
+            touchId_dialog.visibility = View.GONE
+            img_blocker.visibility = View.GONE
+        }
+
+        touchId_img_close.setOnClickListener {
+            touchId_dialog.visibility = View.GONE
+            img_blocker.visibility = View.GONE
+        }
+
+        touchSuccess_img_close.setOnClickListener {
+            // Goto Enter Personal Details
+        }
+
+        touchSuccess_btn_continue.setOnClickListener {
+            // Goto Enter Personal Details
+        }
     }
 
     private fun setupEditTexts() {
@@ -48,7 +74,7 @@ class CreatePasswordActivity : AppCompatActivity() {
         })
     }
 
-    fun isLegalPassword(pass: String): Boolean {
+    private fun isLegalPassword(pass: String): Boolean {
         if (!pass.matches(".*[A-Z].*".toRegex())) return false
         if (!pass.matches(".*[a-z].*".toRegex())) return false
         if (!pass.matches(".*\\d.*".toRegex())) return false

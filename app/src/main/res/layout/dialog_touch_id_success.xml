@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:elevation="5dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/touchSuccess_spacer"
+        android:layout_width="68dp"
+        android:layout_height="68dp"
+        android:layout_marginStart="@dimen/margin_24dp"
+        android:layout_marginTop="@dimen/margin_24dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription" />
+
+    <View
+        android:id="@+id/touchSuccess_container_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/margin_16dp"
+        android:layout_marginTop="@dimen/margin_24dp"
+        android:layout_marginEnd="@dimen/margin_16dp"
+        android:background="@drawable/container_rounded"
+        app:layout_constraintTop_toBottomOf="@id/touchSuccess_spacer"
+        app:layout_constraintBottom_toBottomOf="@id/touchSuccess_end" />
+
+    <ImageView
+        android:id="@+id/touchSuccess_img_close"
+        android:layout_width="@dimen/icon_size_24dp"
+        android:layout_height="@dimen/icon_size_24dp"
+        android:layout_marginStart="@dimen/margin_24dp"
+        android:layout_marginTop="@dimen/margin_24dp"
+        android:layout_marginRight="@dimen/margin_24dp"
+        android:src="@drawable/ic_close"
+        app:layout_constraintRight_toRightOf="@id/touchSuccess_container_content"
+        app:layout_constraintTop_toTopOf="@id/touchSuccess_container_content" />
+
+    <ImageView
+        android:id="@+id/touchSuccess_img_icon"
+        android:layout_width="@dimen/icon_size_160dp"
+        android:layout_height="@dimen/icon_size_160dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_touch_id_check"
+        app:layout_constraintLeft_toLeftOf="@id/touchSuccess_container_content"
+        app:layout_constraintRight_toRightOf="@id/touchSuccess_container_content"
+        app:layout_constraintTop_toBottomOf="@id/touchSuccess_img_close" />
+
+    <TextView
+        android:id="@+id/touchSuccess_tv_desc1"
+        style="@style/FreeBeeHP2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_32dp"
+        android:layout_marginTop="@dimen/margin_32dp"
+        android:layout_marginRight="@dimen/margin_32dp"
+        android:text="Touch ID has been enabled!"
+        android:textAlignment="center"
+        app:layout_constraintLeft_toLeftOf="@id/touchSuccess_container_content"
+        app:layout_constraintRight_toRightOf="@id/touchSuccess_container_content"
+        app:layout_constraintTop_toBottomOf="@id/touchSuccess_img_icon" />
+
+    <Button
+        android:id="@+id/touchSuccess_btn_continue"
+        style="@style/FreeBeeButtonPrimary"
+        android:layout_marginTop="@dimen/margin_64dp"
+        android:text="@string/continue_word"
+        app:layout_constraintLeft_toLeftOf="@id/touchSuccess_container_content"
+        app:layout_constraintRight_toRightOf="@id/touchSuccess_container_content"
+        app:layout_constraintTop_toBottomOf="@id/touchSuccess_tv_desc1" />
+
+    <View
+        android:id="@+id/touchSuccess_end"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_32dp"
+        app:layout_constraintTop_toBottomOf="@id/touchSuccess_btn_continue"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
