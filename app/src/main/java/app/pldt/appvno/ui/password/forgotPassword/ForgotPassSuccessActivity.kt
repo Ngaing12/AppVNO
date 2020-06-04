@@ -8,6 +8,7 @@ import app.pldt.appvno.R
 import app.pldt.appvno.extensions.isVisible
 import app.pldt.appvno.model.Country
 import app.pldt.appvno.ui.login.CountryCodeItem
+import app.pldt.appvno.ui.login.LoginActivity
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.GroupieViewHolder
@@ -16,6 +17,10 @@ import kotlinx.android.synthetic.main.activity_forgot_pass_success.*
 import kotlinx.android.synthetic.main.activity_forgot_pass_success.img_blocker
 import kotlinx.android.synthetic.main.app_bar_pre_login.*
 import kotlinx.android.synthetic.main.bottom_sheet_login.*
+import org.jetbrains.anko.clearTask
+import org.jetbrains.anko.intentFor
+import org.jetbrains.anko.newTask
+import org.jetbrains.anko.startActivity
 
 class ForgotPassSuccessActivity : AppCompatActivity() {
 
@@ -41,6 +46,10 @@ class ForgotPassSuccessActivity : AppCompatActivity() {
 
         loginBSheet_img_close.setOnClickListener {
             bottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED)
+        }
+        btn_login.setOnClickListener {
+            // TODO - goto Home
+            startActivity(intentFor<LoginActivity>().newTask().clearTask())
         }
     }
 

@@ -10,11 +10,15 @@ import app.pldt.appvno.extensions.isVisible
 import app.pldt.appvno.model.Country
 import app.pldt.appvno.model.TempUser
 import app.pldt.appvno.ui.login.CountryCodeItem
+import app.pldt.appvno.ui.login.LoginActivity
+import app.pldt.appvno.ui.otp.OtpVerificationActivity
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.GroupieViewHolder
 import kotlinx.android.synthetic.main.activity_register.*
+import kotlinx.android.synthetic.main.app_bar_pre_login.*
 import kotlinx.android.synthetic.main.bottom_sheet_login.*
+import org.jetbrains.anko.startActivity
 
 class RegisterActivity : AppCompatActivity() {
 
@@ -32,13 +36,19 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     private fun setupButtons() {
+        tv_signIn.setOnClickListener {
+            startActivity<LoginActivity>()
+            finish()
+        }
         btn_next.setOnClickListener {
-            if (edt_country.text.toString() == ""){
-                edt_country.setError("This field is required!", null)
-            }
-            if (edt_mobileNumber.text.toString() == ""){
-                edt_mobileNumber.setError("This field is required!", null)
-            }
+//            if (edt_country.text.toString().isEmpty()){
+//                edt_country.setError("This field is required!", null)
+//            }
+//            if (edt_mobileNumber.text.toString().isEmpty()){
+//                edt_mobileNumber.setError("This field is required!", null)
+//                return@setOnClickListener
+//            }
+            startActivity<OtpVerificationActivity>()
         }
 
         edt_countryCode.setOnClickListener {

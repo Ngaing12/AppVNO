@@ -5,8 +5,10 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import app.pldt.appvno.R
+import app.pldt.appvno.ui.account.AccountLockedActivity
 import kotlinx.android.synthetic.main.activity_forgot_pass_ans_security.*
 import kotlinx.android.synthetic.main.app_bar_pre_login.*
+import org.jetbrains.anko.startActivity
 
 class ForgotPassAnsSecurityActivity : AppCompatActivity() {
 
@@ -15,6 +17,9 @@ class ForgotPassAnsSecurityActivity : AppCompatActivity() {
         setContentView(R.layout.activity_forgot_pass_ans_security)
 
         toolbarTitle.text = "Forgot Password"
+        toolbarClose.setOnClickListener {
+            finish()
+        }
 
         setupButtons()
         setupEditTexts()
@@ -34,6 +39,8 @@ class ForgotPassAnsSecurityActivity : AppCompatActivity() {
     }
 
     private fun setupButtons() {
-
+        btn_submit.setOnClickListener {
+            startActivity<ForgotPassAccountVerificationActivity>()
+        }
     }
 }

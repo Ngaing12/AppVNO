@@ -7,8 +7,10 @@ import android.text.TextWatcher
 import android.util.Log
 import androidx.core.widget.addTextChangedListener
 import app.pldt.appvno.R
+import app.pldt.appvno.ui.password.createPassword.CreatePasswordActivity
 import kotlinx.android.synthetic.main.activity_otp_verification.*
 import kotlinx.android.synthetic.main.app_bar_pre_login.*
+import org.jetbrains.anko.startActivity
 
 class OtpVerificationActivity : AppCompatActivity() {
 
@@ -18,7 +20,22 @@ class OtpVerificationActivity : AppCompatActivity() {
 
 
         toolbarTitle.text = "Forgot Password"
+        toolbarClose.setOnClickListener {
+            finish()
+        }
 
+        setupPinview()
+        setupButtons()
+    }
+
+    private fun setupButtons() {
+
+        btn_submit.setOnClickListener {
+            startActivity<CreatePasswordActivity>()
+        }
+    }
+
+    private fun setupPinview() {
         pinview_otp.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {}
 
@@ -26,7 +43,8 @@ class OtpVerificationActivity : AppCompatActivity() {
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int)
             {
-                Log.d("Test", s.toString()) }
+                btn_submit.isEnabled = s?.count() ?: 0 == 6
+            }
 
         })
     }

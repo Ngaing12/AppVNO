@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FF9800"
+    android:background="@drawable/pre_login_bg"
     tools:context=".ui.getStarted.OnBoardingActivity">
 
   <View
@@ -39,8 +39,9 @@
 
   <TextView
       android:id="@+id/onBoarding_tv_skip"
-      style="@style/TextViewXXL"
+      style="@style/FreeBeeHP1"
       android:layout_width="0dp"
+      android:textAlignment="center"
       android:layout_height="wrap_content"
       android:text="Skip This"
       android:layout_marginBottom="@dimen/margin_32dp"

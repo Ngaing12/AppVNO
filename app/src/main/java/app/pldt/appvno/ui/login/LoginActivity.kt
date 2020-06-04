@@ -12,6 +12,8 @@ import app.pldt.appvno.extensions.isVisible
 import app.pldt.appvno.model.Country
 import app.pldt.appvno.model.TempUser
 import app.pldt.appvno.ui.loginRegister.LoginBottomSheetFragment
+import app.pldt.appvno.ui.password.forgotPassword.ForgotPasswordActivity
+import app.pldt.appvno.ui.register.RegisterActivity
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.xwray.groupie.GroupAdapter
@@ -21,6 +23,7 @@ import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.bottom_sheet_login.*
 import kotlinx.android.synthetic.main.recycler_contact_item.view.*
 import kotlinx.android.synthetic.main.recycler_country_code_item.view.*
+import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
 
 class LoginActivity : AppCompatActivity() {
@@ -39,8 +42,13 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun setupButtons() {
-
-
+        tv_signUp.setOnClickListener {
+            startActivity<RegisterActivity>()
+            finish()
+        }
+        tv_forgotPassword.setOnClickListener {
+            startActivity<ForgotPasswordActivity>()
+        }
         btn_login.setOnClickListener{
             if (edt_mobileNumber.text.toString() == "") {
                 edt_mobileNumber.setError("This field is required!", null)

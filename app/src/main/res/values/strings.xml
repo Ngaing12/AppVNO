@@ -131,6 +131,7 @@
   <string name="to_make_your_account">To make your account more secure, set up a security question.</string>
   <string name="security_question_answer">Security Question Answer</string>
   <string name="enter_answer_to_your_security_question">Enter answer to your Security Question</string>
+  <string name="your_security_question_has_been_set_up">Your Security question has been set up!</string>
 
 
   <string-array name="months">

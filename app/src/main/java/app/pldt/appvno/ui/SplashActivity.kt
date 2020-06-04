@@ -7,6 +7,7 @@ import android.os.Handler
 import android.util.Log
 import app.pldt.appvno.common.SessionManager
 import app.pldt.appvno.ui.getStarted.OnBoardingActivity
+import app.pldt.appvno.ui.login.LoginActivity
 import app.pldt.appvno.ui.loginRegister.LoginRegisterActivity
 import com.sysnetph.sysnetsdk.Sysnet
 
@@ -44,7 +45,7 @@ class SplashActivity : AppCompatActivity() {
        if (!SessionManager.isShowOnBoarding()) {
            intent.setClass(this, OnBoardingActivity::class.java)
        }else {
-           intent.setClass(this, LoginRegisterActivity::class.java)
+           intent.setClass(this, LoginActivity::class.java)
        }
 
         if (getIntent() != null && getIntent().extras != null) {

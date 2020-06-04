@@ -11,7 +11,9 @@ import androidx.viewpager2.widget.ViewPager2
 import app.pldt.appvno.R
 import app.pldt.appvno.common.SessionManager
 import app.pldt.appvno.model.Onboarding
+import app.pldt.appvno.ui.login.LoginActivity
 import app.pldt.appvno.ui.loginRegister.LoginRegisterActivity
+import kotlinx.android.synthetic.main.activity_forgot_password.*
 import kotlinx.android.synthetic.main.activity_onboarding.*
 import org.jetbrains.anko.startActivity
 
@@ -64,7 +66,7 @@ class OnBoardingActivity : AppCompatActivity() {
         })
         onBoarding_tv_skip.setOnClickListener{
             SessionManager.setIsShownOnBoarding(true)
-            startActivity<LoginRegisterActivity>()
+            startActivity<LoginActivity>()
             finish()
         }
     }

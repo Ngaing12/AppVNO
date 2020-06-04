@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollview_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:fitsSystemWindows="true"
+    tools:context=".ui.securityQuestion.SecurityQuestionSuccessActivity">
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:background="@drawable/pre_login_bg">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/app_bar_pre_login" />
+
+    <View
+        android:id="@+id/container_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/margin_16dp"
+        android:layout_marginTop="@dimen/margin_24dp"
+        android:layout_marginEnd="@dimen/margin_16dp"
+        android:layout_marginBottom="@dimen/margin_32dp"
+        android:background="@drawable/container_rounded"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+    <TextView
+        android:id="@+id/tv_contentTitle"
+        style="@style/FreeBeeUH1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_32dp"
+        android:text="@string/success"
+        android:textColor="@color/colorBlack"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/container_content" />
+
+    <TextView
+        android:id="@+id/tv_desc1"
+        style="@style/FreeBeeHP2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_32dp"
+        android:layout_marginTop="@dimen/margin_16dp"
+        android:layout_marginRight="@dimen/margin_32dp"
+        android:text="@string/your_security_question_has_been_set_up"
+        android:textAlignment="center"
+        app:layout_constraintLeft_toLeftOf="@id/container_content"
+        app:layout_constraintRight_toRightOf="@id/container_content"
+        app:layout_constraintTop_toBottomOf="@id/tv_contentTitle" />
+
+
+    <ImageView
+        android:id="@+id/img_icon"
+        android:layout_width="@dimen/icon_size_240dp"
+        android:layout_height="@dimen/icon_size_240dp"
+        android:layout_marginTop="@dimen/margin_32dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/success"
+        app:layout_constraintLeft_toLeftOf="@id/container_content"
+        app:layout_constraintRight_toRightOf="@id/container_content"
+        app:layout_constraintTop_toBottomOf="@id/tv_desc1" />
+
+    <Button
+        android:id="@+id/btn_continue"
+        style="@style/FreeBeeButtonPrimary"
+        android:layout_marginTop="@dimen/margin_32dp"
+        android:layout_marginBottom="@dimen/margin_32dp"
+        android:text="@string/continue_word"
+        app:layout_constraintVertical_bias="1"
+        app:layout_constraintTop_toBottomOf="@id/img_icon"
+        app:layout_constraintLeft_toLeftOf="@id/container_content"
+        app:layout_constraintRight_toRightOf="@id/container_content"
+        app:layout_constraintBottom_toBottomOf="@id/container_content"/>
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

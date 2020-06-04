@@ -8,15 +8,24 @@ import android.util.Log
 import androidx.core.widget.addTextChangedListener
 import app.pldt.appvno.R
 import app.pldt.appvno.extensions.isVisible
+import app.pldt.appvno.ui.password.forgotPassword.ForgotPassLastPassActivity
 import kotlinx.android.synthetic.main.activity_forgot_otp_verification.*
 import kotlinx.android.synthetic.main.activity_otp_verification.*
 import kotlinx.android.synthetic.main.activity_otp_verification.pinview_otp
+import kotlinx.android.synthetic.main.app_bar_pre_login.*
+import org.jetbrains.anko.startActivity
 
 class ForgotPassOtpVerificationActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_forgot_otp_verification)
+
+
+        toolbarTitle.text = "Forgot Password"
+        toolbarClose.setOnClickListener {
+            finish()
+        }
 
         setupButtons()
 
@@ -36,7 +45,7 @@ class ForgotPassOtpVerificationActivity : AppCompatActivity() {
 
     private fun setupButtons() {
         btn_continue.setOnClickListener {
-            // go to next activity
+           startActivity<ForgotPassLastPassActivity>()
         }
     }
 }

@@ -7,16 +7,17 @@
     android:background="@drawable/pre_login_bg"
     tools:context=".ui.otp.OtpVerificationActivity">
 
-  <include android:id="@+id/toolbar"
-      layout="@layout/app_bar_pre_login"/>
+  <include
+      android:id="@+id/toolbar"
+      layout="@layout/app_bar_pre_login" />
 
   <View
       android:id="@+id/container_content"
       android:layout_width="match_parent"
       android:layout_height="0dp"
       android:layout_marginStart="@dimen/margin_16dp"
-      android:layout_marginEnd="@dimen/margin_16dp"
       android:layout_marginTop="@dimen/margin_24dp"
+      android:layout_marginEnd="@dimen/margin_16dp"
       android:layout_marginBottom="@dimen/margin_32dp"
       android:background="@drawable/container_rounded"
       app:layout_constraintBottom_toBottomOf="parent"
@@ -25,11 +26,11 @@
   <TextView
       android:id="@+id/tv_contentTitle"
       style="@style/FreeBeeUH1"
-      android:textColor="@color/colorBlack"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_marginTop="@dimen/margin_32dp"
       android:text="@string/verification"
+      android:textColor="@color/colorBlack"
       app:layout_constraintLeft_toLeftOf="parent"
       app:layout_constraintRight_toRightOf="parent"
       app:layout_constraintTop_toTopOf="@id/container_content" />
@@ -37,36 +38,36 @@
   <TextView
       android:id="@+id/tv_desc1"
       style="@style/FreeBeeHP2"
-      android:textAlignment="center"
       android:layout_width="0dp"
       android:layout_height="wrap_content"
-      android:text="@string/a_code_was_sent"
       android:layout_marginTop="@dimen/margin_32dp"
-      app:layout_constraintTop_toBottomOf="@id/tv_contentTitle"
+      android:text="@string/a_code_was_sent"
+      android:textAlignment="center"
       app:layout_constraintLeft_toLeftOf="@id/container_content"
-      app:layout_constraintRight_toRightOf="@id/container_content" />
+      app:layout_constraintRight_toRightOf="@id/container_content"
+      app:layout_constraintTop_toBottomOf="@id/tv_contentTitle" />
 
   <TextView
-      style="@style/FreeBeeHH2"
-      android:textAlignment="center"
       android:id="@+id/tv_number"
+      style="@style/FreeBeeHH2"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:text="*********123"
-      app:layout_constraintTop_toBottomOf="@id/tv_desc1"
+      android:textAlignment="center"
       app:layout_constraintLeft_toLeftOf="@id/container_content"
-      app:layout_constraintRight_toRightOf="@id/container_content"/>
+      app:layout_constraintRight_toRightOf="@id/container_content"
+      app:layout_constraintTop_toBottomOf="@id/tv_desc1" />
 
   <TextView
-      style="@style/TextViewL"
       android:id="@+id/tv_desc2"
+      style="@style/TextViewL"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:layout_marginTop="@dimen/margin_32dp"
       android:text="@string/enter_the_code_verify"
       app:layout_constraintLeft_toLeftOf="@id/container_content"
       app:layout_constraintRight_toRightOf="@id/container_content"
-      app:layout_constraintTop_toBottomOf="@id/tv_number"/>
+      app:layout_constraintTop_toBottomOf="@id/tv_number" />
 
 
   <!-- OTP Space-->
@@ -75,56 +76,57 @@
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_marginTop="@dimen/margin_32dp"
-      app:itemCount="6"
-      android:maxLines="1"
-      android:focusable="true"
       android:cursorVisible="false"
+      android:focusable="true"
       android:focusableInTouchMode="true"
       android:hint="@string/pinview_hint"
       android:inputType="number"
-      app:lineColor="@android:color/darker_gray"
-      app:lineWidth="2dp"
-      app:itemRadius="@dimen/corner_radius_8dp"
-      android:textSize="@dimen/text_32sp"
-      app:itemHeight="56dp"
-      app:viewType="none"
       android:itemBackground="@drawable/pinview_rounded"
+      android:maxLines="1"
+      android:textSize="@dimen/text_32sp"
+      app:itemCount="6"
+      app:itemHeight="56dp"
+      app:itemRadius="@dimen/corner_radius_8dp"
       app:layout_constraintLeft_toLeftOf="@id/container_content"
       app:layout_constraintRight_toRightOf="@id/container_content"
-      app:layout_constraintTop_toBottomOf="@id/tv_desc2"/>
+      app:layout_constraintTop_toBottomOf="@id/tv_desc2"
+      app:lineColor="@android:color/darker_gray"
+      app:lineWidth="2dp"
+      app:viewType="none" />
 
 
   <TextView
-      style="@style/FreeBeeHP2"
-      android:textAlignment="center"
-      android:visibility="gone"
       android:id="@+id/tv_error"
+      style="@style/FreeBeeHP2"
       android:layout_width="0dp"
       android:layout_height="wrap_content"
+      android:layout_marginTop="@dimen/margin_16dp"
       android:paddingStart="@dimen/margin_32dp"
       android:paddingEnd="@dimen/margin_32dp"
-      android:layout_marginTop="@dimen/margin_16dp"
-      android:textStyle="italic"
       android:text="@string/invalid_code"
-      app:layout_constraintTop_toBottomOf="@id/pinview_otp"
+      android:textAlignment="center"
+      android:textStyle="italic"
+      android:visibility="gone"
       app:layout_constraintLeft_toLeftOf="@id/container_content"
-      app:layout_constraintRight_toRightOf="@id/container_content"/>
+      app:layout_constraintRight_toRightOf="@id/container_content"
+      app:layout_constraintTop_toBottomOf="@id/pinview_otp" />
 
   <TextView
-      style="@style/FreeBeeHH3"
       android:id="@+id/tv_resend"
+      style="@style/FreeBeeHH3"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_marginTop="@dimen/margin_32dp"
       android:text="@string/resend_code"
+      android:textColor="#DCD2CE"
       app:layout_constraintHorizontal_chainStyle="packed"
       app:layout_constraintLeft_toLeftOf="@id/container_content"
       app:layout_constraintRight_toLeftOf="@id/tv_resendCount"
-      app:layout_constraintTop_toBottomOf="@id/tv_error"/>
+      app:layout_constraintTop_toBottomOf="@id/tv_error" />
 
   <TextView
-      style="@style/FreeBeeHP2"
       android:id="@+id/tv_resendCount"
+      style="@style/FreeBeeHP2"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_marginStart="@dimen/margin_8dp"
@@ -132,17 +134,18 @@
       android:textStyle="bold"
       app:layout_constraintLeft_toRightOf="@id/tv_resend"
       app:layout_constraintRight_toRightOf="@id/container_content"
-      app:layout_constraintTop_toTopOf="@id/tv_resend"/>
+      app:layout_constraintTop_toTopOf="@id/tv_resend" />
 
   <Button
-      android:id="@+id/btn_login"
+      android:id="@+id/btn_submit"
       style="@style/FreeBeeButtonPrimary"
       android:layout_marginTop="@dimen/margin_32dp"
       android:layout_marginBottom="@dimen/margin_32dp"
+      android:enabled="false"
       android:text="@string/submit_code"
+      app:layout_constraintBottom_toBottomOf="@id/container_content"
       app:layout_constraintLeft_toLeftOf="parent"
-      app:layout_constraintRight_toRightOf="parent"
-      app:layout_constraintBottom_toBottomOf="@id/container_content" />
+      app:layout_constraintRight_toRightOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

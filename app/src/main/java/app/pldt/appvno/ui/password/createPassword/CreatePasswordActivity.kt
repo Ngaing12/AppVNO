@@ -7,15 +7,22 @@ import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import app.pldt.appvno.R
+import app.pldt.appvno.ui.profile.PersonalDetailActivity
 import kotlinx.android.synthetic.main.activity_create_password.*
+import kotlinx.android.synthetic.main.app_bar_pre_login.*
 import kotlinx.android.synthetic.main.dialog_touch_id.*
 import kotlinx.android.synthetic.main.dialog_touch_id_success.*
+import org.jetbrains.anko.startActivity
 
 class CreatePasswordActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_create_password)
+
+        toolbarClose.setOnClickListener {
+            finish()
+        }
 
         setupEditTexts()
         btn_create.setOnClickListener {
@@ -39,10 +46,12 @@ class CreatePasswordActivity : AppCompatActivity() {
 
         touchSuccess_img_close.setOnClickListener {
             // Goto Enter Personal Details
+            startActivity<PersonalDetailActivity>()
         }
 
         touchSuccess_btn_continue.setOnClickListener {
             // Goto Enter Personal Details
+            startActivity<PersonalDetailActivity>()
         }
     }
 

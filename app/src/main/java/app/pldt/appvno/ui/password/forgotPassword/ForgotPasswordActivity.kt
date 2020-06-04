@@ -10,6 +10,7 @@ import app.pldt.appvno.R
 import app.pldt.appvno.extensions.isVisible
 import app.pldt.appvno.model.Country
 import app.pldt.appvno.ui.login.CountryCodeItem
+import app.pldt.appvno.ui.otp.ForgotPassOtpVerificationActivity
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.GroupieViewHolder
@@ -17,6 +18,7 @@ import kotlinx.android.synthetic.main.activity_forgot_password.*
 import kotlinx.android.synthetic.main.app_bar_pre_login.*
 import kotlinx.android.synthetic.main.bottom_sheet_login.*
 import kotlinx.android.synthetic.main.dialog_touch_id_use.*
+import org.jetbrains.anko.startActivity
 
 class ForgotPasswordActivity : AppCompatActivity() {
 
@@ -30,7 +32,9 @@ class ForgotPasswordActivity : AppCompatActivity() {
         setContentView(R.layout.activity_forgot_password)
 
         toolbarTitle.text = "Forgot Password"
-
+        toolbarClose.setOnClickListener {
+            finish()
+        }
 
         setupBottomSheet()
         setupDummyData()
@@ -40,11 +44,9 @@ class ForgotPasswordActivity : AppCompatActivity() {
 
     private fun setupEditTexts() {
         edt_mobileNumber.addTextChangedListener(object : TextWatcher {
-            override fun afterTextChanged(s: Editable?) {
-            }
+            override fun afterTextChanged(s: Editable?) {}
 
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-            }
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 btn_continue.isEnabled = s?.count() ?: 0 > 0
@@ -53,14 +55,15 @@ class ForgotPasswordActivity : AppCompatActivity() {
     }
 
     private fun setupButtons() {
-
         touchId_btn_yes.setOnClickListener {
-            // Go to create pass
-            //
+            img_blocker.isVisible(false)
+            touchUse_dialog.isVisible(false)
+            startActivity<ForgotPassLastPassActivity>()
         }
         touchId_btn_no.setOnClickListener {
             img_blocker.isVisible(false)
             touchUse_dialog.isVisible(false)
+            startActivity<ForgotPassOtpVerificationActivity>()
         }
         touchId_img_close.setOnClickListener{
             img_blocker.isVisible(false)

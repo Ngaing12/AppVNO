@@ -8,6 +8,7 @@ import app.pldt.appvno.R
 import app.pldt.appvno.ui.profile.SpinnerDefaultAdapter
 import kotlinx.android.synthetic.main.activity_forgot_pass_security.*
 import kotlinx.android.synthetic.main.app_bar_pre_login.*
+import org.jetbrains.anko.startActivity
 
 class ForgotPassSecurityActivity : AppCompatActivity() {
 
@@ -16,6 +17,9 @@ class ForgotPassSecurityActivity : AppCompatActivity() {
         setContentView(R.layout.activity_forgot_pass_security)
 
         toolbarTitle.text = "Forgot Password"
+        toolbarClose.setOnClickListener {
+            finish()
+        }
 
         setupButtons()
         setupDummyData()
@@ -43,6 +47,6 @@ class ForgotPassSecurityActivity : AppCompatActivity() {
 
 
     private fun setupButtons() {
-
+        startActivity<ForgotPassAnsSecurityActivity>()
     }
 }

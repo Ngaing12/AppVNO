@@ -11,6 +11,10 @@ import kotlinx.android.synthetic.main.activity_create_password.*
 import kotlinx.android.synthetic.main.app_bar_pre_login.*
 import kotlinx.android.synthetic.main.dialog_touch_id.*
 import kotlinx.android.synthetic.main.dialog_touch_id_success.*
+import org.jetbrains.anko.clearTask
+import org.jetbrains.anko.intentFor
+import org.jetbrains.anko.newTask
+import org.jetbrains.anko.startActivity
 
 class ForgotPassCreateActivity : AppCompatActivity() {
 
@@ -18,21 +22,20 @@ class ForgotPassCreateActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_create_password)
 
-        toolbarTitle.text = "Forgot Password"
         btn_create.text = "Continue"
+        toolbarTitle.text = "Forgot Password"
+        toolbarClose.setOnClickListener {
+            finish()
+        }
 
         setupEditTexts()
+        setupButtons()
+
+    }
+
+    private fun setupButtons() {
         btn_create.setOnClickListener {
-            touchId_dialog.visibility = View.VISIBLE
-            img_blocker.visibility = View.VISIBLE
-        }
-
-        touchSuccess_img_close.setOnClickListener {
-            // Goto Enter Personal Details
-        }
-
-        touchSuccess_btn_continue.setOnClickListener {
-            // Goto Enter Personal Details
+            startActivity(intentFor<ForgotPassSuccessActivity>().newTask().clearTask())
         }
     }
 
