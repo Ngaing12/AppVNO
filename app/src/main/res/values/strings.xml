@@ -31,7 +31,6 @@
   <string name="your_6_digit_code">Your 6 digit code</string>
   <string name="_00_00">00:00</string>
   <string name="resend_via_sms">Resend via sms</string>
-  <string name="first_name">First Name</string>
   <string name="last_name">Last Name</string>
   <string name="date">Date</string>
   <string name="gender">Gender</string>
@@ -80,6 +79,44 @@
   <string name="cancel">Cancel</string>
   <string name="yes">Yes</string>
   <string name="continue_word">Continue</string>
+  <string name="enter_personal_details">Enter Personal Details</string>
+  <string name="name">Name</string>
+  <string name="first_name">First Name</string>
+  <string name="enter_first_name">Enter First Name</string>
+  <string name="enter_last_name">Enter Last Name</string>
+  <string name="age_verification">Age Verification</string>
+  <string name="birth_year">Birth year</string>
+  <string name="you_need_to_be">*You need to be at least 18 years old to sign up for free bee.</string>
+  <string name="prefer_not_to_say">Prefer not to Say</string>
+  <string name="female">Female</string>
+  <string name="male">Male</string>
+  <string name="referral_code_optional">Referral Code (Optional)</string>
+  <string name="referral_code">Referral Code</string>
+  <string name="enter_referral_code">Enter Referral Code</string>
+  <string name="i_have_read_and_agree_terms">I have read and agree to the \n <u>Terms and Conditions.</u></string>
+  <string name="i_have_read_and_agree_privacy">I have read and agree to the \n <u>Privacy Policy.</u></string>
+  <string name="i_have_read_and_agree_news">I agree to receive notifications on news and promotions.</string>
+  <string name="your_done">You\'re Done!</string>
+  <string name="start_calling_and_messaging">Start calling and messaging your loved ones with Free Bee now</string>
+  <string name="set_security_question">Set Security Question</string>
+  <string name="skip_to_home_underline"><u>Skip to Home</u></string>
+  <string name="enter_your_mobile">Enter your Mobile Number. We\'ll send a code to this number for verification.</string>
 
+
+  <string-array name="months">
+    <item>Choose Month</item>
+    <item>January</item>
+    <item>February</item>
+    <item>March</item>
+    <item>April</item>
+    <item>May</item>
+    <item>June</item>
+    <item>July</item>
+    <item>August</item>
+    <item>September</item>
+    <item>October</item>
+    <item>November</item>
+    <item>December</item>
+  </string-array>
 
 </resources>

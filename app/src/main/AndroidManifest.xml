@@ -22,24 +22,29 @@
       android:roundIcon="@mipmap/ic_launcher_round"
       android:supportsRtl="true"
       android:theme="@style/AppTheme">
-    <activity android:name=".ui.profile.PersonalDetailActivity"></activity>
-    <activity android:name=".ui.otp.OtpVerificationActivity"></activity>
-    <activity android:name=".ui.password.forgotPassword.ForgotPasswordActivity" />
-    <activity android:name=".ui.securityQuestion.SecurityQuestionActivity" />
-    <activity android:name=".ui.password.createPassword.CreatePasswordActivity">
+    <activity android:name=".ui.register.RegisterSuccessActivity">
+    </activity>
+    <activity android:name=".ui.profile.PersonalDetailActivity">
+
+    </activity>
+    <activity android:name=".ui.otp.OtpVerificationActivity" />
+    <activity android:name=".ui.password.forgotPassword.ForgotPasswordActivity"
+        android:windowSoftInputMode="stateVisible|adjustPan" >
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
 
         <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>
     </activity>
+    <activity android:name=".ui.securityQuestion.SecurityQuestionActivity" />
+    <activity android:name=".ui.password.createPassword.CreatePasswordActivity"></activity>
     <activity android:name=".ui.register.RegisterVerificationActivity" />
     <activity
         android:name=".ui.register.RegisterActivity"
-        android:windowSoftInputMode="stateVisible|adjustPan"></activity>
+        android:windowSoftInputMode="stateVisible|adjustPan" />
     <activity
         android:name=".ui.login.LoginActivity"
-        android:windowSoftInputMode="stateVisible|adjustPan"></activity>
+        android:windowSoftInputMode="stateVisible|adjustPan" />
     <activity android:name=".ui.getStarted.OnBoardingActivity" />
     <activity android:name=".ui.call.SysnetCallActivity" />
     <activity android:name=".ui.call.CallDetailActivity" />

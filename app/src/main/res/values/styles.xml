@@ -190,7 +190,32 @@
     </style>
 
 
+    <style name="FreeBeeBaseSpinner" parent="FreeBeeHP4">
+        <item name="android:layout_height">@dimen/edit_text_primary_height</item>
+        <item name="android:textColor">@color/colorTextNormal</item>
+        <item name="android:background">@drawable/freebee_spinner</item>
+    </style>
 
+
+    <style name="FreeBeeRadioButton" parent="FreeBeeHP3">
+        <item name="android:textColor">@color/colorTextNormal</item>
+        <item name="android:button">@drawable/freebee_radio</item>
+        <item name="android:paddingStart">@dimen/padding_4dp</item>
+        <item name="android:layout_marginEnd">@dimen/margin_8dp</item>
+    </style>
+
+    <style name="FreeBeeCheckBox" parent="FreeBeeHP3">
+        <item name="android:textColor">@color/colorTextNormal</item>
+        <item name="android:paddingStart">@dimen/padding_16dp</item>
+        <item name="android:paddingEnd">@dimen/padding_16dp</item>
+        <item name="android:button">@drawable/freebee_checkbox</item>
+    </style>
+
+    <style name="FreeBeeCard1">
+        <item name="android:maxWidth">@dimen/card_width</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:background">@drawable/card_caramel</item>
+    </style>
 
 
 </resources>

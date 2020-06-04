@@ -45,7 +45,6 @@ class LoginActivity : AppCompatActivity() {
             if (edt_mobileNumber.text.toString() == "") {
                 edt_mobileNumber.setError("This field is required!", null)
             }
-
         }
 
         edt_countryCode.setOnClickListener {

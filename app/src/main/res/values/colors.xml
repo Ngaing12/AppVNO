@@ -42,7 +42,7 @@
     <color name="freeBeeLightYellow">#fff9ea</color>
     <color name="freeBeeCaramel">#541d00</color>
     <color name="waxVariant">#FDF0D0</color>
-    <color name="waxVariantDarl">#FF8000</color>
+    <color name="waxVariantDark">#FF8000</color>
 
     <!-- Edit Text -->
     <color name="freeBeeEditTextPrimary">#99FDF0D0</color>
