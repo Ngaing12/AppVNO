@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:fillViewport="true"
     android:fitsSystemWindows="true"
-    tools:context=".ui.password.forgotPassword.ForgotPasswordActivity">
+    tools:context=".ui.password.forgotPassword.ForgotPassSuccessActivity">
 
   <androidx.constraintlayout.widget.ConstraintLayout
       android:layout_width="match_parent"
@@ -31,17 +31,43 @@
 
 
     <TextView
+        android:id="@+id/tv_contentTitle"
+        style="@style/FreeBeeUH1"
+        android:textColor="@color/colorBlack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_32dp"
+        android:text="@string/success"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/container_content" />
+
+
+    <TextView
         android:id="@+id/tv_desc1"
         style="@style/FreeBeeHP2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/margin_32dp"
-        android:layout_marginTop="@dimen/margin_32dp"
+        android:layout_marginTop="@dimen/margin_16dp"
         android:layout_marginRight="@dimen/margin_32dp"
-        android:text="@string/enter_your_mobile"
+        android:text="@string/your_account_details_"
+        android:textAlignment="center"
         app:layout_constraintLeft_toLeftOf="@id/container_content"
         app:layout_constraintRight_toRightOf="@id/container_content"
-        app:layout_constraintTop_toTopOf="@id/container_content" />
+        app:layout_constraintTop_toBottomOf="@id/tv_contentTitle" />
+
+    <ImageView
+        android:id="@+id/img_icon"
+        android:layout_width="@dimen/icon_size_160dp"
+        android:layout_height="@dimen/icon_size_160dp"
+        android:scaleType="fitXY"
+        android:layout_marginTop="@dimen/margin_16dp"
+        android:src="@drawable/success"
+        app:layout_constraintLeft_toLeftOf="@id/container_content"
+        app:layout_constraintRight_toRightOf="@id/container_content"
+        app:layout_constraintTop_toBottomOf="@id/tv_desc1" />
+
 
     <TextView
         android:id="@+id/tv_desc2"
@@ -50,9 +76,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_32dp"
         android:text="@string/mobile_number"
+        app:layout_constraintTop_toBottomOf="@id/img_icon"
         app:layout_constraintLeft_toLeftOf="@id/tv_desc1"
-        app:layout_constraintRight_toRightOf="@id/tv_desc1"
-        app:layout_constraintTop_toBottomOf="@id/tv_desc1" />
+        app:layout_constraintRight_toRightOf="@id/tv_desc1"/>
 
     <EditText
         android:id="@+id/edt_countryCode"
@@ -66,7 +92,7 @@
         android:paddingRight="@dimen/margin_16dp"
         android:text="@string/empty"
         android:textAlignment="center"
-        app:layout_constraintLeft_toLeftOf="@id/tv_desc2"
+        app:layout_constraintLeft_toLeftOf="@id/tv_desc1"
         app:layout_constraintTop_toBottomOf="@id/tv_desc2" />
 
     <EditText
@@ -80,32 +106,66 @@
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="@id/edt_countryCode"
         app:layout_constraintLeft_toRightOf="@id/edt_countryCode"
-        app:layout_constraintRight_toRightOf="@id/tv_desc2"
+        app:layout_constraintRight_toRightOf="@id/tv_desc1"
         app:layout_constraintTop_toTopOf="@id/edt_countryCode" />
 
+    <TextView
+        android:id="@+id/tv_desc3"
+        style="@style/FreeBeeHP4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_16dp"
+        android:text="@string/password"
+        app:layout_constraintLeft_toLeftOf="@id/tv_desc1"
+        app:layout_constraintRight_toRightOf="@id/tv_desc1"
+        app:layout_constraintTop_toBottomOf="@id/edt_countryCode" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_password"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:hintEnabled="false"
+        app:layout_constraintLeft_toLeftOf="@id/tv_desc1"
+        app:layout_constraintRight_toRightOf="@id/tv_desc1"
+        app:layout_constraintTop_toBottomOf="@id/tv_desc3"
+        app:passwordToggleEnabled="true"
+        app:passwordToggleTint="@color/colorPrimaryDark">
+
+      <com.google.android.material.textfield.TextInputEditText
+          android:id="@+id/edt_password"
+          style="@style/FreeBeeBaseEditText"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:background="@drawable/freebee_edt_primary"
+          android:hint="@string/password"
+          android:inputType="textPassword"
+          android:paddingStart="@dimen/margin_16dp"
+          android:paddingEnd="@dimen/margin_16dp"
+          app:boxBackgroundColor="@android:color/transparent" />
+    </com.google.android.material.textfield.TextInputLayout>
+
     <Button
-        android:id="@+id/btn_continue"
+        android:id="@+id/btn_login"
         style="@style/FreeBeeButtonPrimary"
-        android:enabled="false"
-        android:layout_marginBottom="@dimen/margin_8dp"
-        android:text="@string/continue_word"
-        app:layout_constraintBottom_toTopOf="@id/view_end"
-        app:layout_constraintLeft_toLeftOf="@id/container_content"
-        app:layout_constraintRight_toRightOf="@id/container_content"
-        app:layout_constraintTop_toBottomOf="@id/edt_mobileNumber"
-        app:layout_constraintVertical_bias="1.0" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_32dp"
+        android:text="@string/login"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/til_password" />
 
     <View
         android:id="@+id/view_end"
         android:layout_width="match_parent"
         android:layout_height="@dimen/margin_32dp"
         android:layout_marginBottom="@dimen/margin_32dp"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_login" />
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:elevation="4dp"
+        android:elevation="2dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -119,11 +179,6 @@
 
       <include layout="@layout/bottom_sheet_login" />
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
-    <include
-        android:id="@+id/touchUse_dialog"
-        android:visibility="gone"
-        layout="@layout/dialog_touch_id_use" />
 
   </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>

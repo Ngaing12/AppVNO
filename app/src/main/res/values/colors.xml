@@ -50,5 +50,6 @@
 
 
     <color name="freeButtonDisabledState">#CABAB1</color>
+    <color name="freeBeeGray">#434343</color>
 
 </resources>

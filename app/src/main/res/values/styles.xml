@@ -217,5 +217,9 @@
         <item name="android:background">@drawable/card_caramel</item>
     </style>
 
-
+    <style name="FreeBeeCard2">
+        <item name="android:maxWidth">@dimen/card_width</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:background">@drawable/card_outline</item>
+    </style>
 </resources>

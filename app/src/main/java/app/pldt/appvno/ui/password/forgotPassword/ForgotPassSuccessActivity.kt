@@ -2,8 +2,6 @@ package app.pldt.appvno.ui.password.forgotPassword
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
 import android.view.View
 import androidx.constraintlayout.widget.ConstraintLayout
 import app.pldt.appvno.R
@@ -13,13 +11,13 @@ import app.pldt.appvno.ui.login.CountryCodeItem
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.GroupieViewHolder
-import kotlinx.android.synthetic.main.activity_forgot_password.*
+import kotlinx.android.synthetic.main.activity_create_password.*
+import kotlinx.android.synthetic.main.activity_forgot_pass_success.*
+import kotlinx.android.synthetic.main.activity_forgot_pass_success.img_blocker
 import kotlinx.android.synthetic.main.app_bar_pre_login.*
 import kotlinx.android.synthetic.main.bottom_sheet_login.*
-import kotlinx.android.synthetic.main.dialog_touch_id_use.*
 
-class ForgotPasswordActivity : AppCompatActivity() {
-
+class ForgotPassSuccessActivity : AppCompatActivity() {
 
     val adapter = GroupAdapter<GroupieViewHolder>()
     lateinit var bottomSheetBehavior : BottomSheetBehavior<ConstraintLayout>
@@ -27,56 +25,22 @@ class ForgotPasswordActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_forgot_password)
+        setContentView(R.layout.activity_forgot_pass_success)
 
         toolbarTitle.text = "Forgot Password"
-
-
+        toolbarClose.visibility = View.INVISIBLE
         setupBottomSheet()
-        setupDummyData()
         setupButtons()
-        setupEditTexts()
-    }
-
-    private fun setupEditTexts() {
-        edt_mobileNumber.addTextChangedListener(object : TextWatcher {
-            override fun afterTextChanged(s: Editable?) {
-            }
-
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-            }
-
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                btn_continue.isEnabled = s?.count() ?: 0 > 0
-            }
-        })
+        setupDummyData()
     }
 
     private fun setupButtons() {
-
-        touchId_btn_yes.setOnClickListener {
-            // Go to create pass
-            //
-        }
-        touchId_btn_no.setOnClickListener {
-            img_blocker.isVisible(false)
-            touchUse_dialog.isVisible(false)
-        }
-        touchId_img_close.setOnClickListener{
-            img_blocker.isVisible(false)
-            touchUse_dialog.isVisible(false)
-        }
-
-        btn_continue.setOnClickListener {
-            img_blocker.isVisible(true)
-            touchUse_dialog.isVisible(true)
+        edt_countryCode.setOnClickListener {
+            bottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED)
         }
 
         loginBSheet_img_close.setOnClickListener {
             bottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED)
-        }
-        edt_countryCode.setOnClickListener {
-            bottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED)
         }
     }
 

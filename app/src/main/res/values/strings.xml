@@ -1,6 +1,9 @@
 <resources>
   <string name="app_name">AppVNO</string>
 
+  <string name="dummy_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit?</string>
+  <string name="dummy_text2">Lorem ipsum dolor sit amet\nLorem ipsum dolor sit amet\nLorem ipsum dolor sit amet</string>
+
   <!-- TODO: Remove or change this placeholder text -->
   <string name="temp_getStarted_1">Welcome to AppVNO</string>
   <string name="temp_getStarted_2">Free and secure calls and message to any AppVNO user in the World</string>
@@ -101,6 +104,33 @@
   <string name="set_security_question">Set Security Question</string>
   <string name="skip_to_home_underline"><u>Skip to Home</u></string>
   <string name="enter_your_mobile">Enter your Mobile Number. We\'ll send a code to this number for verification.</string>
+  <string name="touch_id_is_enabled">Touch ID is Enabled</string>
+  <string name="you_can_use_your_fingerprint_as_verification">You can use your fingerprint as verification so you can proceed to reset your password.</string>
+  <string name="use_fingerprint">Use Fingerprint</string>
+  <string name="no_thanks">No Thanks</string>
+  <string name="verify_your_phone_number">Verify your phone number by entering the code sent to you through SMS.</string>
+  <string name="last_password">Last Password</string>
+  <string name="enter_the_last_password">Enter the last password that you remember</string>
+  <string name="enter_last_password">Enter last Password</string>
+  <string name="select_security_question">Select Security Question</string>
+  <string name="what_is_the_security_question">What is the security question that you chose to upon setting up?</string>
+  <string name="security_question">Security Question</string>
+  <string name="please_answer_your_security">Please answer your security question.</string>
+  <string name="answer">Answer</string>
+  <string name="type_your_answer">Type your answer</string>
+  <string name="submit_answer">Submit Answer</string>
+  <string name="account_verification">Account Verification</string>
+  <string name="to_make_sure_that_you_are_the_owner">To make sure that you are the owner of this account, please answer this question.</string>
+  <string name="you_will_need_to_contact_customer">You will need to contact Customer Support for further action</string>
+  <string name="next_steps">Next Steps:</string>
+  <string name="customer_support">Customer Support</string>
+  <string name="back_to_login_underline"><u>Back to Login</u></string>
+  <string name="success">Success!</string>
+  <string name="your_account_details_">Your account details have been updated and you may now Login.</string>
+  <string name="set_up_security_question">Set Up Security Question</string>
+  <string name="to_make_your_account">To make your account more secure, set up a security question.</string>
+  <string name="security_question_answer">Security Question Answer</string>
+  <string name="enter_answer_to_your_security_question">Enter answer to your Security Question</string>
 
 
   <string-array name="months">
