@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Size -->
     <dimen name="icon_size_24dp">24dp</dimen>
     <dimen name="icon_size_32dp">32dp</dimen>
@@ -47,7 +47,7 @@
     <dimen name="logo_height">50dp</dimen>
     <dimen name="button_primary_height">48dp</dimen>
     <dimen name="edit_text_primary_height">52dp</dimen>
-    <dimen name="bottom_navigation_height">56dp</dimen>
+    <dimen name="bottom_navigation_height">80dp</dimen>
     <dimen name="getStarted_background_height">200dp</dimen>
 
     <!-- Text Size -->
@@ -65,7 +65,8 @@
     <dimen name="elevation_8dp">8dp</dimen>
     <dimen name="elevation_10dp">10dp</dimen>
 
-
-
-
+   <dimen name="design_bottom_navigation_text_size" tools:override="true">12dp</dimen>
+   <dimen name="design_bottom_navigation_active_text_size" tools:override="true">12dp</dimen>
+<!--   <dimen name="design_bottom_navigation_active_icon_padding" tools:override="true">12dp</dimen>-->
 </resources>
+

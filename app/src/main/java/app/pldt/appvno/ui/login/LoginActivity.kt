@@ -11,6 +11,7 @@ import app.pldt.appvno.R
 import app.pldt.appvno.extensions.isVisible
 import app.pldt.appvno.model.Country
 import app.pldt.appvno.model.TempUser
+import app.pldt.appvno.ui.homePage.FreebeeHomeActivity
 import app.pldt.appvno.ui.loginRegister.LoginBottomSheetFragment
 import app.pldt.appvno.ui.password.forgotPassword.ForgotPasswordActivity
 import app.pldt.appvno.ui.register.RegisterActivity
@@ -23,8 +24,7 @@ import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.bottom_sheet_login.*
 import kotlinx.android.synthetic.main.recycler_contact_item.view.*
 import kotlinx.android.synthetic.main.recycler_country_code_item.view.*
-import org.jetbrains.anko.startActivity
-import org.jetbrains.anko.toast
+import org.jetbrains.anko.*
 
 class LoginActivity : AppCompatActivity() {
 
@@ -50,9 +50,10 @@ class LoginActivity : AppCompatActivity() {
             startActivity<ForgotPasswordActivity>()
         }
         btn_login.setOnClickListener{
-            if (edt_mobileNumber.text.toString() == "") {
-                edt_mobileNumber.setError("This field is required!", null)
-            }
+//            if (edt_mobileNumber.text.toString() == "") {
+//                edt_mobileNumber.setError("This field is required!", null)
+//            }
+            startActivity(intentFor<FreebeeHomeActivity>().newTask().clearTask())
         }
 
         edt_countryCode.setOnClickListener {

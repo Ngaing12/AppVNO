@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import app.pldt.appvno.R
 import app.pldt.appvno.extensions.isVisible
+import app.pldt.appvno.ui.homePage.FreebeeHomeActivity
 import app.pldt.appvno.ui.login.LoginActivity
 import app.pldt.appvno.ui.securityQuestion.SecurityQuestionActivity
 import kotlinx.android.synthetic.main.activity_register_success.*
@@ -29,7 +30,7 @@ class RegisterSuccessActivity : AppCompatActivity() {
 
         tv_skip.setOnClickListener {
             // TODO - Go to home
-            startActivity(intentFor<LoginActivity>().newTask().clearTask())
+            startActivity(intentFor<FreebeeHomeActivity>().newTask().clearTask())
         }
 
         btn_set.setOnClickListener {

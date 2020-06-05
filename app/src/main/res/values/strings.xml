@@ -132,6 +132,11 @@
   <string name="security_question_answer">Security Question Answer</string>
   <string name="enter_answer_to_your_security_question">Enter answer to your Security Question</string>
   <string name="your_security_question_has_been_set_up">Your Security question has been set up!</string>
+  <string name="home">Home</string>
+  <string name="contacts">Contacts</string>
+  <string name="calls">Calls</string>
+  <string name="messages">Messages</string>
+  <string name="menu">Menu</string>
 
 
   <string-array name="months">

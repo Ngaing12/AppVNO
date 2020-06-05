@@ -4,6 +4,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.home.FreebeeHomeActivity">
+    tools:context=".ui.homePage.FreebeeHomeActivity">
+
+  <FrameLayout
+      android:id="@+id/fl_container"
+      android:layout_width="match_parent"
+      android:layout_height="0dp"
+      app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.5"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+  <com.google.android.material.bottomnavigation.BottomNavigationView
+      style="@style/FreeBeeNavigationHome"
+      android:id="@+id/bottomNavigationView"
+      android:layout_width="match_parent"
+      app:labelVisibilityMode="labeled"
+      app:itemBackground="@drawable/container_rounded_selector"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:itemIconSize="28dp"
+      android:paddingHorizontal="@dimen/padding_8dp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.5"
+      app:layout_constraintStart_toStartOf="parent"
+      app:menu="@menu/freebee_nav_menu" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

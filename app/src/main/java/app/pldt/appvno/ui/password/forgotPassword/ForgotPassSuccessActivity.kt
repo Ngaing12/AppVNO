@@ -7,6 +7,7 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import app.pldt.appvno.R
 import app.pldt.appvno.extensions.isVisible
 import app.pldt.appvno.model.Country
+import app.pldt.appvno.ui.homePage.FreebeeHomeActivity
 import app.pldt.appvno.ui.login.CountryCodeItem
 import app.pldt.appvno.ui.login.LoginActivity
 import com.google.android.material.bottomsheet.BottomSheetBehavior
@@ -49,7 +50,7 @@ class ForgotPassSuccessActivity : AppCompatActivity() {
         }
         btn_login.setOnClickListener {
             // TODO - goto Home
-            startActivity(intentFor<LoginActivity>().newTask().clearTask())
+            startActivity(intentFor<FreebeeHomeActivity>().newTask().clearTask())
         }
     }
 

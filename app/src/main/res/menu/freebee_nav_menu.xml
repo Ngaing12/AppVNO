@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <item
+      android:id="@+id/miHome"
+      android:title="@string/home"
+      android:icon="@drawable/ic_home"/>
+
+  <item
+      android:id="@+id/miContacts"
+      android:title="@string/contacts"
+      android:icon="@drawable/ic_contacts"/>
+
+  <item
+      android:id="@+id/miCalls"
+      android:title="@string/calls"
+      android:icon="@drawable/ic_calls"/>
+
+  <item
+      android:id="@+id/miMessages"
+      android:title="@string/messages"
+      android:icon="@drawable/ic_messages"/>
+
+  <item
+      android:id="@+id/miMenu"
+      android:title="@string/menu"
+      android:icon="@drawable/temp_ic_dehaze_black_24dp"/>
+</menu>

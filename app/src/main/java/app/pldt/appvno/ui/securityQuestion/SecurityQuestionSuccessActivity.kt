@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import app.pldt.appvno.R
+import app.pldt.appvno.ui.homePage.FreebeeHomeActivity
 import app.pldt.appvno.ui.login.LoginActivity
 import kotlinx.android.synthetic.main.activity_security_question_success.*
 import kotlinx.android.synthetic.main.app_bar_pre_login.*
@@ -26,8 +27,7 @@ class SecurityQuestionSuccessActivity : AppCompatActivity() {
 
     private fun setupButtons() {
         btn_continue.setOnClickListener {
-            // TODO - goto home
-            startActivity(intentFor<LoginActivity>().newTask().clearTask())
+            startActivity(intentFor<FreebeeHomeActivity>().newTask().clearTask())
         }
     }
 }

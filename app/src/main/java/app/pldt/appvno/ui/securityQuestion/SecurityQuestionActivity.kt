@@ -7,6 +7,7 @@ import android.text.TextWatcher
 import android.view.View
 import android.widget.AdapterView
 import app.pldt.appvno.R
+import app.pldt.appvno.ui.homePage.FreebeeHomeActivity
 import app.pldt.appvno.ui.login.LoginActivity
 import app.pldt.appvno.ui.profile.SpinnerDefaultAdapter
 import kotlinx.android.synthetic.main.activity_security_question.*
@@ -24,8 +25,7 @@ class SecurityQuestionActivity : AppCompatActivity() {
 
         toolbarTitle.text = "Security Question"
         toolbarClose.setOnClickListener {
-            // Todo - home
-            startActivity(intentFor<LoginActivity>().newTask().clearTask())
+            startActivity(intentFor<FreebeeHomeActivity>().newTask().clearTask())
         }
 
         setupDummyData()
