@@ -1,4 +1,4 @@
-package app.pldt.appvno.ui.home
+package app.pldt.appvno.ui.shop
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

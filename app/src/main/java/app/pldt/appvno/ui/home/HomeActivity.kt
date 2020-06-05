@@ -1,14 +1,11 @@
 package app.pldt.appvno.ui.home
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
-import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
 import app.pldt.appvno.AppVNOApplication
-import app.pldt.appvno.MainActivity
 import app.pldt.appvno.R
 import app.pldt.appvno.ui.call.CallActivity
 import app.pldt.appvno.extensions.isVisible
@@ -16,11 +13,11 @@ import app.pldt.appvno.firebase.MyFirebaseDatabase
 import app.pldt.appvno.ui.BaseActivity
 import app.pldt.appvno.ui.call.SysnetCallActivity
 import app.pldt.appvno.ui.message.MessageFragment
+import app.pldt.appvno.ui.shop.ShopFragment
 import com.sysnetph.sysnetsdk.RegistrationAction
 import com.sysnetph.sysnetsdk.Sysnet
 import com.sysnetph.sysnetsdk.activityListener
 import kotlinx.android.synthetic.main.activity_home.*
-import kotlinx.android.synthetic.main.activity_sysnet_call.*
 import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
 
