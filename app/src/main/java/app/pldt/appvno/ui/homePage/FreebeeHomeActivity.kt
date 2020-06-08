@@ -7,6 +7,7 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import app.pldt.appvno.R
+import app.pldt.appvno.ui.profile.ProfileFragment
 import app.pldt.appvno.ui.shop.ShopFragment
 import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.activity_freebee_home.*
@@ -52,9 +53,22 @@ class FreebeeHomeActivity : AppCompatActivity() , NavigationView.OnNavigationIte
         }
     }
 
-    private fun setCurrentFragment(fragment : Fragment, x : Int = 0) =
+    fun setCurrentFragment(fragment : Fragment, x : Int = 0) =
         supportFragmentManager.beginTransaction().apply {
             replace(R.id.fl_container, fragment)
+            commit()
+            if (x == 1 ) {
+                val size = bottomNavigationView.menu.size()
+                for (i in 0 until size) {
+                    bottomNavigationView.menu.getItem(i).isChecked = false;
+                }
+            }
+        }
+
+    fun setCurrentFragmentWithBackStack(fragment : Fragment, x : Int = 0) =
+        supportFragmentManager.beginTransaction().apply {
+            replace(R.id.fl_container, fragment)
+            addToBackStack(null)
             commit()
             if (x == 1 ) {
                 val size = bottomNavigationView.menu.size()
@@ -68,7 +82,8 @@ class FreebeeHomeActivity : AppCompatActivity() , NavigationView.OnNavigationIte
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.drawer_profile -> {
-                setCurrentFragment(ShopFragment.newInstance(),1)
+                setCurrentFragment(ProfileFragment.newInstance(),1)
+                setCurrentFragment(ProfileFragment.newInstance(),1)
             }
             R.id.drawer_shop -> {
                 setCurrentFragment(ShopFragment.newInstance(),1)

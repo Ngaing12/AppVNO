@@ -1,6 +1,8 @@
 package app.pldt.appvno.ui.profile
 
 import android.os.Bundle
+import android.widget.ArrayAdapter
+import android.widget.AutoCompleteTextView
 import androidx.appcompat.app.AppCompatActivity
 import app.pldt.appvno.R
 import app.pldt.appvno.ui.register.RegisterSuccessActivity
@@ -40,6 +42,7 @@ class PersonalDetailActivity : AppCompatActivity() {
         )
         spinner_month.adapter = spinnerArrayAdapter
         spinner_month.setSelection(0)
+
     }
 
 }

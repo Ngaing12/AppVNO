@@ -146,7 +146,25 @@
         app:layout_constraintRight_toLeftOf="@id/spinner_month"
         app:layout_constraintTop_toBottomOf="@id/tv_desc3" />
 
+<!--    <com.google.android.material.textfield.TextInputLayout-->
+<!--        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:hint="Choose Month"-->
+<!--        app:layout_constraintLeft_toRightOf="@id/edt_year"-->
+<!--        app:layout_constraintRight_toRightOf="@id/tv_header1"-->
+<!--        app:layout_constraintTop_toTopOf="@id/edt_year">-->
+
+<!--      <AutoCompleteTextView-->
+<!--          android:id="@+id/tv_month"-->
+<!--          android:layout_width="match_parent"-->
+<!--          android:layout_height="wrap_content"/>-->
+
+<!--    </com.google.android.material.textfield.TextInputLayout>-->
+
+
     <androidx.appcompat.widget.AppCompatSpinner
+        android:visibility="visible"
         android:id="@+id/spinner_month"
         style="@style/FreeBeeBaseSpinner"
         android:layout_width="0dp"

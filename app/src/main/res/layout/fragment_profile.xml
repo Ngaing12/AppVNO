@@ -1,0 +1,526 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollview_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:fitsSystemWindows="true"
+    tools:context=".ui.profile.ProfileFragment">
+
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:background="@color/freeBeeHomeBg">
+
+    <ImageView
+        android:id="@+id/img_toolbar_bg"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:src="@drawable/container_bottom_rounded"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/app_bar" />
+
+    <View
+        android:id="@+id/view_container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginLeft="@dimen/margin_16dp"
+
+        android:layout_marginRight="@dimen/margin_16dp"
+        android:background="@drawable/container_rounded_top_right"
+        app:layout_constraintBottom_toBottomOf="@id/view_container_end"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guide_1" />
+
+    <View
+        android:id="@+id/guide_1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        app:layout_constraintBottom_toBottomOf="@id/img_profile"
+        app:layout_constraintTop_toTopOf="@id/img_profile" />
+
+    <ImageView
+        android:id="@+id/img_profile"
+        android:layout_width="@dimen/icon_size_112dp"
+        android:layout_height="@dimen/icon_size_112dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_profile_placeholder"
+        android:tint="@color/freeButtonDisabledState"
+        app:layout_constraintLeft_toLeftOf="@id/view_container"
+        app:layout_constraintRight_toRightOf="@id/view_container"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+
+    <ImageView
+        android:layout_width="@dimen/icon_size_32dp"
+        android:layout_height="@dimen/icon_size_32dp"
+        android:layout_marginStart="@dimen/margin_16dp"
+        android:layout_marginBottom="@dimen/margin_8dp"
+        android:src="@drawable/ic_profile_edit"
+        app:layout_constraintBottom_toBottomOf="@id/img_profile"
+        app:layout_constraintLeft_toLeftOf="@id/img_profile" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        style="@style/FreeBeeHH3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_8dp"
+        android:text="Juan dela Cruz"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        app:layout_constraintLeft_toLeftOf="@id/view_container"
+        app:layout_constraintRight_toRightOf="@id/view_container"
+        app:layout_constraintTop_toBottomOf="@id/img_profile" />
+
+    <TextView
+        android:id="@+id/tv_gender"
+        style="@style/FreeBeeHP3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Male"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        app:layout_constraintLeft_toLeftOf="@id/view_container"
+        app:layout_constraintRight_toRightOf="@id/view_container"
+        app:layout_constraintTop_toBottomOf="@id/tv_name" />
+
+    <View
+        android:id="@+id/view_container_end"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_24dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_gender" />
+
+
+    <!-- Register & Pass -->
+    <View
+        android:id="@+id/card_1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/margin_4dp"
+        android:background="@drawable/container_bottom_rounded"
+        android:backgroundTint="@color/colorWhite"
+        app:layout_constraintBottom_toBottomOf="@id/view_card1_end"
+        app:layout_constraintLeft_toLeftOf="@id/view_container"
+        app:layout_constraintRight_toRightOf="@id/view_container"
+        app:layout_constraintTop_toBottomOf="@id/view_container" />
+
+    <TextView
+        android:id="@+id/tv_decs1"
+        style="@style/FreeBeeHP3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_16dp"
+        android:text="@string/registered_mobile_number"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        app:layout_constraintLeft_toLeftOf="@id/card_1"
+        app:layout_constraintRight_toRightOf="@id/card_1"
+        app:layout_constraintTop_toTopOf="@id/card_1" />
+
+    <TextView
+        android:id="@+id/tv_mobile"
+        style="@style/FreeBeeHH3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="+44 20 1234 5678"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        app:layout_constraintLeft_toLeftOf="@id/card_1"
+        app:layout_constraintRight_toRightOf="@id/card_1"
+        app:layout_constraintTop_toBottomOf="@id/tv_decs1" />
+
+    <View
+        android:id="@+id/view_password"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/margin_4dp"
+        android:layout_marginTop="@dimen/margin_4dp"
+        android:layout_marginEnd="@dimen/margin_4dp"
+        android:background="@drawable/container_bottom_rounded"
+        android:backgroundTint="@color/freeBeeHomeBg"
+        app:layout_constraintBottom_toBottomOf="@id/view_password_end"
+        app:layout_constraintLeft_toLeftOf="@id/card_1"
+        app:layout_constraintRight_toRightOf="@id/card_1"
+        app:layout_constraintTop_toBottomOf="@id/tv_mobile" />
+
+    <TextView
+        android:id="@+id/tv_desc2"
+        style="@style/FreeBeeHP4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_16dp"
+        android:layout_marginTop="@dimen/margin_16dp"
+        android:text="Password has been set"
+        android:textAlignment="textStart"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintRight_toLeftOf="@id/tv_changePassword"
+        app:layout_constraintStart_toStartOf="@id/view_password"
+        app:layout_constraintTop_toTopOf="@id/view_password" />
+
+    <TextView
+        android:id="@+id/tv_changePassword"
+        style="@style/FreeBeeHP4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin_16dp"
+        android:text="@string/change_password"
+        android:textAlignment="textEnd"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/tv_desc2"
+        app:layout_constraintLeft_toRightOf="@id/tv_desc2"
+        app:layout_constraintRight_toRightOf="@id/view_password"
+        app:layout_constraintTop_toTopOf="@id/tv_desc2" />
+
+    <View
+        android:id="@+id/view_password_end"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_16dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_desc2" />
+
+    <View
+        android:id="@+id/view_card1_end"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_4dp"
+        app:layout_constraintTop_toBottomOf="@id/view_password_end" />
+
+
+    <!-- Virtual Number -->
+    <View
+        android:id="@+id/card_2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/margin_16dp"
+        android:background="@drawable/container_bottom_rounded"
+        android:backgroundTint="@color/colorWhite"
+        app:layout_constraintBottom_toBottomOf="@id/view_card2_end"
+        app:layout_constraintLeft_toLeftOf="@id/view_container"
+        app:layout_constraintRight_toRightOf="@id/view_container"
+        app:layout_constraintTop_toBottomOf="@id/card_1" />
+
+    <ImageView
+        android:id="@+id/img_check"
+        android:layout_width="@dimen/icon_size_32dp"
+        android:layout_height="@dimen/icon_size_32dp"
+        android:layout_marginStart="@dimen/margin_16dp"
+        android:src="@drawable/ic_profile_check"
+        app:layout_constraintBottom_toBottomOf="@id/tv_desc3"
+        app:layout_constraintLeft_toLeftOf="@id/card_2"
+        app:layout_constraintTop_toTopOf="@id/tv_desc3" />
+
+    <TextView
+        android:id="@+id/tv_desc3"
+        style="@style/FreeBeeHH3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_8dp"
+        android:layout_marginTop="@dimen/margin_16dp"
+        android:text="@string/active"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@id/tv_vNumber"
+        app:layout_constraintLeft_toRightOf="@id/img_check"
+        app:layout_constraintTop_toTopOf="@id/tv_desc4" />
+
+
+    <TextView
+        android:id="@+id/tv_desc4"
+        style="@style/FreeBeeHP3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_16dp"
+        android:layout_marginEnd="@dimen/margin_16dp"
+        android:text="@string/virtual_smart_ph_number"
+        android:textAlignment="textEnd"
+        app:layout_constraintRight_toRightOf="@id/card_2"
+        app:layout_constraintTop_toTopOf="@id/card_2" />
+
+    <TextView
+        android:id="@+id/tv_vNumber"
+        style="@style/FreeBeeUH3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_4dp"
+        android:layout_marginEnd="@dimen/margin_16dp"
+        android:text="+63 999 999 999"
+        android:textAlignment="textEnd"
+        app:layout_constraintRight_toRightOf="@id/card_2"
+        app:layout_constraintTop_toBottomOf="@id/tv_desc4" />
+
+
+    <View
+        android:id="@+id/view_vNumber"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/margin_4dp"
+        android:layout_marginTop="@dimen/margin_16dp"
+        android:layout_marginEnd="@dimen/margin_4dp"
+        android:background="@drawable/container_bottom_rounded"
+        android:backgroundTint="@color/freeBeeHomeBg"
+        app:layout_constraintBottom_toBottomOf="@id/view_vNumber_end"
+        app:layout_constraintLeft_toLeftOf="@id/card_2"
+        app:layout_constraintRight_toRightOf="@id/card_2"
+        app:layout_constraintTop_toBottomOf="@id/tv_vNumber" />
+
+    <TextView
+        android:id="@+id/tv_valid"
+        style="@style/FreeBeeHP4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_16dp"
+        android:layout_marginTop="@dimen/margin_16dp"
+        android:text="Valid Until 10/29/2019"
+        android:textAlignment="textStart"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintRight_toLeftOf="@id/tv_viewDetails"
+        app:layout_constraintStart_toStartOf="@id/view_vNumber"
+        app:layout_constraintTop_toTopOf="@id/view_vNumber" />
+
+    <TextView
+        android:id="@+id/tv_viewDetails"
+        style="@style/FreeBeeHP4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin_16dp"
+        android:text="@string/view_details"
+        android:textAlignment="textEnd"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/tv_valid"
+        app:layout_constraintLeft_toRightOf="@id/tv_valid"
+        app:layout_constraintRight_toRightOf="@id/view_vNumber"
+        app:layout_constraintTop_toTopOf="@id/tv_valid" />
+
+    <View
+        android:id="@+id/view_vNumber_end"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_16dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_viewDetails" />
+
+    <View
+        android:id="@+id/view_card2_end"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_4dp"
+        app:layout_constraintTop_toBottomOf="@id/view_vNumber_end" />
+
+
+    <View
+        android:id="@+id/view_separator"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/separator_view_size_5dp"
+        android:layout_marginTop="@dimen/margin_24dp"
+        android:background="@drawable/dash_line2"
+        app:layout_constraintLeft_toLeftOf="@id/view_container"
+        app:layout_constraintRight_toRightOf="@id/view_container"
+        app:layout_constraintTop_toBottomOf="@id/view_card2_end" />
+
+
+    <!--  Settings -->
+    <View
+        android:id="@+id/card_3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/margin_16dp"
+        android:background="@drawable/container_rounded"
+        android:backgroundTint="@color/colorWhite"
+        app:layout_constraintBottom_toBottomOf="@id/view_card3_end"
+        app:layout_constraintLeft_toLeftOf="@id/view_container"
+        app:layout_constraintRight_toRightOf="@id/view_container"
+        app:layout_constraintTop_toBottomOf="@id/view_separator" />
+
+    <ImageView
+        android:id="@+id/img_settings"
+        android:layout_width="@dimen/icon_size_48dp"
+        android:layout_height="@dimen/icon_size_48dp"
+        android:layout_marginStart="@dimen/margin_32dp"
+        android:src="@drawable/ic_profile_settings"
+        app:layout_constraintBottom_toBottomOf="@id/tv_subTitle1"
+        app:layout_constraintLeft_toLeftOf="@id/card_3"
+        app:layout_constraintTop_toTopOf="@id/tv_title1" />
+
+    <TextView
+        android:id="@+id/tv_title1"
+        style="@style/FreeBeeHH1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_24dp"
+        android:layout_marginTop="@dimen/margin_24dp"
+        android:text="@string/settings"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toRightOf="@id/img_settings"
+        app:layout_constraintRight_toLeftOf="@id/img_arrow1"
+        app:layout_constraintTop_toTopOf="@id/card_3" />
+
+    <TextView
+        android:id="@+id/tv_subTitle1"
+        style="@style/FreeBeeHP3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_4dp"
+        android:text="@string/view_and_edit_notification_and_security_settings"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="@id/tv_title1"
+        app:layout_constraintRight_toRightOf="@id/tv_title1"
+        app:layout_constraintTop_toBottomOf="@id/tv_title1" />
+
+    <ImageView
+        android:id="@+id/img_arrow1"
+        android:layout_width="40dp"
+        android:layout_height="0dp"
+        android:src="@drawable/ic_keyboard_arrow_right"
+        app:layout_constraintBottom_toBottomOf="@id/card_3"
+        app:layout_constraintRight_toRightOf="@id/card_3"
+        app:layout_constraintTop_toTopOf="@id/card_3" />
+
+    <View
+        android:id="@+id/view_card3_end"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_24dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_subTitle1" />
+
+    <!--  About -->
+    <View
+        android:id="@+id/card_4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/margin_16dp"
+        android:background="@drawable/container_rounded"
+        android:backgroundTint="@color/colorWhite"
+        app:layout_constraintBottom_toBottomOf="@id/view_card4_end"
+        app:layout_constraintLeft_toLeftOf="@id/view_container"
+        app:layout_constraintRight_toRightOf="@id/view_container"
+        app:layout_constraintTop_toBottomOf="@id/card_3" />
+
+    <ImageView
+        android:id="@+id/img_about"
+        android:layout_width="@dimen/icon_size_48dp"
+        android:layout_height="@dimen/icon_size_48dp"
+        android:layout_marginStart="@dimen/margin_32dp"
+        android:src="@drawable/ic_profile_about"
+        app:layout_constraintBottom_toBottomOf="@id/tv_subTitle2"
+        app:layout_constraintLeft_toLeftOf="@id/card_4"
+        app:layout_constraintTop_toTopOf="@id/tv_title2" />
+
+    <TextView
+        android:id="@+id/tv_title2"
+        style="@style/FreeBeeHH1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_24dp"
+        android:layout_marginTop="@dimen/margin_24dp"
+        android:text="@string/about_the_app"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toRightOf="@id/img_about"
+        app:layout_constraintRight_toLeftOf="@id/img_arrow2"
+        app:layout_constraintTop_toTopOf="@id/card_4" />
+
+    <TextView
+        android:id="@+id/tv_subTitle2"
+        style="@style/FreeBeeHP3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_4dp"
+        android:text="@string/view_version_number_and_other_details_about_the_app"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="@id/tv_title2"
+        app:layout_constraintRight_toRightOf="@id/tv_title2"
+        app:layout_constraintTop_toBottomOf="@id/tv_title2" />
+
+    <ImageView
+        android:id="@+id/img_arrow2"
+        android:layout_width="40dp"
+        android:layout_height="0dp"
+        android:src="@drawable/ic_keyboard_arrow_right"
+        app:layout_constraintBottom_toBottomOf="@id/card_4"
+        app:layout_constraintRight_toRightOf="@id/card_4"
+        app:layout_constraintTop_toTopOf="@id/card_4" />
+
+    <View
+        android:id="@+id/view_card4_end"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_24dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_subTitle2" />
+
+    <!--  Deactivate -->
+    <View
+        android:id="@+id/card_5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/margin_16dp"
+        android:background="@drawable/container_rounded"
+        android:backgroundTint="@color/colorWhite"
+        app:layout_constraintBottom_toBottomOf="@id/view_card5_end"
+        app:layout_constraintLeft_toLeftOf="@id/view_container"
+        app:layout_constraintRight_toRightOf="@id/view_container"
+        app:layout_constraintTop_toBottomOf="@id/card_4" />
+
+    <ImageView
+        android:id="@+id/img_deactivate"
+        android:layout_width="@dimen/icon_size_48dp"
+        android:layout_height="@dimen/icon_size_48dp"
+        android:layout_marginStart="@dimen/margin_32dp"
+        android:src="@drawable/ic_profile_deactivate"
+        app:layout_constraintBottom_toBottomOf="@id/tv_subTitle3"
+        app:layout_constraintLeft_toLeftOf="@id/card_5"
+        app:layout_constraintTop_toTopOf="@id/tv_title3" />
+
+    <TextView
+        android:id="@+id/tv_title3"
+        style="@style/FreeBeeHH1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_24dp"
+        android:layout_marginTop="@dimen/margin_24dp"
+        android:text="@string/deactivate_account"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toRightOf="@id/img_deactivate"
+        app:layout_constraintRight_toLeftOf="@id/img_arrow3"
+        app:layout_constraintTop_toTopOf="@id/card_5" />
+
+    <TextView
+        android:id="@+id/tv_subTitle3"
+        style="@style/FreeBeeHP3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_4dp"
+        android:text="@string/dummy_text"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="@id/tv_title3"
+        app:layout_constraintRight_toRightOf="@id/tv_title3"
+        app:layout_constraintTop_toBottomOf="@id/tv_title3" />
+
+    <ImageView
+        android:id="@+id/img_arrow3"
+        android:layout_width="40dp"
+        android:layout_height="0dp"
+        android:src="@drawable/ic_keyboard_arrow_right"
+        app:layout_constraintBottom_toBottomOf="@id/card_5"
+        app:layout_constraintRight_toRightOf="@id/card_5"
+        app:layout_constraintTop_toTopOf="@id/card_5" />
+
+    <View
+        android:id="@+id/view_card5_end"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_24dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_subTitle3" />
+
+    <Button
+        android:id="@+id/btn_logout1"
+        style="@style/FreeBeeButtonPrimary"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_32dp"
+        android:layout_marginBottom="@dimen/margin_32dp"
+        android:text="@string/logout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/card_5" />
+
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

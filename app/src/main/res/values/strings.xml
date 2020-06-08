@@ -1,6 +1,8 @@
 <resources>
   <string name="app_name">AppVNO</string>
 
+
+  <string name="_500_bee_coins_have_been"><b>500 Bee Coins</b> been</string>
   <string name="dummy_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit?</string>
   <string name="dummy_text2">Lorem ipsum dolor sit amet\nLorem ipsum dolor sit amet\nLorem ipsum dolor sit amet</string>
 
@@ -137,6 +139,48 @@
   <string name="calls">Calls</string>
   <string name="messages">Messages</string>
   <string name="menu">Menu</string>
+  <string name="what_are_you_shopping_for">What are you shopping for?</string>
+  <string name="select_number_bee_coins_to_purchase">Select number of \n Bee Coins to purchase</string>
+  <string name="what_are_bee_coins"><u>What are Bee Coins</u></string>
+  <string name="bee_coins_balance">Bee Coins Balance</string>
+  <string name="_500_bee_coins">500 Bee Coins</string>
+  <string name="_1000_bee_coins">1000 Bee Coins</string>
+  <string name="how_to_use">How to Use</string>
+  <string name="buy_bee_coins">Buy Bee Coins</string>
+  <string name="confirm_purchase">CONFIRM PURCHASE</string>
+  <string name="upon_confirming_you_will_be_taken">Upon confirming, you will be taken to our payment portal for checkout</string>
+  <string name="you_ve_purchased">You\'ve purchased</string>
+  <string name="they_ve_now_been_credited_into_your_account">They\'ve now been credited into your account</string>
+  <string name="view_my_bee_coins"><u>View My Bee Coins</u></string>
+  <string name="you_can_now_buy_premium_call_plans">You can now buy <b>Premium Call Plans </b>using Bee Coins to make premium calls.</string>
+  <string name="buy_a_plan">Buy A Plan</string>
+  <string name="back_to_bee_shop">Back To Bee Shop</string>
+  <string name="okay_take_me_there">Okay Take Me There</string>
+  <string name="we_couldn_t_successfully_process">We couldn\'t successfully process your payment through Apple Pay</string>
+  <string name="try_again">Try Again</string>
+  <string name="choose_another_payment_method"><u>Choose another payment method</u></string>
+  <string name="got_a_bee_coin_pin">Got A Bee Coin Pin?</string>
+  <string name="enter_the_pin_from_a_bee_coin_card">Enter the PIN from a Bee Coin Card</string>
+  <string name="card_hint">00-0000-0000-0000</string>
+  <string name="submit_pin"><u>Submit Pin</u></string>
+  <string name="need_help"><u>Need Help?</u></string>
+  <string name="invalid_pin">Invalid PIN</string>
+  <string name="touch_id_has_been_enabled">Touch ID has been enabled!</string>
+  <string name="please_check_if_you_ve_entered_the_correct_pin">Please check if you\'ve entered the correct PIN.</string>
+  <string name="your_new_bee_coins_balance">Your new Bee Coins balance</string>
+  <string name="you_can_now_buy_premium_call">You can now buy Premium Call Plans using Bee Coins to make premium calls.</string>
+  <string name="buy_a_plan_now"><u>Buy a Plan Now</u></string>
+  <string name="change_password"><u>Change Password</u></string>
+  <string name="registered_mobile_number">Registered Mobile Number</string>
+  <string name="active">Active</string>
+  <string name="virtual_smart_ph_number">Virtual Smart PH Number</string>
+  <string name="view_details"><u>View Details</u></string>
+  <string name="view_and_edit_notification_and_security_settings">View and edit notification and security settings</string>
+  <string name="settings">Settings</string>
+  <string name="about_the_app">About the App</string>
+  <string name="view_version_number_and_other_details_about_the_app">View version number and other details about the app</string>
+  <string name="deactivate_account">Deactivate Account</string>
+  <string name="logout">Logout</string>
 
 
   <string-array name="months">

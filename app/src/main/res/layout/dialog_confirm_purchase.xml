@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:elevation="5dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <View
+        android:id="@+id/payment_container_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/margin_16dp"
+        android:layout_marginTop="@dimen/margin_24dp"
+        android:layout_marginEnd="@dimen/margin_16dp"
+        android:background="@drawable/container_rounded"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/barrier2" />
+
+    <ImageView
+        android:id="@+id/payment_top_bg"
+        android:src="@drawable/container_rounded_top"
+        android:tint="@color/freeBeeYellow"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        app:layout_constraintLeft_toLeftOf="@id/payment_container_content"
+        app:layout_constraintRight_toRightOf="@id/payment_container_content"
+        app:layout_constraintTop_toTopOf="@id/payment_container_content" />
+
+
+    <ImageView
+        android:id="@+id/payment_img_icon"
+        android:layout_width="@dimen/icon_size_112dp"
+        android:layout_height="0dp"
+        android:scaleType="fitXY"
+        android:layout_marginTop="@dimen/margin_16dp"
+        android:layout_marginRight="@dimen/margin_32dp"
+        android:src="@drawable/ic_confirm_payment"
+        app:layout_constraintRight_toRightOf="@id/payment_top_bg"
+        app:layout_constraintBottom_toBottomOf="@id/payment_top_bg"
+        app:layout_constraintTop_toTopOf="@id/payment_top_bg" />
+
+    <TextView
+        android:id="@+id/payment_tv_desc1"
+        style="@style/FreeBeeUH2.Offset"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_16dp"
+        android:layout_marginRight="@dimen/margin_32dp"
+        android:text="@string/confirm_purchase"
+        app:layout_constraintBottom_toBottomOf="@id/payment_top_bg"
+        app:layout_constraintLeft_toLeftOf="@id/payment_container_content"
+        app:layout_constraintRight_toLeftOf="@id/payment_img_icon"
+        app:layout_constraintTop_toTopOf="@id/payment_top_bg" />
+
+
+
+    <View
+        android:id="@+id/payment_card_1"
+        android:layout_width="0dp"
+        android:layout_height="140dp"
+        android:background="@drawable/container_three_rounded"
+        android:backgroundTint="@color/freeBeeHomeCardBackground1"
+        android:layout_marginTop="@dimen/margin_16dp"
+        android:layout_marginLeft="@dimen/margin_32dp"
+        android:layout_marginRight="@dimen/margin_32dp"
+        app:layout_constraintRight_toRightOf="@id/payment_container_content"
+        app:layout_constraintLeft_toLeftOf="@id/payment_container_content"
+        app:layout_constraintTop_toBottomOf="@id/payment_top_bg"/>
+
+
+    <TextView
+        android:id="@+id/payment_tv_desc2"
+        style="@style/FreeBeeHH3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:layout_marginTop="@dimen/margin_32dp"
+        android:text="@string/confirm_purchase"
+        app:layout_constraintLeft_toLeftOf="@id/payment_card_1"
+        app:layout_constraintRight_toRightOf="@id/payment_card_1"
+        app:layout_constraintTop_toTopOf="@id/payment_card_1" />
+
+    <ImageView
+        android:id="@+id/payment_img_coin"
+        android:src="@drawable/ic_coin_gold"
+        android:layout_width="@dimen/icon_size_48dp"
+        android:layout_height="@dimen/icon_size_48dp"
+        android:layout_marginTop="@dimen/margin_8dp"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintTop_toTopOf="@id/payment_tv_amount"
+        app:layout_constraintBottom_toBottomOf="@id/payment_tv_amount"
+        app:layout_constraintLeft_toLeftOf="@id/payment_card_1"
+        app:layout_constraintRight_toLeftOf="@id/payment_tv_amount"/>
+
+    <TextView
+        android:id="@+id/payment_tv_amount"
+        style="@style/FreeBeeUH1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textSize="45dp"
+        android:text="600.00"
+        android:layout_marginStart="@dimen/margin_8dp"
+        app:layout_constraintLeft_toRightOf="@id/payment_img_coin"
+        app:layout_constraintRight_toRightOf="@id/payment_card_1"
+        app:layout_constraintTop_toBottomOf="@id/payment_tv_desc2" />
+
+
+
+    <TextView
+        android:id="@+id/payment_tv_desc3"
+        style="@style/FreeBeeHP2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_32dp"
+        android:layout_marginTop="@dimen/margin_32dp"
+        android:layout_marginRight="@dimen/margin_32dp"
+        android:text="@string/upon_confirming_you_will_be_taken"
+        android:textAlignment="center"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/payment_card_1" />
+
+
+    <Button
+        android:id="@+id/payment_btn_okay"
+        style="@style/FreeBeeButtonPrimary"
+        android:layout_marginTop="@dimen/margin_64dp"
+        android:text="@string/okay_take_me_there"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/payment_tv_desc3" />
+
+    <Button
+        android:id="@+id/payment_btn_no"
+        style="@style/FreeBeeButtonSecondary"
+        android:layout_marginTop="@dimen/margin_16dp"
+        android:text="@string/cancel"
+        app:layout_constraintLeft_toLeftOf="@id/payment_btn_okay"
+        app:layout_constraintRight_toRightOf="@id/payment_btn_okay"
+        app:layout_constraintTop_toBottomOf="@id/payment_btn_okay" />
+
+    <View
+        android:id="@+id/payment_end"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_32dp"
+        app:layout_constraintTop_toBottomOf="@id/payment_btn_no"/>
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="payment_end"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

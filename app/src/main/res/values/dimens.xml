@@ -6,6 +6,7 @@
     <dimen name="icon_size_48dp">48dp</dimen>
     <dimen name="icon_size_56dp">56dp</dimen>
    <dimen name="icon_size_68dp">68dp</dimen>
+   <dimen name="icon_size_76dp">76dp</dimen>
     <dimen name="icon_size_112dp">112dp</dimen>
    <dimen name="icon_size_160dp">160dp</dimen>
  <dimen name="icon_size_240dp">240dp</dimen>
@@ -40,12 +41,14 @@
     <!-- Width -->
     <dimen name="logo_width">160dp</dimen>
     <dimen name="button_width">220dp</dimen>
+   <dimen name="button_width_small">75dp</dimen>
     <dimen name="card_width">335dp</dimen>
     <dimen name="secondary_stroke_width">4dp</dimen>
 
     <!-- Height -->
     <dimen name="logo_height">50dp</dimen>
     <dimen name="button_primary_height">48dp</dimen>
+   <dimen name="button_tertiary_height_small">30dp</dimen>
     <dimen name="edit_text_primary_height">52dp</dimen>
     <dimen name="bottom_navigation_height">80dp</dimen>
     <dimen name="getStarted_background_height">200dp</dimen>
@@ -67,6 +70,7 @@
 
    <dimen name="design_bottom_navigation_text_size" tools:override="true">12dp</dimen>
    <dimen name="design_bottom_navigation_active_text_size" tools:override="true">12dp</dimen>
-<!--   <dimen name="design_bottom_navigation_active_icon_padding" tools:override="true">12dp</dimen>-->
+   <dimen name="card_height_100dp">100dp</dimen>
+   <!--   <dimen name="design_bottom_navigation_active_icon_padding" tools:override="true">12dp</dimen>-->
 </resources>
 
