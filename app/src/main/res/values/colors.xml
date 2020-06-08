@@ -43,11 +43,14 @@
     <color name="waxVariant">#FDF0D0</color>
     <color name="waxVariantDark">#FF8000</color>
 
+    <color name="toolbar_color">#FF9D0B</color>
+
     <!-- Background -->
     <color name="freeBeeHomeBg">#FEF9EC</color>
     <color name="freeBeeHomeCardBackground1">#FEF6E1</color>
     <color name="freeBeeHomeCardBackground2">#FEEEC4</color>
     <color name="freeBeeHomeCardBackground3">#FEF1D1</color>
+
     <!-- Edit Text -->
     <color name="freeBeeEditTextPrimary">#99FDF0D0</color>
     <color name="freeBeeEditTextSecondary">#99FFF3D3</color>

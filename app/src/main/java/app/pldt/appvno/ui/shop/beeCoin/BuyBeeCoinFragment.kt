@@ -8,6 +8,7 @@ import android.view.ViewGroup
 
 import app.pldt.appvno.R
 import app.pldt.appvno.ui.homePage.FreebeeHomeActivity
+import app.pldt.appvno.ui.notification.NotificationFragment
 import kotlinx.android.synthetic.main.app_bar.*
 import kotlinx.android.synthetic.main.fragment_buy_bee_coin.*
 import kotlinx.android.synthetic.main.fragment_buy_bee_coin_confirm.*
@@ -26,6 +27,10 @@ class BuyBeeCoinFragment : Fragment() {
         toolbarTitle.text = "Buy Bee Coins"
         toolbarClose.setOnClickListener {
             fragmentManager?.popBackStack()
+        }
+        toolbarNotif.setOnClickListener {
+            val a = activity as FreebeeHomeActivity
+            a.setCurrentFragmentWithBackStack(NotificationFragment.newInstance(), 1)
         }
         setupButtons()
     }

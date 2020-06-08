@@ -1,4 +1,4 @@
-package app.pldt.appvno.ui.shop
+package app.pldt.appvno.ui.account
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,22 +9,24 @@ import android.view.ViewGroup
 import app.pldt.appvno.R
 import app.pldt.appvno.ui.homePage.FreebeeHomeActivity
 import app.pldt.appvno.ui.notification.NotificationFragment
-import app.pldt.appvno.ui.shop.beeCoin.BuyBeeCoinFragment
 import kotlinx.android.synthetic.main.app_bar.*
-import kotlinx.android.synthetic.main.fragment_shop.*
-import org.jetbrains.anko.toast
+import kotlinx.android.synthetic.main.fragment_deactivate_account.*
 
-class ShopFragment : Fragment() {
+
+class DeactivateAccountFragment : Fragment() {
+
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_shop, container, false)
+        return inflater.inflate(R.layout.fragment_deactivate_account, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        toolbarClose.visibility =View.GONE
-        toolbarTitle.text = "Shop"
+        toolbarTitle.text = "Deactivate Account"
+        toolbarClose.setOnClickListener {
+            fragmentManager?.popBackStack()
+        }
         toolbarNotif.setOnClickListener {
             val a = activity as FreebeeHomeActivity
             a.setCurrentFragmentWithBackStack(NotificationFragment.newInstance(), 1)
@@ -33,14 +35,16 @@ class ShopFragment : Fragment() {
     }
 
     private fun setupButtons() {
-        view_sample.setOnClickListener {
-            // Goto BeeShop
+        btn_deactivate.setOnClickListener{
             val a = activity as FreebeeHomeActivity
-            a.setCurrentFragmentWithBackStack(BuyBeeCoinFragment.newInstance())
+            a.setCurrentFragment(DeactivateAccountSuccessFragment.newInstance())
+        }
+        btn_cancel.setOnClickListener {
+            fragmentManager?.popBackStack()
         }
     }
 
     companion object {
-        fun newInstance() = ShopFragment()
+        fun newInstance() = DeactivateAccountFragment()
     }
 }

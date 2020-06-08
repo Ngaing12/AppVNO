@@ -134,6 +134,7 @@
 
     <style name="FreeBeeHH1">
         <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/freeBeeCaramel</item>
         <item name="android:textSize">@dimen/text_24sp</item>
     </style>
     <style name="FreeBeeHH1.Offset">
@@ -142,6 +143,7 @@
 
     <style name="FreeBeeHH2">
         <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/freeBeeCaramel</item>
         <item name="android:textSize">@dimen/text_20sp</item>
     </style>
     <style name="FreeBeeHH2.Offset">
@@ -150,6 +152,7 @@
 
     <style name="FreeBeeHH3">
         <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/freeBeeCaramel</item>
         <item name="android:textSize">@dimen/text_18sp</item>
     </style>
     <style name="FreeBeeHH3.Offset">
@@ -157,18 +160,22 @@
     </style>
 
     <style name="FreeBeeHP1">
+        <item name="android:textColor">@color/freeBeeCaramel</item>
         <item name="android:textSize">@dimen/text_20sp</item>
     </style>
 
     <style name="FreeBeeHP2">
+        <item name="android:textColor">@color/freeBeeCaramel</item>
         <item name="android:textSize">@dimen/text_18sp</item>
     </style>
 
     <style name="FreeBeeHP3">
+        <item name="android:textColor">@color/freeBeeCaramel</item>
         <item name="android:textSize">@dimen/margin_16dp</item>
     </style>
 
     <style name="FreeBeeHP4">
+        <item name="android:textColor">@color/freeBeeCaramel</item>
         <item name="android:textSize">@dimen/text_14sp</item>
     </style>
 
@@ -197,6 +204,7 @@
 
     <!-- Edit Text -->
     <style name="FreeBeeBaseEditText" parent="FreeBeeHP4">
+        <item name="android:textColor">@color/freeBeeCaramel</item>
         <item name="android:layout_height">@dimen/edit_text_primary_height</item>
     </style>
 
@@ -222,6 +230,13 @@
         <item name="android:paddingStart">@dimen/padding_4dp</item>
         <item name="android:layout_marginEnd">@dimen/margin_8dp</item>
     </style>
+
+    <style name="FreeBeeRadioButton2" parent="FreeBeeHP3">
+        <item name="android:button">@drawable/freebee_radio2</item>
+        <item name="android:paddingStart">@dimen/padding_4dp</item>
+        <item name="android:layout_marginEnd">@dimen/margin_8dp</item>
+    </style>
+
 
     <!-- Checkbox -->
     <style name="FreeBeeCheckBox" parent="FreeBeeHP3">

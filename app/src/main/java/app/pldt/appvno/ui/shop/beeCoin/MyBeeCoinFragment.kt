@@ -11,6 +11,7 @@ import android.view.WindowManager
 
 import app.pldt.appvno.R
 import app.pldt.appvno.ui.homePage.FreebeeHomeActivity
+import app.pldt.appvno.ui.notification.NotificationFragment
 import com.afollestad.materialdialogs.MaterialDialog
 import kotlinx.android.synthetic.main.app_bar.*
 import kotlinx.android.synthetic.main.dialog_invalid_pin.view.*
@@ -33,6 +34,10 @@ class MyBeeCoinFragment : Fragment() {
         toolbarTitle.text = "My Bee Coins"
         toolbarClose.setOnClickListener {
             fragmentManager?.popBackStack()
+        }
+        toolbarNotif.setOnClickListener {
+            val a = activity as FreebeeHomeActivity
+            a.setCurrentFragmentWithBackStack(NotificationFragment.newInstance(), 1)
         }
         setupButtons()
         setupDialog()

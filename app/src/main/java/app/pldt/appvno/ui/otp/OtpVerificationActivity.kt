@@ -19,7 +19,7 @@ class OtpVerificationActivity : AppCompatActivity() {
         setContentView(R.layout.activity_otp_verification)
 
 
-        toolbarTitle.text = "Forgot Password"
+        toolbarTitle.text = "Sign Up"
         toolbarClose.setOnClickListener {
             finish()
         }

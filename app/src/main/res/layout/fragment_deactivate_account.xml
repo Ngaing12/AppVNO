@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollview_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:fitsSystemWindows="true"
+    tools:context=".ui.account.DeactivateAccountFragment">
+
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:background="@color/freeBeeHomeBg">
+
+    <ImageView
+        android:id="@+id/img_toolbar_bg"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:src="@drawable/container_bottom_rounded"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/app_bar" />
+
+    <View
+        android:id="@+id/view_container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginLeft="@dimen/margin_16dp"
+        android:layout_marginRight="@dimen/margin_16dp"
+        android:layout_marginTop="@dimen/margin_16dp"
+        android:background="@drawable/container_three_rounded"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/view_end"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+
+    <TextView
+        android:id="@+id/tv_title"
+        style="@style/FreeBeeUH3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:layout_marginTop="@dimen/margin_24dp"
+        android:layout_marginLeft="@dimen/margin_32dp"
+        android:layout_marginRight="@dimen/margin_32dp"
+        android:text="@string/tell_us_why_you_re_deactivating"
+        app:layout_constraintLeft_toLeftOf="@id/view_container"
+        app:layout_constraintRight_toRightOf="@id/view_container"
+        app:layout_constraintTop_toTopOf="@id/view_container" />
+
+
+    <RadioGroup
+        android:id="@+id/rg_reason"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintLeft_toLeftOf="@id/tv_title"
+        app:layout_constraintRight_toRightOf="@id/tv_title"
+        app:layout_constraintTop_toBottomOf="@id/tv_title">
+
+      <RadioButton
+          android:id="@+id/rb_option1"
+          style="@style/FreeBeeRadioButton2"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="@dimen/margin_4dp"
+          android:layout_marginTop="@dimen/margin_16dp"
+          android:text="@string/i_don_t_need_to_do_frequent_calls" />
+
+      <RadioButton
+          android:id="@+id/rb_option2"
+          style="@style/FreeBeeRadioButton2"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="@dimen/margin_16dp"
+          android:layout_marginStart="@dimen/margin_4dp"
+          android:text="To many ads" />
+
+      <RadioButton
+          android:id="@+id/rb_option3"
+          style="@style/FreeBeeRadioButton2"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="@dimen/margin_16dp"
+          android:layout_marginStart="@dimen/margin_4dp"
+          android:text="Lorem ipsum dolor sit amet" />
+
+    </RadioGroup>
+
+
+
+    <TextView
+        android:id="@+id/tv_title2"
+        style="@style/FreeBeeUH3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:layout_marginTop="@dimen/margin_24dp"
+        android:layout_marginLeft="@dimen/margin_32dp"
+        android:layout_marginRight="@dimen/margin_32dp"
+        android:text="Other Reasons (Optional)"
+        app:layout_constraintLeft_toLeftOf="@id/view_container"
+        app:layout_constraintRight_toRightOf="@id/view_container"
+        app:layout_constraintTop_toBottomOf="@id/rg_reason" />
+
+
+    <EditText
+        style="@style/FreeBeeEditText"
+        android:id="@+id/edt_reason"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:gravity="top|left"
+        android:hint="Enter Reason Here"
+        android:inputType="textMultiLine"
+        android:lines="11"
+        android:maxLength="1500"
+        android:maxLines="15"
+        android:minLines="10"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="@dimen/margin_16dp"
+        android:scrollbars="vertical"
+        android:layout_marginTop="@dimen/margin_16dp"
+        android:layout_marginStart="@dimen/margin_32dp"
+        android:layout_marginEnd="@dimen/margin_32dp"
+        app:layout_constraintLeft_toLeftOf="@id/view_container"
+        app:layout_constraintRight_toRightOf="@id/view_container"
+        app:layout_constraintTop_toBottomOf="@id/tv_title2"/>
+
+
+    <Button
+        android:id="@+id/btn_deactivate"
+        style="@style/FreeBeeButtonPrimary"
+        android:layout_marginTop="@dimen/margin_48dp"
+        android:text="@string/deactivate_account"
+        app:layout_constraintLeft_toLeftOf="@id/view_container"
+        app:layout_constraintRight_toRightOf="@id/view_container"
+        app:layout_constraintTop_toBottomOf="@id/edt_reason" />
+
+    <Button
+        android:id="@+id/btn_cancel"
+        style="@style/FreeBeeButtonSecondary"
+        android:layout_marginTop="@dimen/margin_16dp"
+        android:text="@string/cancel"
+        app:layout_constraintLeft_toLeftOf="@id/view_container"
+        app:layout_constraintRight_toRightOf="@id/view_container"
+        app:layout_constraintTop_toBottomOf="@id/btn_deactivate" />
+
+
+    <View
+        android:id="@+id/view_end"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_32dp"
+        android:layout_marginBottom="@dimen/margin_32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_cancel"
+        app:layout_constraintVertical_bias="1.0" />
+
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

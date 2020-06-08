@@ -58,7 +58,7 @@
   <string name="password">Password</string>
   <string name="forgot_password_underline"><u>Forgot Password </u></string>
   <string name="sign_up_underline"><u>Sign Up Now</u></string>
-  <string name="don_t_have_account_yet">Don\'t have account yet?</string>
+  <string name="don_t_have_account_yet">Don\'t have an account yet?</string>
   <string name="search_country">Search Country</string>
   <string name="type_country_name_here">Type country name here</string>
   <string name="confirm">Confirm</string>
@@ -67,7 +67,7 @@
   <string name="login_now"><u>Login Now</u></string>
   <string name="verification">Verification</string>
   <string name="a_code_was_sent">A code was sent to the number</string>
-  <string name="enter_the_code_verify">Enter the code verify this mobile number.</string>
+  <string name="enter_the_code_verify">Enter the code to verify this mobile number.</string>
   <string name="pinview_hint">------</string>
   <string name="invalid_code">Invalid code! Check if you\'ve entered the correct code or resend another code</string>
   <string name="resend_code"><u>Resend Code</u></string>
@@ -181,6 +181,13 @@
   <string name="view_version_number_and_other_details_about_the_app">View version number and other details about the app</string>
   <string name="deactivate_account">Deactivate Account</string>
   <string name="logout">Logout</string>
+  <string name="tell_us_why_you_re_deactivating">Tell us Why you\'re deactivating</string>
+  <string name="i_don_t_need_to_do_frequent_calls">I don\'t need to do frequent calls</string>
+  <string name="account_deactivated">Account Deactivated!</string>
+  <string name="enter_your_last_password">Enter your Last Password</string>
+  <string name="password_has_been_changed">Password has been changed!</string>
+  <string name="clear_all">Clear All</string>
+  <string name="mark_all_as_read">Mark All as read</string>
 
 
   <string-array name="months">

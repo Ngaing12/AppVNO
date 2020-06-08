@@ -203,7 +203,7 @@
         android:layout_width="@dimen/icon_size_24dp"
         android:layout_height="@dimen/icon_size_24dp"
         android:src="@drawable/ic_help"
-        android:tint="@color/colorBlack"
+        android:tint="@color/freeBeeCaramel"
         android:layout_marginEnd="@dimen/margin_8dp"
         app:layout_constraintRight_toLeftOf="@id/tv_needHelp"
         app:layout_constraintTop_toTopOf="@id/tv_needHelp"

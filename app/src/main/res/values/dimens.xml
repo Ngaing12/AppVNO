@@ -2,6 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Size -->
     <dimen name="icon_size_24dp">24dp</dimen>
+  <dimen name="icon_size_28dp">28dp</dimen>
     <dimen name="icon_size_32dp">32dp</dimen>
     <dimen name="icon_size_48dp">48dp</dimen>
     <dimen name="icon_size_56dp">56dp</dimen>

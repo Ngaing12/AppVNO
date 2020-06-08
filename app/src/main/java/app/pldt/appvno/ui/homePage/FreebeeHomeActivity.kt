@@ -15,6 +15,9 @@ import org.jetbrains.anko.toast
 
 class FreebeeHomeActivity : AppCompatActivity() , NavigationView.OnNavigationItemSelectedListener {
 
+    // TODO - Temp
+    var isChangePass = false
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_freebee_home)
