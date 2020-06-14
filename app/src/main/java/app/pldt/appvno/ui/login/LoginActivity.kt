@@ -15,8 +15,11 @@ import app.pldt.appvno.ui.homePage.FreebeeHomeActivity
 import app.pldt.appvno.ui.loginRegister.LoginBottomSheetFragment
 import app.pldt.appvno.ui.password.forgotPassword.ForgotPasswordActivity
 import app.pldt.appvno.ui.register.RegisterActivity
+import com.google.android.gms.tasks.OnCompleteListener
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
+import com.google.firebase.iid.FirebaseInstanceId
+import com.google.firebase.messaging.FirebaseMessaging
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.GroupieViewHolder
 import com.xwray.groupie.Item
@@ -34,7 +37,31 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+        FirebaseInstanceId.getInstance().instanceId
+            .addOnCompleteListener(OnCompleteListener { task ->
+                if (!task.isSuccessful) {
+                    Log.w("FCM", "getInstanceId failed", task.exception)
+                    return@OnCompleteListener
+                }
 
+                // Get new Instance ID token
+                val token = task.result?.token
+
+                // Log and toast
+
+                Log.d("FCM", token)
+            })
+
+        FirebaseMessaging.getInstance().subscribeToTopic("AllUser").addOnCompleteListener { task ->
+            var msg = "Subscribed"
+            if (!task.isSuccessful) {
+                msg = "Failed to subscribed"
+            }
+            toast(msg)
+        } .addOnFailureListener {
+            toast("failed")
+        }
+        toast("failed")
         setupBottomSheet()
         setupDummyData()
         setupButtons()

@@ -9,7 +9,9 @@ import app.pldt.appvno.common.SessionManager
 import app.pldt.appvno.ui.getStarted.OnBoardingActivity
 import app.pldt.appvno.ui.login.LoginActivity
 import app.pldt.appvno.ui.loginRegister.LoginRegisterActivity
+import com.google.firebase.messaging.FirebaseMessaging
 import com.sysnetph.sysnetsdk.Sysnet
+import org.jetbrains.anko.toast
 
 class SplashActivity : AppCompatActivity() {
 

@@ -58,6 +58,9 @@
     <color name="freeBeeSpinnerSecondary">#99FDF0D0</color>
 
 
+    <color name="freeBeeButtonSmallGray">#A58B79</color>
+    <color name="freeBeeButtonSmallRed">#CE0000</color>
+
     <color name="freeButtonDisabledState">#CABAB1</color>
     <color name="freeBeeGray">#434343</color>
 

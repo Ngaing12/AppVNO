@@ -10,6 +10,7 @@ import app.pldt.appvno.R
 import app.pldt.appvno.ui.profile.ProfileFragment
 import app.pldt.appvno.ui.shop.ShopFragment
 import com.google.android.material.navigation.NavigationView
+import com.google.firebase.messaging.FirebaseMessaging
 import kotlinx.android.synthetic.main.activity_freebee_home.*
 import org.jetbrains.anko.toast
 
