@@ -37,6 +37,8 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+
+        // Getting Token
         FirebaseInstanceId.getInstance().instanceId
             .addOnCompleteListener(OnCompleteListener { task ->
                 if (!task.isSuccessful) {
@@ -52,16 +54,16 @@ class LoginActivity : AppCompatActivity() {
                 Log.d("FCM", token)
             })
 
-        FirebaseMessaging.getInstance().subscribeToTopic("AllUser").addOnCompleteListener { task ->
-            var msg = "Subscribed"
-            if (!task.isSuccessful) {
-                msg = "Failed to subscribed"
-            }
-            toast(msg)
-        } .addOnFailureListener {
-            toast("failed")
-        }
-        toast("failed")
+//        FirebaseMessaging.getInstance().subscribeToTopic("AllUser").addOnCompleteListener { task ->
+//            var msg = "Subscribed"
+//            if (!task.isSuccessful) {
+//                msg = "Failed to subscribed"
+//            }
+//            toast(msg)
+//        } .addOnFailureListener {
+//            toast("failed")
+//        }
+//        toast("failed")
         setupBottomSheet()
         setupDummyData()
         setupButtons()

@@ -51,7 +51,7 @@ class NotificationItemAdapter (internal var context : Context, private var notif
 
             itemView.tv_title.text = notif.title
             itemView.tv_content.text = notif.content
-            itemView.tv_Date.text = notif.date
+            itemView.tv_date.text = notif.date
 
             itemView.spacer.isVisible(notif.isVisible)
             itemView.container.isVisible(notif.isVisible)

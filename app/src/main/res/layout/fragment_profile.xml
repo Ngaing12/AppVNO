@@ -339,19 +339,21 @@
         android:layout_height="@dimen/icon_size_48dp"
         android:layout_marginStart="@dimen/margin_32dp"
         android:src="@drawable/ic_profile_settings"
+        android:tint="@color/freeBeeColorCardProfile"
         app:layout_constraintBottom_toBottomOf="@id/tv_subTitle1"
         app:layout_constraintLeft_toLeftOf="@id/card_3"
         app:layout_constraintTop_toTopOf="@id/tv_title1" />
 
     <TextView
         android:id="@+id/tv_title1"
-        style="@style/FreeBeeHH1"
+        style="@style/FreeBeeHH2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_24dp"
         android:layout_marginTop="@dimen/margin_24dp"
         android:text="@string/settings"
         android:textStyle="bold"
+        android:textColor="@color/freeBeeColorCardProfile"
         app:layout_constraintLeft_toRightOf="@id/img_settings"
         app:layout_constraintRight_toLeftOf="@id/img_arrow1"
         app:layout_constraintTop_toTopOf="@id/card_3" />
@@ -364,6 +366,7 @@
         android:layout_marginTop="@dimen/margin_4dp"
         android:text="@string/view_and_edit_notification_and_security_settings"
         android:textStyle="bold"
+        android:textColor="@color/freeBeeColorCardProfile"
         app:layout_constraintLeft_toLeftOf="@id/tv_title1"
         app:layout_constraintRight_toRightOf="@id/tv_title1"
         app:layout_constraintTop_toBottomOf="@id/tv_title1" />
@@ -372,6 +375,7 @@
         android:id="@+id/img_arrow1"
         android:layout_width="40dp"
         android:layout_height="0dp"
+        android:tint="@color/freeBeeColorCardProfile"
         android:src="@drawable/ic_keyboard_arrow_right"
         app:layout_constraintBottom_toBottomOf="@id/card_3"
         app:layout_constraintRight_toRightOf="@id/card_3"
@@ -402,19 +406,21 @@
         android:layout_height="@dimen/icon_size_48dp"
         android:layout_marginStart="@dimen/margin_32dp"
         android:src="@drawable/ic_profile_about"
+        android:tint="@color/freeBeeColorCardProfile"
         app:layout_constraintBottom_toBottomOf="@id/tv_subTitle2"
         app:layout_constraintLeft_toLeftOf="@id/card_4"
         app:layout_constraintTop_toTopOf="@id/tv_title2" />
 
     <TextView
         android:id="@+id/tv_title2"
-        style="@style/FreeBeeHH1"
+        style="@style/FreeBeeHH2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_24dp"
         android:layout_marginTop="@dimen/margin_24dp"
         android:text="@string/about_the_app"
         android:textStyle="bold"
+        android:textColor="@color/freeBeeColorCardProfile"
         app:layout_constraintLeft_toRightOf="@id/img_about"
         app:layout_constraintRight_toLeftOf="@id/img_arrow2"
         app:layout_constraintTop_toTopOf="@id/card_4" />
@@ -427,6 +433,7 @@
         android:layout_marginTop="@dimen/margin_4dp"
         android:text="@string/view_version_number_and_other_details_about_the_app"
         android:textStyle="bold"
+        android:textColor="@color/freeBeeColorCardProfile"
         app:layout_constraintLeft_toLeftOf="@id/tv_title2"
         app:layout_constraintRight_toRightOf="@id/tv_title2"
         app:layout_constraintTop_toBottomOf="@id/tv_title2" />
@@ -435,6 +442,7 @@
         android:id="@+id/img_arrow2"
         android:layout_width="40dp"
         android:layout_height="0dp"
+        android:tint="@color/freeBeeColorCardProfile"
         android:src="@drawable/ic_keyboard_arrow_right"
         app:layout_constraintBottom_toBottomOf="@id/card_4"
         app:layout_constraintRight_toRightOf="@id/card_4"
@@ -464,6 +472,7 @@
         android:layout_width="@dimen/icon_size_48dp"
         android:layout_height="@dimen/icon_size_48dp"
         android:layout_marginStart="@dimen/margin_32dp"
+        android:tint="@color/freeBeeColorCardProfile"
         android:src="@drawable/ic_profile_deactivate"
         app:layout_constraintBottom_toBottomOf="@id/tv_subTitle3"
         app:layout_constraintLeft_toLeftOf="@id/card_5"
@@ -471,13 +480,14 @@
 
     <TextView
         android:id="@+id/tv_title3"
-        style="@style/FreeBeeHH1"
+        style="@style/FreeBeeHH2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_24dp"
         android:layout_marginTop="@dimen/margin_24dp"
         android:text="@string/deactivate_account"
         android:textStyle="bold"
+        android:textColor="@color/freeBeeColorCardProfile"
         app:layout_constraintLeft_toRightOf="@id/img_deactivate"
         app:layout_constraintRight_toLeftOf="@id/img_arrow3"
         app:layout_constraintTop_toTopOf="@id/card_5" />
@@ -490,6 +500,7 @@
         android:layout_marginTop="@dimen/margin_4dp"
         android:text="@string/dummy_text"
         android:textStyle="bold"
+        android:textColor="@color/freeBeeColorCardProfile"
         app:layout_constraintLeft_toLeftOf="@id/tv_title3"
         app:layout_constraintRight_toRightOf="@id/tv_title3"
         app:layout_constraintTop_toBottomOf="@id/tv_title3" />
@@ -498,6 +509,7 @@
         android:id="@+id/img_arrow3"
         android:layout_width="40dp"
         android:layout_height="0dp"
+        android:tint="@color/freeBeeColorCardProfile"
         android:src="@drawable/ic_keyboard_arrow_right"
         app:layout_constraintBottom_toBottomOf="@id/card_5"
         app:layout_constraintRight_toRightOf="@id/card_5"

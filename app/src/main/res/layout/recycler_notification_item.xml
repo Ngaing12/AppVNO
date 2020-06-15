@@ -23,7 +23,7 @@
         android:layout_marginStart="@dimen/margin_16dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="@dimen/margin_16dp"
+        android:layout_marginBottom="@dimen/margin_8dp"
         app:layout_constraintRight_toLeftOf="@id/container"
         app:layout_constraintLeft_toLeftOf="@id/spacer">
 
@@ -64,25 +64,27 @@
 
 
       <TextView
-          android:id="@+id/tv_Date"
-          style="@style/FreeBeeHP3"
+          android:id="@+id/tv_date"
+          style="@style/FreeBeeHP4"
           android:layout_width="0dp"
           android:layout_height="wrap_content"
           android:layout_marginEnd="@dimen/margin_8dp"
           android:layout_marginTop="@dimen/margin_16dp"
           android:text="12/11/23"
+          android:textColor="#BAA89F"
           app:layout_constraintRight_toRightOf="parent"
           app:layout_constraintTop_toTopOf="parent" />
       
       <ImageView
           android:id="@+id/img_notif"
           android:layout_marginEnd="@dimen/margin_8dp"
-          android:layout_marginBottom="@dimen/margin_8dp"
+          android:layout_marginTop="@dimen/margin_8dp"
+          app:layout_constraintTop_toBottomOf="@id/tv_date"
           app:layout_constraintBottom_toBottomOf="parent"
           app:layout_constraintRight_toRightOf="parent"
           android:src="@drawable/ic_notif_dots"
           android:layout_width="20dp"
-          android:layout_height="30dp"/>
+          android:layout_height="25dp"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -99,10 +101,10 @@
 
     <ImageView
         android:id="@+id/img_view"
-        android:layout_marginBottom="@dimen/margin_16dp"
+        android:layout_marginBottom="@dimen/margin_8dp"
         android:layout_marginStart="@dimen/margin_8dp"
         android:background="@drawable/button_rounded_small_gray"
-        android:src="@drawable/ic_password_eye"
+        android:src="@drawable/ic_notif_eye"
         android:tint="@color/colorWhite"
         android:scaleType="center"
         android:layout_width="80dp"

@@ -77,7 +77,7 @@ class BuyBeeCoinCofirmFragment : Fragment() {
         }
         purchaseDialog?.edt_promo_promo?.filters = arrayOf<InputFilter>(InputFilter.AllCaps())
         purchaseDialog?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-        purchaseDialog?.window?.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT  )
+        purchaseDialog?.window?.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT  )
 
     }
 

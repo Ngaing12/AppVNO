@@ -40,7 +40,7 @@
         android:orientation="horizontal">
       
       <ImageView
-          android:src="@drawable/ic_password_eye"
+          android:src="@drawable/ic_notif_eye"
           android:tint="@color/colorWhite"
           android:layout_marginStart="@dimen/margin_16dp"
           android:layout_width="@dimen/icon_size_24dp"

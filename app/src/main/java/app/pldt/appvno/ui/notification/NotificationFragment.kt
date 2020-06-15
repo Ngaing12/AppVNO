@@ -55,7 +55,7 @@ class NotificationFragment : Fragment() {
     private fun dummyData() {
         val itemList = ArrayList<NotificationItem>()
         var i = 0
-        while (i < 50) {
+        while (i < 10) {
             itemList.add(NotificationItem(0,"Pie $i", "11/11/1111", "Sup"))
             i++
         }
@@ -63,36 +63,34 @@ class NotificationFragment : Fragment() {
         rv_notification.adapter = adapter
 
 
-
-
-        val myCallback = object: SampleHelper() {
-            override fun onMove(
-                recyclerView: RecyclerView,
-                viewHolder: RecyclerView.ViewHolder,
-                target: RecyclerView.ViewHolder
-            ): Boolean = false
-
-
-            override fun onSwiped(viewHolder: RecyclerView.ViewHolder,
-                                  direction: Int) {
-
-//                if (direction == ItemTouchHelper.RIGHT) {
-//                    adapter.hideLayout(viewHolder.adapterPosition)
-//                } else if (direction == ItemTouchHelper.LEFT) {
-//                    adapter.showLayout(viewHolder.adapterPosition)
-//                }
-//                // More code here
-                adapter.notifyItemChanged(viewHolder.adapterPosition)
-
-            }
-        }
-
-
-
-
-        var myHelper = ItemTouchHelper(myCallback).attachToRecyclerView(rv_notification)
-
-
+//        val myCallback = object: SampleHelper() {
+//            override fun onMove(
+//                recyclerView: RecyclerView,
+//                viewHolder: RecyclerView.ViewHolder,
+//                target: RecyclerView.ViewHolder
+//            ): Boolean = false
+//
+//
+//            override fun onSwiped(viewHolder: RecyclerView.ViewHolder,
+//                                  direction: Int) {
+//
+////                if (direction == ItemTouchHelper.RIGHT) {
+////                    adapter.hideLayout(viewHolder.adapterPosition)
+////                } else if (direction == ItemTouchHelper.LEFT) {
+////                    adapter.showLayout(viewHolder.adapterPosition)
+////                }
+////                // More code here
+//                adapter.notifyItemChanged(viewHolder.adapterPosition)
+//
+//            }
+//        }
+//
+//
+//
+//
+//        var myHelper = ItemTouchHelper(myCallback).attachToRecyclerView(rv_notification)
+//
+//
 
 
 //
@@ -142,9 +140,6 @@ class NotificationFragment : Fragment() {
 //
 //        }
 
-
-
-
     }
 
 
@@ -169,6 +164,6 @@ abstract class SampleHelper :
         dY: Float,
         actionState: Int,
         isCurrentlyActive: Boolean) {
-        super.onChildDraw(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive)
+        super.onChildDraw(c, recyclerView, viewHolder, 0f, dY, actionState, isCurrentlyActive)
     }
 }

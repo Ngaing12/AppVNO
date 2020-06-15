@@ -17,7 +17,7 @@
 
     <TextView
         android:id="@+id/toolbarTitle"
-        style="@style/FreeBeeUH1.Offset"
+        style="@style/FreeBeeUH2.Offset"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/sign_up"
