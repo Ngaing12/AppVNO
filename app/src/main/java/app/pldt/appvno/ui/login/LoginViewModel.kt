@@ -2,10 +2,18 @@ package app.pldt.appvno.ui.login
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+import app.pldt.appvno.AppVNOApplication
+import app.pldt.appvno.common.Resource
+import app.pldt.appvno.firebase.MyFirebaseDatabase
 import app.pldt.appvno.model.TempUser
 import com.google.firebase.auth.FirebaseAuth
 
-class LoginViewModel(app : Application) : AndroidViewModel(app) {
+class LoginViewModel : ViewModel() {
+
+
+    val loginResponse : MutableLiveData<Resource<String>> = MutableLiveData()
 
     val tempUser1 = TempUser(
         "9000000000",
@@ -24,30 +32,40 @@ class LoginViewModel(app : Application) : AndroidViewModel(app) {
 
     val phone2 = "9111111111"
 
-//    // TODO - change to courotine
-//    private fun loginToFirebase(mobileNum : String, password : String){
-//        if (FirebaseAuth.getInstance().currentUser != null )
-//            FirebaseAuth.getInstance().signOut()
-//
-//        FirebaseAuth.getInstance().signInWithEmailAndPassword(user.email, user.password)
-//            .addOnCompleteListener {
-//                if (it.isSuccessful) {
-//                    AppVNOApplication.getInstance().tempUser = user
-//                    MyFirebaseDatabase.startListening(user.id)
-//                    login_group.isVisible(true)
-//                    loginRegister_progressBar.isVisible(false)
-//                    // Start new Activity
-//                    startActivity(intentFor<HomeActivity>().newTask().clearTask())
-//                    finish()
-//                }
-//            }
-//            .addOnFailureListener {
-//                toast("${it.message}")
-//                login_group.isVisible(true)
-//                loginRegister_progressBar.isVisible(false)
-//            }
-//    }
+    // TODO - change to courotine
+    fun loginToFirebase(mobileNum : String, password : String){
+        if (FirebaseAuth.getInstance().currentUser != null )
+            FirebaseAuth.getInstance().signOut()
 
 
+        loginResponse.postValue(Resource.Loading())
+        val user = getUser(mobileNum)
+
+        if (user == null) {
+            loginResponse.postValue(Resource.Error("User not found"))
+            return
+        }
+
+        FirebaseAuth.getInstance().signInWithEmailAndPassword(user.email, password)
+            .addOnCompleteListener {
+                if (it.isSuccessful) {
+                    AppVNOApplication.getInstance().tempUser = user
+                    MyFirebaseDatabase.startListening(user.id)
+                    loginResponse.postValue(Resource.Success("Success"))
+                }
+            }
+            .addOnFailureListener {
+                loginResponse.postValue(Resource.Error(it.message ?: "Something went wrong!"))
+            }
+    }
+
+
+    private fun getUser(mobileNum: String) : TempUser? {
+        if (tempUser1.number == mobileNum)
+            return  tempUser1
+        if (tempUser2.number == mobileNum)
+            return tempUser2
+        return null
+    }
 
 }

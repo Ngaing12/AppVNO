@@ -190,7 +190,7 @@
       <AutoCompleteTextView
           android:cursorVisible="false"
           android:focusable="false"
-          android:hint="Choose Month"
+          android:hint="Month"
           android:textColorHint="@color/freeBeeHint"
           style="@style/FreeBeeEditText"
           android:id="@+id/autoComplete"

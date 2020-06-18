@@ -34,7 +34,7 @@ class CallDetailActivity : AppCompatActivity(),Session.SessionListener, Publishe
 
     val API_KEY = "46732122"
     val SESSION_ID = "2_MX40NjczMjEyMn5-MTU4OTI1MjA3MjQ1NX41cHhHczdiZEE2MExidi9WYzFVaERDdVF-fg"
-    val TOKEN = "T1==cGFydG5lcl9pZD00NjczMjEyMiZzaWc9MjliNTEzNTM1MzAxZmExZDFhZGJjNTVmNGVlMzQxZjAwZjUxNjk0ZDpzZXNzaW9uX2lkPTJfTVg0ME5qY3pNakV5TW41LU1UVTRPVEkxTWpBM01qUTFOWDQxY0hoSGN6ZGlaRUUyTUV4aWRpOVdZekZWYUVSRGRWRi1mZyZjcmVhdGVfdGltZT0xNTg5MjUyMTI5Jm5vbmNlPTAuMDk4OTE3MDQ4NTM4NDY0Mjgmcm9sZT1wdWJsaXNoZXImZXhwaXJlX3RpbWU9MTU5MTg0NDEyNyZpbml0aWFsX2xheW91dF9jbGFzc19saXN0PQ=="
+    val TOKEN = "T1==cGFydG5lcl9pZD00NjczMjEyMiZzaWc9MmIxYjYyMTI4OTZkNjI1NGUxYWQ1ZTg5YWQ3ZTU2Mjc1NzRmNmM3YTpzZXNzaW9uX2lkPTJfTVg0ME5qY3pNakV5TW41LU1UVTRPVEkxTWpBM01qUTFOWDQxY0hoSGN6ZGlaRUUyTUV4aWRpOVdZekZWYUVSRGRWRi1mZyZjcmVhdGVfdGltZT0xNTkyNDU1OTgxJm5vbmNlPTAuMjE2MzY0MzIzMzI4NDYwOSZyb2xlPXB1Ymxpc2hlciZleHBpcmVfdGltZT0xNTk1MDQ3OTgwJmluaXRpYWxfbGF5b3V0X2NsYXNzX2xpc3Q9"
     val LOG_TAG = "Test"
 
     lateinit var mSession : Session
@@ -169,7 +169,7 @@ class CallDetailActivity : AppCompatActivity(),Session.SessionListener, Publishe
     }
 
     override fun onError(p0: Session?, p1: OpentokError?) {
-        Log.d(LOG_TAG, "Stream Error")
+        Log.d(LOG_TAG, "Stream Error " + p1?.message ?: "")
     }
 
     override fun onStreamDropped(p0: Session?, p1: Stream?) {

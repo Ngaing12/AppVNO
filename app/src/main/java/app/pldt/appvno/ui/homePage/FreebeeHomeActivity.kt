@@ -7,6 +7,9 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import app.pldt.appvno.R
+import app.pldt.appvno.ui.BaseActivity
+import app.pldt.appvno.ui.home.CallFragment
+import app.pldt.appvno.ui.message.MessageFragment
 import app.pldt.appvno.ui.profile.ProfileFragment
 import app.pldt.appvno.ui.shop.ShopFragment
 import com.google.android.material.navigation.NavigationView
@@ -14,7 +17,7 @@ import com.google.firebase.messaging.FirebaseMessaging
 import kotlinx.android.synthetic.main.activity_freebee_home.*
 import org.jetbrains.anko.toast
 
-class FreebeeHomeActivity : AppCompatActivity() , NavigationView.OnNavigationItemSelectedListener {
+class FreebeeHomeActivity : BaseActivity() , NavigationView.OnNavigationItemSelectedListener {
 
     // TODO - Temp
     var isChangePass = false
@@ -50,8 +53,8 @@ class FreebeeHomeActivity : AppCompatActivity() , NavigationView.OnNavigationIte
             when (it.itemId) {
                 R.id.miHome -> setCurrentFragment(FreebeeHomeFragment.newInstance())
                 R.id.miContacts -> setCurrentFragment(FreebeeContactsFragment.newInstance())
-                R.id.miCalls -> setCurrentFragment(FreebeeCallFragment.newInstance())
-                R.id.miMessages -> setCurrentFragment(FreebeeMessagesFragment.newInstance())
+                R.id.miCalls -> setCurrentFragment(CallFragment.newInstance()) // TODO - Temp
+                R.id.miMessages -> setCurrentFragment(MessageFragment.newInstance()) // TODO - Temp
             }
             true
         }

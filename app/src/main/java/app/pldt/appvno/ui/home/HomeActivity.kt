@@ -21,7 +21,7 @@ import kotlinx.android.synthetic.main.activity_home.*
 import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
 
-class HomeActivity : BaseActivity(), HomeFragment.OnHomeInteractionListener   , RegistrationAction, activityListener {
+class HomeActivity : BaseActivity(), HomeFragment.OnHomeInteractionListener  , RegistrationAction, activityListener {
 
 
     private var isLogin = false

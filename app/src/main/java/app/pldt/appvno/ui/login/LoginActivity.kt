@@ -6,8 +6,11 @@ import android.util.Log
 import android.view.MotionEvent
 import android.view.View
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
 import app.pldt.appvno.R
+import app.pldt.appvno.common.Resource
 import app.pldt.appvno.extensions.isVisible
 import app.pldt.appvno.model.Country
 import app.pldt.appvno.model.TempUser
@@ -34,9 +37,37 @@ class LoginActivity : AppCompatActivity() {
     val adapter = GroupAdapter<GroupieViewHolder>()
     lateinit var bottomSheetBehavior : BottomSheetBehavior<ConstraintLayout>
 
+    lateinit var viewModel: LoginViewModel
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+
+
+        val viewModelProviderFactory = LoginViewModelProviderFactory()
+        viewModel = ViewModelProvider(this, viewModelProviderFactory).get(LoginViewModel::class.java)
+
+        viewModel.loginResponse.observe(this, Observer { response ->
+            when (response) {
+                is Resource.Success -> {
+                    toast(response.message ?: "Success")
+                    startActivity(intentFor<FreebeeHomeActivity>().newTask().clearTask())
+                }
+                is Resource.Error -> {
+                    toast(response.message ?: "Error")
+//                    hideProgressBar()
+//                    response.message?.let { message ->
+//                        Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
+//                    }
+                }
+//                is Resource.Loading -> {
+//                    showProgressBar()
+//                }
+            }
+        })
+
+
+
 
         // Getting Token
         FirebaseInstanceId.getInstance().instanceId
@@ -82,7 +113,8 @@ class LoginActivity : AppCompatActivity() {
 //            if (edt_mobileNumber.text.toString() == "") {
 //                edt_mobileNumber.setError("This field is required!", null)
 //            }
-            startActivity(intentFor<FreebeeHomeActivity>().newTask().clearTask())
+          //
+            doLogin()
         }
 
         edt_countryCode.setOnClickListener {
@@ -92,6 +124,15 @@ class LoginActivity : AppCompatActivity() {
         loginBSheet_img_close.setOnClickListener {
             bottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED)
         }
+    }
+
+    private fun doLogin() {
+        if (edt_mobileNumber.text.toString().isEmpty() ||
+                edt_password.text.toString().isEmpty()){
+            toast("Please enter mobile number and password")
+            return
+        }
+        viewModel.loginToFirebase(edt_mobileNumber.text.toString(), edt_password.text.toString())
     }
 
     private fun setupBottomSheet() {
