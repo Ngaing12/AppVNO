@@ -143,12 +143,12 @@
 
     <TextView
         android:id="@+id/tv_price1"
-        style="@style/FreeBeeHP2"
+        style="@style/FreeBeeHP4"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_4dp"
         android:text="USD 10.00"
-        android:textColor="@android:color/black"
+        android:textColor="@color/freeBeeColorCardProfile"
         app:layout_constraintBottom_toBottomOf="@id/card_2"
         app:layout_constraintLeft_toLeftOf="@id/tv_desc3"
         app:layout_constraintTop_toBottomOf="@id/tv_desc3" />
@@ -157,6 +157,7 @@
         android:id="@+id/btn_coin1"
         style="@style/FreeBeeButtonTertiarySmall"
         android:text="Buy"
+        android:textStyle="bold"
         android:layout_marginRight="@dimen/margin_4dp"
         android:layout_marginBottom="@dimen/margin_4dp"
         app:layout_constraintBottom_toBottomOf="@id/card_2"
@@ -202,12 +203,12 @@
 
     <TextView
         android:id="@+id/tv_price2"
-        style="@style/FreeBeeHP2"
+        style="@style/FreeBeeHP4"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_4dp"
         android:text="USD 10.00"
-        android:textColor="@android:color/black"
+        android:textColor="@color/freeBeeColorCardProfile"
         app:layout_constraintBottom_toBottomOf="@id/card_3"
         app:layout_constraintLeft_toLeftOf="@id/tv_desc4"
         app:layout_constraintTop_toBottomOf="@id/tv_desc4" />
@@ -217,6 +218,7 @@
         style="@style/FreeBeeButtonTertiarySmall"
         android:text="Buy"
         android:layout_marginRight="@dimen/margin_4dp"
+        android:textStyle="bold"
         android:layout_marginBottom="@dimen/margin_4dp"
         app:layout_constraintBottom_toBottomOf="@id/card_3"
         app:layout_constraintRight_toRightOf="@id/card_3" />
@@ -261,12 +263,12 @@
 
     <TextView
         android:id="@+id/tv_price3"
-        style="@style/FreeBeeHP2"
+        style="@style/FreeBeeHP4"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_4dp"
         android:text="USD 10.00"
-        android:textColor="@android:color/black"
+        android:textColor="@color/freeBeeColorCardProfile"
         app:layout_constraintBottom_toBottomOf="@id/card_4"
         app:layout_constraintLeft_toLeftOf="@id/tv_desc5"
         app:layout_constraintTop_toBottomOf="@id/tv_desc5" />
@@ -276,6 +278,7 @@
         style="@style/FreeBeeButtonTertiarySmall"
         android:text="Buy"
         android:layout_marginRight="@dimen/margin_4dp"
+        android:textStyle="bold"
         android:layout_marginBottom="@dimen/margin_4dp"
         app:layout_constraintBottom_toBottomOf="@id/card_4"
         app:layout_constraintRight_toRightOf="@id/card_4" />
@@ -320,12 +323,12 @@
 
     <TextView
         android:id="@+id/tv_price4"
-        style="@style/FreeBeeHP2"
+        style="@style/FreeBeeHP4"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_4dp"
         android:text="USD 10.00"
-        android:textColor="@android:color/black"
+        android:textColor="@color/freeBeeColorCardProfile"
         app:layout_constraintBottom_toBottomOf="@id/card_5"
         app:layout_constraintLeft_toLeftOf="@id/tv_desc6"
         app:layout_constraintTop_toBottomOf="@id/tv_desc6" />
@@ -335,6 +338,7 @@
         style="@style/FreeBeeButtonTertiarySmall"
         android:text="Buy"
         android:layout_marginRight="@dimen/margin_4dp"
+        android:textStyle="bold"
         android:layout_marginBottom="@dimen/margin_4dp"
         app:layout_constraintBottom_toBottomOf="@id/card_5"
         app:layout_constraintRight_toRightOf="@id/card_5" />

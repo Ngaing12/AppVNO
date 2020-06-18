@@ -6,6 +6,7 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
 import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import app.pldt.appvno.R
 import app.pldt.appvno.ui.homePage.FreebeeHomeActivity
 import app.pldt.appvno.ui.login.LoginActivity
@@ -67,9 +68,28 @@ class SecurityQuestionActivity : AppCompatActivity() {
             }
 
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+              //  spinner_question.setTextC==
                 btn_continue.isEnabled = position > 0
             }
         }
+
+        val s =  arrayOf(
+            "Item 1",
+            "Item 2",
+            "Item 3",
+            "Item 4",
+            "Item 5",
+            "Item 6",
+            "Other"
+        )
+
+        val adapter = ArrayAdapter<String>(
+            this,
+            R.layout.material_spinner_freebee,
+            s
+        )
+        autoComplete.setAdapter(adapter)
+
     }
 
 }

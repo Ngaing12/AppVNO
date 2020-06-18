@@ -191,7 +191,6 @@
 
 
   <string-array name="months">
-    <item>Choose Month</item>
     <item>January</item>
     <item>February</item>
     <item>March</item>

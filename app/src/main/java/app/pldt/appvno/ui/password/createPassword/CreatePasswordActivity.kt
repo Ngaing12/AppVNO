@@ -1,17 +1,24 @@
 package app.pldt.appvno.ui.password.createPassword
 
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
 import android.view.View
+import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import app.pldt.appvno.R
+import app.pldt.appvno.extensions.isVisible
 import app.pldt.appvno.ui.profile.PersonalDetailActivity
+import com.afollestad.materialdialogs.MaterialDialog
 import kotlinx.android.synthetic.main.activity_create_password.*
 import kotlinx.android.synthetic.main.app_bar_pre_login.*
 import kotlinx.android.synthetic.main.dialog_touch_id.*
+import kotlinx.android.synthetic.main.dialog_touch_id.view.*
 import kotlinx.android.synthetic.main.dialog_touch_id_success.*
+import kotlinx.android.synthetic.main.dialog_touch_id_success.view.*
 import org.jetbrains.anko.startActivity
 
 class CreatePasswordActivity : AppCompatActivity() {
@@ -20,14 +27,17 @@ class CreatePasswordActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_create_password)
 
+
         toolbarClose.setOnClickListener {
             finish()
         }
 
         setupEditTexts()
         btn_create.setOnClickListener {
+        //    touchIdDialog.show()
             touchId_dialog.visibility = View.VISIBLE
-            img_blocker.visibility = View.VISIBLE
+            Log.d("Test", "Click")
+            img_blocker.isVisible(true)
         }
 
         touchId_btn_yes.setOnClickListener {
@@ -46,6 +56,9 @@ class CreatePasswordActivity : AppCompatActivity() {
 
         touchSuccess_img_close.setOnClickListener {
             // Goto Enter Personal Details
+            img_blocker.visibility = View.GONE
+            touchId_dialog.visibility = View.GONE
+            touchSuccess_dialog.visibility = View.GONE
             startActivity<PersonalDetailActivity>()
         }
 
@@ -90,4 +103,5 @@ class CreatePasswordActivity : AppCompatActivity() {
      //   if (!pass.matches(".*[~!.......].*".toRegex())) return false
         return  true
     }
+
 }

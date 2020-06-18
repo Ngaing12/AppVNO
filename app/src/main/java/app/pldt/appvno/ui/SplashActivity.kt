@@ -15,7 +15,6 @@ import org.jetbrains.anko.toast
 
 class SplashActivity : AppCompatActivity() {
 
-
     private lateinit var mHandler : Handler
 
     override fun onCreate(savedInstanceState: Bundle?) {

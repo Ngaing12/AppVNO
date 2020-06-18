@@ -2,8 +2,11 @@ package app.pldt.appvno.ui.password.forgotPassword
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.View
 import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import app.pldt.appvno.R
 import app.pldt.appvno.ui.profile.SpinnerDefaultAdapter
 import kotlinx.android.synthetic.main.activity_forgot_pass_security.*
@@ -43,10 +46,30 @@ class ForgotPassSecurityActivity : AppCompatActivity() {
                 btn_continue.isEnabled = position > 0
             }
         }
+
+        autoComplete.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable?) {}
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                btn_continue.isEnabled = s?.count() ?: 0 > 0
+            }
+
+        })
+
+        val adapter = ArrayAdapter<String>(
+            this,
+            R.layout.material_spinner_freebee,
+            dummyData
+        )
+        autoComplete.setAdapter(adapter)
     }
 
 
     private fun setupButtons() {
-        startActivity<ForgotPassAnsSecurityActivity>()
+        btn_continue.setOnClickListener {
+            startActivity<ForgotPassAnsSecurityActivity>()
+        }
     }
 }

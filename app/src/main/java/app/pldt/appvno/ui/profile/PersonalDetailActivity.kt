@@ -43,6 +43,14 @@ class PersonalDetailActivity : AppCompatActivity() {
         spinner_month.adapter = spinnerArrayAdapter
         spinner_month.setSelection(0)
 
+
+
+        val adapter = ArrayAdapter<String>(
+            this,
+            R.layout.material_spinner_freebee,
+            months
+        )
+        autoComplete.setAdapter(adapter)
     }
 
 }

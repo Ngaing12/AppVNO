@@ -164,7 +164,7 @@
 
 
     <androidx.appcompat.widget.AppCompatSpinner
-        android:visibility="visible"
+        android:visibility="invisible"
         android:id="@+id/spinner_month"
         style="@style/FreeBeeBaseSpinner"
         android:layout_width="0dp"
@@ -172,6 +172,34 @@
         app:layout_constraintLeft_toRightOf="@id/edt_year"
         app:layout_constraintRight_toRightOf="@id/tv_header1"
         app:layout_constraintTop_toTopOf="@id/edt_year" />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:endIconMode="dropdown_menu"
+        app:hintEnabled="false"
+        app:endIconTint="@color/freeBeeHoney"
+        style="@style/AppTheme.ExposedDropdownMenu"
+        android:layout_marginStart="@dimen/margin_4dp"
+        app:layout_constraintLeft_toRightOf="@id/edt_year"
+        app:layout_constraintRight_toRightOf="@id/tv_header1"
+        app:layout_constraintTop_toTopOf="@id/edt_year">
+
+      <AutoCompleteTextView
+          android:cursorVisible="false"
+          android:focusable="false"
+          android:hint="Choose Month"
+          android:textColorHint="@color/freeBeeHint"
+          style="@style/FreeBeeEditText"
+          android:id="@+id/autoComplete"
+          android:textSize="@dimen/text_13sp"
+          android:ellipsize="start"
+          android:layout_width="match_parent"
+          android:singleLine="true" />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
         android:id="@+id/tv_desc5"
@@ -209,6 +237,7 @@
       <RadioButton
           android:id="@+id/rb_male"
           style="@style/FreeBeeRadioButton"
+          android:textColor="@color/freeBeeCaramel"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:text="@string/male" />
@@ -216,6 +245,7 @@
       <RadioButton
           android:id="@+id/rb_female"
           style="@style/FreeBeeRadioButton"
+          android:textColor="@color/freeBeeCaramel"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_marginStart="@dimen/margin_4dp"
@@ -223,6 +253,7 @@
 
       <RadioButton
           android:id="@+id/rb_not"
+          android:textColor="@color/freeBeeCaramel"
           style="@style/FreeBeeRadioButton"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
@@ -272,6 +303,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_16dp"
         android:layout_marginStart="@dimen/margin_8dp"
+        android:textColor="@color/freeBeeCaramel"
         android:text="@string/i_have_read_and_agree_terms"
         app:layout_constraintLeft_toLeftOf="@id/tv_header1"
         app:layout_constraintRight_toRightOf="@id/tv_header1"
@@ -284,6 +316,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_16dp"
         android:layout_marginStart="@dimen/margin_8dp"
+        android:textColor="@color/freeBeeCaramel"
         android:text="@string/i_have_read_and_agree_privacy"
         app:layout_constraintLeft_toLeftOf="@id/tv_header1"
         app:layout_constraintRight_toRightOf="@id/tv_header1"
@@ -296,7 +329,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_16dp"
         android:layout_marginStart="@dimen/margin_8dp"
-        android:text="@string/i_have_read_and_agree_privacy"
+        android:textColor="@color/freeBeeCaramel"
+        android:text="@string/i_have_read_and_agree_news"
         app:layout_constraintLeft_toLeftOf="@id/tv_header1"
         app:layout_constraintRight_toRightOf="@id/tv_header1"
         app:layout_constraintTop_toBottomOf="@id/cb_privacy" />

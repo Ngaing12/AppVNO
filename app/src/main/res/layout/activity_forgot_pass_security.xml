@@ -61,6 +61,7 @@
       app:layout_constraintTop_toBottomOf="@id/tv_desc1" />
 
   <androidx.appcompat.widget.AppCompatSpinner
+      android:visibility="invisible"
       android:id="@+id/spinner_question"
       style="@style/FreeBeeBaseSpinner"
       android:layout_width="0dp"
@@ -69,6 +70,34 @@
       app:layout_constraintLeft_toLeftOf="@id/container_content"
       app:layout_constraintRight_toRightOf="@id/container_content"
       app:layout_constraintTop_toBottomOf="@id/tv_desc2" />
+
+
+  <com.google.android.material.textfield.TextInputLayout
+      android:id="@+id/til"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      app:endIconMode="dropdown_menu"
+      app:hintEnabled="false"
+      app:endIconTint="@color/freeBeeHoney"
+      style="@style/AppTheme.ExposedDropdownMenu"
+      android:layout_marginEnd="@dimen/margin_32dp"
+      android:layout_marginStart="@dimen/margin_32dp"
+      app:layout_constraintLeft_toLeftOf="@id/container_content"
+      app:layout_constraintRight_toRightOf="@id/container_content"
+      app:layout_constraintTop_toBottomOf="@id/tv_desc2">
+
+    <AutoCompleteTextView
+        android:cursorVisible="false"
+        android:focusable="false"
+        android:hint="Select your Security Question"
+        android:textColorHint="@color/freeBeeHint"
+        style="@style/FreeBeeEditText"
+        android:id="@+id/autoComplete"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:layout_width="match_parent" />
+
+  </com.google.android.material.textfield.TextInputLayout>
 
   <Button
       android:id="@+id/btn_continue"

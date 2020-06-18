@@ -72,12 +72,40 @@
         app:layout_constraintTop_toBottomOf="@id/tv_desc1" />
 
     <androidx.appcompat.widget.AppCompatSpinner
+        android:visibility="invisible"
         android:id="@+id/spinner_question"
         style="@style/FreeBeeBaseSpinner"
         android:layout_width="0dp"
         app:layout_constraintLeft_toLeftOf="@id/tv_desc1"
         app:layout_constraintRight_toRightOf="@id/tv_desc1"
         app:layout_constraintTop_toBottomOf="@id/tv_desc2" />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:endIconMode="dropdown_menu"
+        app:hintEnabled="false"
+        app:endIconTint="@color/freeBeeHoney"
+        style="@style/AppTheme.ExposedDropdownMenu"
+        app:layout_constraintLeft_toLeftOf="@id/tv_desc1"
+        app:layout_constraintRight_toRightOf="@id/tv_desc1"
+        app:layout_constraintTop_toBottomOf="@id/tv_desc2">
+
+      <AutoCompleteTextView
+          android:cursorVisible="false"
+          android:focusable="false"
+          android:hint="@string/select_security_question"
+          android:textColorHint="@color/freeBeeHint"
+          style="@style/FreeBeeEditText"
+          android:id="@+id/autoComplete"
+          android:ellipsize="end"
+          android:maxLines="1"
+          android:layout_width="match_parent" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
 
     <TextView
         android:id="@+id/tv_desc3"
@@ -90,14 +118,17 @@
         app:layout_constraintRight_toRightOf="@id/tv_desc1"
         app:layout_constraintTop_toBottomOf="@id/spinner_question" />
 
+
     <EditText
         android:id="@+id/edt_answer"
         style="@style/FreeBeeEditText"
         android:layout_width="0dp"
+        android:textSize="@dimen/text_13sp"
         android:hint="@string/enter_answer_to_your_security_question"
         android:inputType="text"
         android:paddingStart="@dimen/padding_16dp"
         android:paddingEnd="@dimen/padding_16dp"
+        android:ellipsize="end"
         app:layout_constraintLeft_toLeftOf="@id/tv_desc1"
         app:layout_constraintRight_toRightOf="@id/tv_desc1"
         app:layout_constraintTop_toBottomOf="@id/tv_desc3" />

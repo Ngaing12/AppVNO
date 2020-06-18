@@ -88,6 +88,7 @@
         android:text="Male"
         android:textAlignment="center"
         android:textAllCaps="true"
+        android:textColor="@color/freeBeeColorCardProfile"
         app:layout_constraintLeft_toLeftOf="@id/view_container"
         app:layout_constraintRight_toRightOf="@id/view_container"
         app:layout_constraintTop_toBottomOf="@id/tv_name" />
@@ -121,6 +122,7 @@
         android:text="@string/registered_mobile_number"
         android:textAlignment="center"
         android:textAllCaps="true"
+        android:textColor="@color/freeBeeColorCardProfile"
         app:layout_constraintLeft_toLeftOf="@id/card_1"
         app:layout_constraintRight_toRightOf="@id/card_1"
         app:layout_constraintTop_toTopOf="@id/card_1" />
@@ -133,6 +135,7 @@
         android:text="+44 20 1234 5678"
         android:textAlignment="center"
         android:textAllCaps="true"
+        android:textColor="@color/colorBlack"
         app:layout_constraintLeft_toLeftOf="@id/card_1"
         app:layout_constraintRight_toRightOf="@id/card_1"
         app:layout_constraintTop_toBottomOf="@id/tv_decs1" />
@@ -160,6 +163,7 @@
         android:layout_marginTop="@dimen/margin_16dp"
         android:text="Password has been set"
         android:textAlignment="textStart"
+        android:textColor="@color/freeBeeColorCardProfile"
         app:layout_constraintHorizontal_chainStyle="spread"
         app:layout_constraintRight_toLeftOf="@id/tv_changePassword"
         app:layout_constraintStart_toStartOf="@id/view_password"
@@ -238,6 +242,7 @@
         android:layout_marginEnd="@dimen/margin_16dp"
         android:text="@string/virtual_smart_ph_number"
         android:textAlignment="textEnd"
+        android:textColor="@color/colorBlack"
         app:layout_constraintRight_toRightOf="@id/card_2"
         app:layout_constraintTop_toTopOf="@id/card_2" />
 

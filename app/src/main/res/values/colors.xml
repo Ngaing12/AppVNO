@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorPrimary">#fbc02d</color>
+    <color name="colorPrimaryDark">#541d00</color>
     <color name="colorAccent">#D81B60</color>
 
     <color name="colorGetStartedBG">#53ACA7</color>
@@ -63,5 +63,8 @@
 
     <color name="freeButtonDisabledState">#CABAB1</color>
     <color name="freeBeeGray">#434343</color>
+
+
+    <color name="freeBeeHint">#9D988D</color>
 
 </resources>

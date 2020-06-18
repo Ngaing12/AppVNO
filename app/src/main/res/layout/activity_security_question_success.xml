@@ -59,11 +59,11 @@
 
     <ImageView
         android:id="@+id/img_icon"
-        android:layout_width="@dimen/icon_size_240dp"
-        android:layout_height="@dimen/icon_size_240dp"
+        android:layout_width="@dimen/icon_size_320dp"
+        android:layout_height="@dimen/icon_size_320dp"
         android:layout_marginTop="@dimen/margin_32dp"
         android:scaleType="fitXY"
-        android:src="@drawable/success"
+        android:src="@drawable/ic_success"
         app:layout_constraintLeft_toLeftOf="@id/container_content"
         app:layout_constraintRight_toRightOf="@id/container_content"
         app:layout_constraintTop_toBottomOf="@id/tv_desc1" />
