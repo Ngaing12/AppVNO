@@ -10,15 +10,11 @@ data class LocationDetails (
     val postalCode : String
 )
 
-
-
 data class Onboarding(
     val title: String,
     val description : String,
     val icon : Int
 )
-
-
 
 data class Country(
     val code: String,

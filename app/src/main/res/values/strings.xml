@@ -188,6 +188,7 @@
   <string name="password_has_been_changed">Password has been changed!</string>
   <string name="clear_all">Clear All</string>
   <string name="mark_all_as_read">Mark All as read</string>
+  <string name="view_my_plan"><u>View my Plan</u></string>
 
 
   <string-array name="months">

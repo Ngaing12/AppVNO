@@ -1,14 +1,162 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollview_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.shop.ShopFragment">
+    android:fillViewport="true"
+    android:fitsSystemWindows="true"
+    tools:context=".ui.notification.NotificationFragment">
 
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="Home" />
+        android:layout_height="wrap_content"
+        android:id="@+id/notification_layout">
 
-</FrameLayout>
+        <ImageView
+            android:id="@+id/img_toolbar_bg"
+            android:layout_width="match_parent"
+            android:layout_height="240dp"
+            android:scaleType="centerCrop"
+            android:background="@color/freeBeeHoney"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <ImageView
+            android:id="@+id/img_background"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="matrix"
+            android:background="@drawable/element_hexbg"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/app_bar_home" />
+
+        <TextView
+            android:id="@+id/tv_desc1"
+            style="@style/FreeBeeHP4"
+            android:textStyle="bold"
+            android:layout_width="0dp"
+            android:textColor="@color/colorWhite"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_16dp"
+            android:layout_marginTop="@dimen/margin_16dp"
+            android:layout_marginRight="@dimen/margin_32dp"
+            android:text="Available Balance:"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+        <LinearLayout
+            android:id="@+id/container_view"
+            android:orientation="horizontal"
+            android:layout_width="0dp"
+            android:background="@drawable/container_rounded_small"
+            android:layout_height="@dimen/edit_text_primary_height"
+            app:layout_constraintTop_toBottomOf="@id/tv_desc1"
+            app:layout_constraintLeft_toLeftOf="@id/tv_desc1"
+            app:layout_constraintRight_toRightOf="@id/tv_desc1">
+
+            <ImageView
+                android:layout_width="23dp"
+                android:layout_height="23dp"
+                android:padding="@dimen/padding_4dp"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="13dp"
+                android:src="@drawable/temp_ic_call_white_24dp"
+                android:background="@drawable/circle_button_yellow"
+                android:layout_marginBottom="13dp" />
+
+            <TextView
+                android:id="@+id/tv_mins"
+                style="@style/FreeBeeHP4"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:textColor="@color/freeBeeHoney"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_16dp"
+                android:layout_marginTop="@dimen/margin_16dp"
+                android:text="120 mins" />
+
+
+
+
+            <ImageView
+                android:layout_width="23dp"
+                android:layout_height="23dp"
+                android:padding="@dimen/padding_4dp"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="13dp"
+                android:src="@drawable/temp_ic_email_white"
+                android:background="@drawable/circle_button_yellow"
+                android:layout_marginBottom="13dp" />
+
+            <TextView
+                android:id="@+id/tv_sms"
+                style="@style/FreeBeeHP4"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:textColor="@color/freeBeeHoney"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_16dp"
+                android:layout_marginTop="@dimen/margin_16dp"
+                android:text="120 SMS" />
+
+            <TextView
+                android:id="@+id/tv_plan"
+                style="@style/FreeBeeHP4"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:textColor="#4E2008"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_16dp"
+                android:layout_marginTop="@dimen/margin_16dp"
+                android:text="@string/view_my_plan" />
+
+
+            <ImageView
+                android:layout_width="23dp"
+                android:layout_height="23dp"
+                android:padding="@dimen/padding_4dp"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="13dp"
+                android:src="@drawable/ic_keyboard_arrow"
+                android:background="@drawable/circle_button_caramel"
+                android:layout_marginBottom="13dp"
+                android:layout_marginLeft="@dimen/margin_16dp"/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/colorWhite"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/img_toolbar_bg"/>
+
+        <com.synnapps.carouselview.CarouselView
+            android:id="@+id/carousel_view"
+            android:layout_width="match_parent"
+            android:layout_marginRight="@dimen/margin_16dp"
+            android:layout_marginLeft="@dimen/margin_16dp"
+            android:layout_marginTop="@dimen/margin_16dp"
+            android:layout_height="129dp"
+            android:background="@drawable/container_rounded"
+            android:backgroundTint="@color/colorBlack"
+            app:fillColor="#FFFFFF"
+            app:pageColor="#FF777777"
+            app:radius="6dp"
+            app:slideInterval="5000"
+
+            app:layout_constraintTop_toBottomOf="@id/container_view"/>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
+

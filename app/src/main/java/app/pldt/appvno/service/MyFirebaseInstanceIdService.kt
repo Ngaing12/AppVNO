@@ -34,12 +34,14 @@ class MyFirebaseInstanceIdService : FirebaseMessagingService()   {
 
         Log.d("FCM", "From ${remoteMessage.from}")
 
-
-        remoteMessage.data.isEmpty().let {
-            Log.d("FCM", "Message data payload: " + remoteMessage.data)
-            Log.d("FCM", "Notification id: " + remoteMessage.data.get("notification_id"))
-            shwoNotification(remoteMessage.data["title"] ?: "No Title", remoteMessage.data["message"] ?: "No Content")
+        if (remoteMessage.notification == null ) {
+            remoteMessage.data.isEmpty().let {
+                Log.d("FCM", "Message data payload: " + remoteMessage.data)
+                Log.d("FCM", "Notification id: " + remoteMessage.data.get("notification_id"))
+                shwoNotification(remoteMessage.data["title"] ?: "No Title", remoteMessage.data["message"] ?: "No Content")
+            }
         }
+
 //            if (remoteMessage.data.size != 0) {
 //                Log.d("FCM", "Message data payload: " + remoteMessage.data)
 //                Log.d("FCM", "Notification id: " + remoteMessage.data["notification_id"?: "no id"])
