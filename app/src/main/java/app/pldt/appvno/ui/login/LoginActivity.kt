@@ -43,9 +43,11 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-
         val viewModelProviderFactory = LoginViewModelProviderFactory()
         viewModel = ViewModelProvider(this, viewModelProviderFactory).get(LoginViewModel::class.java)
+
+
+        viewModel.notificationReport("111", "111111","Clicked", "sdfdsfsdfsdfsdf")
 
         viewModel.loginResponse.observe(this, Observer { response ->
             when (response) {
@@ -66,6 +68,24 @@ class LoginActivity : AppCompatActivity() {
             }
         })
 
+
+        viewModel.notificationResponse.observe(this, Observer { response ->
+            when (response) {
+                is Resource.Success -> {
+                    toast(response.data!!.data.attributes.status ?: "Success")
+                }
+                is Resource.Error -> {
+                    toast(response.message ?: "Error")
+//                    hideProgressBar()
+//                    response.message?.let { message ->
+//                        Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
+//                    }
+                }
+//                is Resource.Loading -> {
+//                    showProgressBar()
+//                }
+            }
+        })
 
 
 

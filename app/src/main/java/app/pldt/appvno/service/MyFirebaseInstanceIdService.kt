@@ -15,6 +15,7 @@ import androidx.core.app.NotificationCompat
 import app.pldt.appvno.R
 import app.pldt.appvno.ui.SplashActivity
 import app.pldt.appvno.ui.call.SysnetCallActivity
+import app.pldt.appvno.ui.homePage.FreebeeHomeActivity
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
 import com.sysnetph.sysnetsdk.Sysnet
@@ -33,31 +34,41 @@ class MyFirebaseInstanceIdService : FirebaseMessagingService()   {
     override fun onMessageReceived(remoteMessage: RemoteMessage) {
 
         Log.d("FCM", "From ${remoteMessage.from}")
-
-        if (remoteMessage.notification == null ) {
-            remoteMessage.data.isEmpty().let {
-                Log.d("FCM", "Message data payload: " + remoteMessage.data)
-                Log.d("FCM", "Notification id: " + remoteMessage.data.get("notification_id"))
-                shwoNotification(remoteMessage.data["title"] ?: "No Title", remoteMessage.data["message"] ?: "No Content")
-            }
-        }
-
-//            if (remoteMessage.data.size != 0) {
+//
+//        if (remoteMessage.notification == null ) {
+//            remoteMessage.data.isEmpty().let {
 //                Log.d("FCM", "Message data payload: " + remoteMessage.data)
-//                Log.d("FCM", "Notification id: " + remoteMessage.data["notification_id"?: "no id"])
+//                Log.d("FCM", "Notification id: " + remoteMessage.data.get("notification_id"))
+//                if *()
 //                shwoNotification(remoteMessage.data["title"] ?: "No Title", remoteMessage.data["message"] ?: "No Content")
 //            }
+//        }
+
+//        if (remoteMessage.data.size != 0) {
+//            Log.d("FCM", "Message data payload: " + remoteMessage.data)
+//            Log.d("FCM", "Notification id: " + remoteMessage.data["notification_id"?: "no id"])
+//            shwoNotification(remoteMessage.data["title"] ?: "No Title", remoteMessage.data["message"] ?: "No Content")
+//        }
 
 
+//        if (remoteMessage.notification != null ) {
+//            Log.d("FCM", "From ${remoteMessage.notification.toString()}")
+//            shwoNotification(remoteMessage.notification?.title ?: "No Title", remoteMessage.notification?.body ?: "No Body")
+//        }
 //        remoteMessage.notification?.let {
 //            Log.d("FCM", "From ${remoteMessage.notification.toString()}")
-//            shwoNotification(it.title ?: "No Title", it.body ?: "No Body")
+//            remoteMessage.data.isEmpty().let { _ ->
+//               if (remoteMessage.data["type"] ?: 0 == 1 ) {
+//                   // background only
+//                   shwoNotification(it.title ?: "No Title", it.body ?: "No Body")
+//               }
+//            }
 //        }
     }
 
     fun shwoNotification(title : String , message : String) {
-        val i = intentFor<SplashActivity>().clearTop()
-        val intent = Intent(this,SplashActivity::class.java)
+        val i = intentFor<FreebeeHomeActivity>().clearTop()
+        val intent = Intent(this,FreebeeHomeActivity::class.java)
         val channel_id = "app_vno"
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         val pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_ONE_SHOT)

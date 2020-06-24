@@ -26,6 +26,13 @@ class FreebeeHomeActivity : BaseActivity() , NavigationView.OnNavigationItemSele
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_freebee_home)
 
+//        val bundle = intent.extras
+//        if (bundle != null) {
+//            toast(bundle["something"].toString())
+//        } else {
+//            toast("bundle is empty")
+//        }
+
         setupBottomNavigation()
         setupNavigationDrawer()
         setCurrentFragment(FreebeeHomeFragment.newInstance())

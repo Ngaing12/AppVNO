@@ -7,10 +7,10 @@ import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
 import app.pldt.appvno.AppVNOApplication
 import app.pldt.appvno.R
-import app.pldt.appvno.ui.call.CallActivity
 import app.pldt.appvno.extensions.isVisible
 import app.pldt.appvno.firebase.MyFirebaseDatabase
 import app.pldt.appvno.ui.BaseActivity
+import app.pldt.appvno.ui.call.CallActivity
 import app.pldt.appvno.ui.call.SysnetCallActivity
 import app.pldt.appvno.ui.message.MessageFragment
 import app.pldt.appvno.ui.shop.ShopFragment
@@ -33,6 +33,8 @@ class HomeActivity : BaseActivity(), HomeFragment.OnHomeInteractionListener  , R
         setContentView(R.layout.activity_home)
         attachListener()
         replaceFragment(HomeFragment.newInstance())
+
+
 
         Sysnet.getInstance().inicreate()
         Sysnet.getInstance().registrationListener = this

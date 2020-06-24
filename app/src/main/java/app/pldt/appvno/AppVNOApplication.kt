@@ -8,6 +8,7 @@ import app.pldt.appvno.firebase.MyFirebaseDatabase
 import  app.pldt.appvno.googleAds.GoogleAdsManager
 import app.pldt.appvno.location.LocationRequestManager
 import app.pldt.appvno.model.TempUser
+import app.pldt.appvno.repository.ReportRepository
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 import org.koin.dsl.module
@@ -56,6 +57,7 @@ class AppVNOApplication : Application() {
             //single { AppExecutors() }
             // single { AppDatabase.getInstance(get()).driverDao() }
             // Repo6
+            single { ReportRepository(get()) }
             //single { DriverRepository(get()) }
         }
 

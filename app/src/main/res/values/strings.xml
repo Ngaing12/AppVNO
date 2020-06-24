@@ -189,6 +189,7 @@
   <string name="clear_all">Clear All</string>
   <string name="mark_all_as_read">Mark All as read</string>
   <string name="view_my_plan"><u>View my Plan</u></string>
+  <string name="default_notification_channel_id">APP_VNO_CHANNEL</string>
 
 
   <string-array name="months">

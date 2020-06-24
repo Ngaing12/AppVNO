@@ -31,34 +31,34 @@ object SessionManager {
         editor?.apply()
     }
 
-//    fun save(session: Session) {
-//        sharedPref?.let { pref ->
-//            val editor = pref.edit()
-//            editor.putString(KEY_TOKEN, session.token)
-//            editor.putBoolean(KEY_IS_LOGGED_IN, session.isLoggedIn)
-//            editor.apply()
-//        }
-//    }
-//
-//    fun getSession(): Session {
-//        sharedPref?.let { pref ->
-//            val token = pref.getString(KEY_TOKEN, "")
-//            val isLoggedIn = pref.getBoolean(KEY_IS_LOGGED_IN, false)
-//            return Session(token, isLoggedIn)
-//        }
-//
-//        return Session("", false)
-//    }
-//
-//    fun hasSession(): Boolean {
-//        sharedPref?.let { pref ->
-//            return pref.getBoolean(KEY_IS_LOGGED_IN, false)
-//        }
-//
-//        return false
-//    }
-//
-//    fun clearSession() {
-//        save(Session("", false))
-//    }
+    fun save(session: Session) {
+        sharedPref?.let { pref ->
+            val editor = pref.edit()
+            editor.putString(KEY_TOKEN, session.token)
+            editor.putBoolean(KEY_IS_LOGGED_IN, session.isLoggedIn)
+            editor.apply()
+        }
+    }
+
+    fun getSession(): Session {
+        sharedPref?.let { pref ->
+            val token = pref.getString(KEY_TOKEN, "")
+            val isLoggedIn = pref.getBoolean(KEY_IS_LOGGED_IN, false)
+            return Session(token ?: "", isLoggedIn)
+        }
+
+        return Session("", false)
+    }
+
+    fun hasSession(): Boolean {
+        sharedPref?.let { pref ->
+            return pref.getBoolean(KEY_IS_LOGGED_IN, false)
+        }
+
+        return false
+    }
+
+    fun clearSession() {
+        save(Session("", false))
+    }
 }
